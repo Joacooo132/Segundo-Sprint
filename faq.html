@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Respuestas a las dudas más comunes sobre calidad del software, modelos de desarrollo y metodologías ágiles.">
+  <title>Preguntas frecuentes | Sistema de Gestión de Calidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sprint2.css">
+  <script src="sprint2.js" defer></script>
+  <script src="js/faq.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="figma.html">
+      <img src="img/logo.png" alt="Logotipo del Sistema de Gestión de Calidad" width="58" height="58">
+      <span class="brand-name">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <span>Calidad de software · Sprint 307</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="site-nav" id="menu" aria-label="Principal">
+      <a href="figma.html">Inicio</a>
+      <a href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a href="metodologias-agiles.html">Metodologías</a>
+      <a class="active" href="recursos.html" aria-current="page">Recursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-copy">
+        <span class="story-tag">US-13 · Recursos y aprendizaje</span>
+        <h1>Preguntas frecuentes</h1>
+        <p>Respuestas breves a las dudas más comunes sobre calidad del software, modelos de desarrollo y metodologías ágiles.</p>
+      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Abre solo lo que necesitas</h2>
+        <p>Filtra por categoría y despliega una pregunta para leer la respuesta. Puedes abrir varias a la vez.</p>
+      </aside>
+    </section>
+
+    <section class="section white" aria-labelledby="faq-titulo">
+      <div class="section-head">
+        <span class="label">Dudas comunes</span>
+        <h2 id="faq-titulo">Preguntas frecuentes</h2>
+      </div>
+      <div class="chips" role="group" aria-label="Categorías" id="categorias">
+        <button class="chip" type="button" data-cat="todas" aria-pressed="true">Todas</button>
+        <button class="chip" type="button" data-cat="calidad" aria-pressed="false">Calidad</button>
+        <button class="chip" type="button" data-cat="procesos" aria-pressed="false">Procesos</button>
+        <button class="chip" type="button" data-cat="agil" aria-pressed="false">Agilidad</button>
+        <button class="chip" type="button" data-cat="sitio" aria-pressed="false">Sobre el sitio</button>
+      </div>
+      <div class="faq-layout">
+        <div class="faq-list" id="faq">
+          <details class="acc" data-cat="calidad"><summary>¿Qué es la calidad del software?</summary><div class="acc-body"><p>Es el grado en que un producto cumple sus requisitos y satisface las necesidades de quienes lo usan. Incluye funcionar correctamente, pero también ser usable, seguro, eficiente y fácil de mantener.</p></div></details>
+          <details class="acc" data-cat="calidad"><summary>¿Cuál es la diferencia entre verificar y validar?</summary><div class="acc-body"><p>Verificar responde «¿lo construimos bien?»: comprueba que el software cumple su especificación. Validar responde «¿construimos lo correcto?»: comprueba que satisface la necesidad real del usuario.</p></div></details>
+          <details class="acc" data-cat="calidad"><summary>¿Probar el software garantiza que no tiene errores?</summary><div class="acc-body"><p>No. Las pruebas muestran la presencia de defectos, no su ausencia. Reducen el riesgo, por eso se combinan con revisiones, buenas prácticas y métricas.</p></div></details>
+          <details class="acc" data-cat="procesos"><summary>¿Cuándo conviene usar el modelo en cascada?</summary><div class="acc-body"><p>Cuando los requisitos son estables y conocidos, el alcance está bien definido y se necesita documentación y trazabilidad por fases, por ejemplo en algunos proyectos regulados.</p></div></details>
+          <details class="acc" data-cat="procesos"><summary>¿En qué se diferencia el modelo en V de la cascada?</summary><div class="acc-body"><p>Ambos son secuenciales, pero el modelo en V asocia cada fase de diseño con un nivel de prueba y planifica esas pruebas desde el principio.</p></div></details>
+          <details class="acc" data-cat="agil"><summary>¿Ágil significa no planificar ni documentar?</summary><div class="acc-body"><p>No. Se planifica de forma continua y se documenta lo que aporta valor. El Manifiesto Ágil prioriza el software funcionando, pero no elimina la documentación.</p></div></details>
+          <details class="acc" data-cat="agil"><summary>¿Scrum y Kanban son lo mismo?</summary><div class="acc-body"><p>No. Scrum organiza el trabajo en Sprints con roles y eventos definidos. Kanban gestiona un flujo continuo limitando el trabajo en curso y no exige roles nuevos. Pueden combinarse.</p><p><a class="btn" href="comparador.html">Compararlos →</a></p></div></details>
+          <details class="acc" data-cat="agil"><summary>¿Cuánto dura un Sprint?</summary><div class="acc-body"><p>Un mes o menos, con duración fija. Muchos equipos usan Sprints de dos semanas para recibir feedback con frecuencia.</p></div></details>
+          <details class="acc" data-cat="sitio"><summary>¿Cómo sé qué metodología me conviene?</summary><div class="acc-body"><p>Responde la encuesta de preferencias: cinco preguntas sobre tu proyecto y una orientación con puntaje explicado.</p><p><a class="btn primary" href="encuesta.html">Hacer la encuesta →</a></p></div></details>
+          <details class="acc" data-cat="sitio"><summary>¿Puedo proponer contenido o reportar un error?</summary><div class="acc-body"><p>Sí. Usa el formulario de contacto para enviarnos sugerencias, correcciones o nuevas preguntas.</p></div></details>
+        </div>
+        <aside class="card">
+          <h3>¿No encuentras tu duda?</h3>
+          <p>Busca el término en el glosario o practica con un caso concreto.</p>
+          <a class="btn" href="glosario.html">Ir al glosario</a>
+          <a class="btn" href="ejercicios.html">Ver ejercicios</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="orient-titulo">
+      <div class="section-head">
+        <span class="label">Orientaciones</span>
+        <h2 id="orient-titulo">Tres orientaciones para empezar con criterio</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card"><span class="pill">1</span><h3>Empieza por el problema</h3><p>Antes de elegir un método, describe el producto, los usuarios y cuánto pueden cambiar las necesidades.</p></article>
+        <article class="card"><span class="pill">2</span><h3>La calidad se construye</h3><p>No se agrega al final: se planifica con criterios de aceptación, revisiones y pruebas desde el comienzo.</p></article>
+        <article class="card"><span class="pill">3</span><h3>Mejora en pasos pequeños</h3><p>Prueba un cambio, mide su efecto y ajusta. Vale tanto para el producto como para el proceso.</p></article>
+      </div>
+    </section>
+
+    <section class="section white" aria-labelledby="otro-titulo">
+      <div class="section-head">
+        <span class="label">Contacto educativo</span>
+        <h2 id="otro-titulo">¿Tu duda necesita otro ejemplo?</h2>
+      </div>
+      <div class="card row-between faq-cta">
+        <p class="text">Cuéntanos qué tema te cuesta y en qué contexto lo estás aplicando. Usaremos tus preguntas para mejorar esta sección.</p>
+        <a class="btn primary" href="contacto.html">Escribir al equipo →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-id">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="figma.html">Inicio</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Sprint 307. Proyecto de los pibes.</span>
+      <span>Aprender · Aplicar · Mejorar</span>
+    </div>
+  </footer>
+</body>
+</html>

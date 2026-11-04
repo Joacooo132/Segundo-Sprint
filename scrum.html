@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roles, eventos y artefactos de Scrum con un cronograma interactivo del Sprint de 1 a 4 semanas.">
+  <title>Scrum en profundidad | Sistema de Gestión de Calidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sprint2.css">
+  <script src="sprint2.js" defer></script>
+  <script src="js/scrum.js" defer></script>
+  <script src="js/indice.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="figma.html">
+      <img src="img/logo.png" alt="Logotipo del Sistema de Gestión de Calidad" width="58" height="58">
+      <span class="brand-name">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <span>Calidad de software · Sprint 307</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="site-nav" id="menu" aria-label="Principal">
+      <a href="figma.html">Inicio</a>
+      <a href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a class="active" href="metodologias-agiles.html" aria-current="page">Metodologías</a>
+      <a href="recursos.html">Recursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-copy">
+        <span class="story-tag">US-10 · Metodologías en detalle</span>
+        <h1>Scrum en profundidad</h1>
+        <p>Roles, Sprints, backlog, Daily Scrum, Sprint Review y Sprint Retrospective, explicados con un cronograma que puedes explorar.</p>
+      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Basado en la Guía de Scrum</h2>
+        <p>Usamos la terminología de la Guía de Scrum 2020: responsabilidades, eventos y artefactos con compromisos.</p>
+      </aside>
+    </section>
+
+    <nav class="toc-bar" aria-label="Bloques de aprendizaje">
+      <span class="label">Bloques de aprendizaje</span>
+      <div class="chips">
+        <a class="chip" href="#roles">1 · Roles</a>
+        <a class="chip" href="#eventos">2 · Eventos</a>
+        <a class="chip" href="#artefactos">3 · Artefactos</a>
+        <a class="chip" href="#backlog">Backlog práctico</a>
+      </div>
+    </nav>
+
+    <section class="section white" id="roles" aria-labelledby="roles-titulo">
+      <div class="section-head">
+        <span class="label">1 · Scrum Team</span>
+        <h2 id="roles-titulo">Un equipo, tres responsabilidades</h2>
+        <p>El Scrum Team es pequeño (normalmente 10 personas o menos), multifuncional y autogestionado. No hay subequipos ni jerarquías.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card"><div class="icon-box" aria-hidden="true">PO</div><h3>Product Owner</h3><p>Maximiza el valor del producto. Define el Product Goal y ordena el Product Backlog. Es una persona, no un comité.</p></article>
+        <article class="card"><div class="icon-box" aria-hidden="true">SM</div><h3>Scrum Master</h3><p>Ayuda a que Scrum se entienda y se aplique. Elimina impedimentos y sirve al equipo y a la organización como líder.</p></article>
+        <article class="card"><div class="icon-box" aria-hidden="true">D</div><h3>Developers</h3><p>Crean el Incremento en cada Sprint. Planifican el Sprint Backlog, cumplen la Definition of Done y se adaptan a diario.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="eventos" aria-labelledby="eventos-titulo">
+      <div class="section-head">
+        <span class="label">2 · Eventos</span>
+        <h2 id="eventos-titulo">El Sprint reúne todos los eventos</h2>
+        <p>Elige la duración del Sprint y haz clic en cada evento para ver su objetivo y duración máxima sugerida.</p>
+      </div>
+      <div class="row-between">
+        <div class="chips" role="group" aria-label="Duración del Sprint" id="duracion">
+          <button class="chip" type="button" data-semanas="1" aria-pressed="false">1 semana</button>
+          <button class="chip" type="button" data-semanas="2" aria-pressed="true">2 semanas</button>
+          <button class="chip" type="button" data-semanas="3" aria-pressed="false">3 semanas</button>
+          <button class="chip" type="button" data-semanas="4" aria-pressed="false">4 semanas</button>
+        </div>
+        <span class="label" id="duracion-texto">Sprint de 2 semanas · 10 días hábiles</span>
+      </div>
+      <div class="timeline" id="cronograma" role="group" aria-label="Eventos del Sprint">
+        <button class="event-btn" type="button" data-evento="planning" aria-pressed="true"><small>Día 1</small><strong>Sprint Planning</strong></button>
+        <button class="event-btn" type="button" data-evento="daily" aria-pressed="false"><small>Cada día</small><strong>Daily Scrum</strong></button>
+        <button class="event-btn" type="button" data-evento="refinement" aria-pressed="false"><small>Durante el Sprint</small><strong>Refinamiento</strong></button>
+        <button class="event-btn" type="button" data-evento="review" aria-pressed="false"><small>Último día</small><strong>Sprint Review</strong></button>
+        <button class="event-btn" type="button" data-evento="retro" aria-pressed="false"><small>Último día</small><strong>Sprint Retrospective</strong></button>
+      </div>
+      <div>
+        <span class="label">Cadencia diaria</span>
+        <div class="days" id="dias" aria-hidden="true"></div>
+      </div>
+      <article class="card" id="evento-detalle" aria-live="polite">
+        <span class="pill" id="ev-cuando">Día 1 · al inicio del Sprint</span>
+        <h3 id="ev-nombre">Sprint Planning</h3>
+        <p id="ev-objetivo"></p>
+        <div class="grid-3">
+          <div class="tile"><h3 id="ev-duracion">4 h</h3><p>Duración máxima sugerida</p></div>
+          <div class="tile"><h3 id="ev-quienes">Todo el Scrum Team</h3><p>Participan</p></div>
+          <div class="tile"><h3 id="ev-salida">Sprint Goal</h3><p>Resultado esperado</p></div>
+        </div>
+      </article>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th scope="col">Evento</th><th scope="col">Propósito</th><th scope="col">Máximo para un Sprint de un mes</th></tr></thead>
+          <tbody>
+            <tr><td>Sprint</td><td>Contenedor de los demás eventos; produce un Incremento.</td><td>1 mes o menos</td></tr>
+            <tr><td>Sprint Planning</td><td>Definir por qué, qué y cómo del Sprint.</td><td>8 horas</td></tr>
+            <tr><td>Daily Scrum</td><td>Inspeccionar el avance hacia el Sprint Goal y adaptar el plan.</td><td>15 minutos</td></tr>
+            <tr><td>Sprint Review</td><td>Inspeccionar el Incremento con interesados y adaptar el Product Backlog.</td><td>4 horas</td></tr>
+            <tr><td>Sprint Retrospective</td><td>Planificar mejoras de calidad y efectividad.</td><td>3 horas</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <strong>El refinamiento no es un evento formal</strong>
+        <p>Refinar el Product Backlog es una actividad continua: se dividen y detallan elementos para que estén listos. Muchos equipos le dedican hasta un 10 % de su capacidad.</p>
+      </div>
+    </section>
+
+    <section class="section white" id="artefactos" aria-labelledby="art-titulo">
+      <div class="section-head">
+        <span class="label">3 · Artefactos</span>
+        <h2 id="art-titulo">Artefactos con compromisos explícitos</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th scope="col">Artefacto</th><th scope="col">Qué es</th><th scope="col">Compromiso</th><th scope="col">Responsable</th></tr></thead>
+          <tbody>
+            <tr><td>Product Backlog</td><td>Lista emergente y ordenada de lo necesario para mejorar el producto.</td><td>Product Goal</td><td>Product Owner</td></tr>
+            <tr><td>Sprint Backlog</td><td>Sprint Goal, elementos elegidos y plan para entregar el Incremento.</td><td>Sprint Goal</td><td>Developers</td></tr>
+            <tr><td>Incremento</td><td>Paso concreto hacia el Product Goal; debe ser utilizable.</td><td>Definition of Done</td><td>Scrum Team</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="backlog" aria-labelledby="bl-titulo">
+      <div class="section-head">
+        <span class="label">Ejemplo aplicado</span>
+        <h2 id="bl-titulo">Backlog práctico · plataforma de cursos</h2>
+      </div>
+      <div class="note">
+        <strong>Product Goal: que un estudiante pueda inscribirse y completar un curso en línea sin ayuda</strong>
+        <p>Los elementos están ordenados por valor. Los primeros están refinados y listos para un Sprint; los últimos todavía son ideas grandes.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th scope="col">Orden</th><th scope="col">Historia de usuario</th><th scope="col">Estimación</th><th scope="col">Estado</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Como estudiante, quiero registrarme con mi correo para acceder a los cursos.</td><td>3 puntos</td><td>Lista para el Sprint</td></tr>
+            <tr><td>2</td><td>Como estudiante, quiero ver el catálogo filtrado por tema.</td><td>5 puntos</td><td>Lista para el Sprint</td></tr>
+            <tr><td>3</td><td>Como estudiante, quiero inscribirme en un curso con un clic.</td><td>3 puntos</td><td>En refinamiento</td></tr>
+            <tr><td>4</td><td>Como docente, quiero subir videos a una lección.</td><td>8 puntos</td><td>En refinamiento</td></tr>
+            <tr><td>5</td><td>Como estudiante, quiero obtener un certificado al terminar.</td><td>Sin estimar</td><td>Idea (épica)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row-between">
+        <p class="text">Compara Scrum con Kanban y otros modelos.</p>
+        <div class="actions"><a class="btn" href="kanban.html">Kanban en profundidad</a><a class="btn primary" href="comparador.html">Ver comparador →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-id">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="figma.html">Inicio</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Sprint 307. Proyecto de los pibes.</span>
+      <span>Aprender · Aplicar · Mejorar</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Niveles de prueba, caja negra y caja blanca, y técnicas para diseñar casos de prueba.">
+  <title>Técnicas de Aseguramiento | Sistema de Gestión de Calidad</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="figma.html">
+      <div class="logo-mark">307</div>
+      <div>
+        <h3>Sistema de Gestión de Calidad</h3>
+        <p>CALIDAD DE SOFTWARE · SPRINT 307</p>
+      </div>
+    </a>
+    <nav>
+      <a href="figma.html">Inicio</a>
+      <a class="active" href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a href="metodologias.html">Metodologías</a>
+      <a href="recursos.html">Recursos</a>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">US-03 · TÉCNICAS DE ASEGURAMIENTO DE LA CALIDAD</span>
+      <h1>Niveles de prueba y técnicas para diseñar casos</h1>
+      <p>Conocé en qué niveles se prueba el software, qué diferencia a la caja negra de la caja blanca y qué técnica usar en cada caso.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <div class="hero-card">
+        <div class="symbol">✓</div>
+        <h3>Aseguramiento de la Calidad</h3>
+        <p>Prevenir defectos es mejor que corregirlos.</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-head">
+      <div>
+        <div class="kicker">NIVELES DE PRUEBA</div>
+        <h2>Unitarias, Integración y Sistema</h2>
+      </div>
+      <p>Cada nivel prueba el software con un alcance distinto.</p>
+    </div>
+
+    <div class="levels">
+      <article class="card">
+        <span class="tag">NIVEL 1</span>
+        <div class="icon">◈</div>
+        <h3>Pruebas Unitarias</h3>
+        <p>Verifican una función o componente de forma aislada.</p>
+      </article>
+      <article class="card">
+        <span class="tag">NIVEL 2</span>
+        <div class="icon">⌁</div>
+        <h3>Pruebas de Integración</h3>
+        <p>Comprueban que los módulos funcionen bien al trabajar juntos.</p>
+      </article>
+      <article class="card">
+        <span class="tag">NIVEL 3</span>
+        <div class="icon">▥</div>
+        <h3>Pruebas de Sistema</h3>
+        <p>Validan el producto completo frente a los requisitos.</p>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top:48px">
+      <div>
+        <div class="kicker">ENFOQUES</div>
+        <h2>Caja Negra / Caja Blanca</h2>
+      </div>
+      <p>Cambia lo que el probador conoce del código.</p>
+    </div>
+
+    <div class="box-scheme">
+      <article class="card">
+        <span class="tag">CAJA NEGRA</span>
+        <div class="icon">■</div>
+        <h3>Sin ver el código</h3>
+        <p>Se prueban entradas y salidas según los requisitos, sin conocer cómo está hecho por dentro.</p>
+      </article>
+      <article class="card">
+        <span class="tag">CAJA BLANCA</span>
+        <div class="icon">□</div>
+        <h3>Viendo el código</h3>
+        <p>Se diseñan las pruebas a partir de la estructura interna: sentencias, ramas y caminos.</p>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top:48px">
+      <div>
+        <div class="kicker">TÉCNICAS</div>
+        <h2>Técnicas de diseño de pruebas</h2>
+      </div>
+      <p>Tocá "+" para ver el ejemplo. Podés abrir varias a la vez.</p>
+    </div>
+
+    <div class="acc-list">
+      <div class="acc">
+        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="t1"><span>Partición de equivalencia</span><span class="acc-sign" aria-hidden="true">+</span></button>
+        <div class="acc-body" id="t1" hidden>
+          <p>Agrupa las entradas en clases que el sistema trata igual y se prueba un valor por clase.</p>
+          <p><strong>Ejemplo:</strong> edad válida de 18 a 65. Clases: menor de 18 (inválida), de 18 a 65 (válida), mayor de 65 (inválida). Se prueba 10, 30 y 70.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="t2"><span>Valores límite</span><span class="acc-sign" aria-hidden="true">+</span></button>
+        <div class="acc-body" id="t2" hidden>
+          <p>Prueba los bordes de cada clase, donde suelen aparecer los errores.</p>
+          <p><strong>Ejemplo:</strong> para el rango de 18 a 65 se prueban 17, 18, 65 y 66.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="t3"><span>Cobertura de sentencias y ramas</span><span class="acc-sign" aria-hidden="true">+</span></button>
+        <div class="acc-body" id="t3" hidden>
+          <p>Mide cuántas líneas (sentencias) y decisiones (ramas) del código ejecutan las pruebas.</p>
+          <p><strong>Ejemplo:</strong> un <code>if</code> con <code>else</code> necesita al menos dos pruebas: una que entre por el verdadero y otra por el falso.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="t4"><span>Pruebas de caminos</span><span class="acc-sign" aria-hidden="true">+</span></button>
+        <div class="acc-body" id="t4" hidden>
+          <p>Identifica los caminos independientes del flujo del programa y prueba cada uno.</p>
+          <p><strong>Ejemplo:</strong> una función con dos <code>if</code> seguidos tiene hasta cuatro caminos posibles.</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="mapa" style="margin-top:48px">
+      <div class="section-head">
+        <div>
+          <div class="kicker">TU PLAN</div>
+          <h2>Mi mapa de pruebas</h2>
+        </div>
+        <p>Elegí las técnicas que querés usar y armá tu lista.</p>
+      </div>
+      <div class="panel">
+        <div class="map-opts" role="group" aria-label="Técnicas">
+          <label><input type="checkbox" value="Partición de equivalencia · Caja negra · Unitarias e Integración"> Partición de equivalencia</label>
+          <label><input type="checkbox" value="Valores límite · Caja negra · Unitarias e Integración"> Valores límite</label>
+          <label><input type="checkbox" value="Cobertura de sentencias y ramas · Caja blanca · Unitarias"> Cobertura de sentencias y ramas</label>
+          <label><input type="checkbox" value="Pruebas de caminos · Caja blanca · Unitarias e Integración"> Pruebas de caminos</label>
+        </div>
+        <ul class="map-out" id="mapOut" aria-live="polite"><li>Todavía no elegiste ninguna técnica.</li></ul>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div>
+        <h3>Armá tu estrategia de pruebas</h3>
+        <p>Combiná niveles y técnicas para cubrir tu producto.</p>
+      </div>
+      <a class="btn" href="#mapa">Crear mi mapa de pruebas →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <h3>Sistema de Gestión de Calidad</h3>
+      <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      <div class="copyright">© 2026 Sprint 307. Proyecto de los pibes.</div>
+    </div>
+    <div class="footer-links">
+      <a href="figma.html">Inicio</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.acc-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var body = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        body.hidden = open;
+        btn.querySelector('.acc-sign').textContent = open ? '+' : '\u2212';
+      });
+    });
+    var out = document.getElementById('mapOut');
+    document.querySelectorAll('.map-opts input').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        var sel = Array.from(document.querySelectorAll('.map-opts input:checked'));
+        out.innerHTML = sel.length
+          ? sel.map(function (c) { return '<li>' + c.value + '</li>'; }).join('')
+          : '<li>Todavía no elegiste ninguna técnica.</li>';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Herramientas para gestionar defectos, analizar código y administrar pruebas.">
+  <title>Herramientas de Calidad | Sistema de Gestión de Calidad</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="figma.html">
+      <div class="logo-mark">307</div>
+      <div>
+        <h3>Sistema de Gestión de Calidad</h3>
+        <p>CALIDAD DE SOFTWARE · SPRINT 307</p>
+      </div>
+    </a>
+    <nav>
+      <a href="figma.html">Inicio</a>
+      <a class="active" href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a href="metodologias.html">Metodologías</a>
+      <a href="recursos.html">Recursos</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">US-04 · HERRAMIENTAS DE CALIDAD</span>
+      <h1>Herramientas para cuidar la calidad del software</h1>
+      <p>Filtrá por tipo y conocé las herramientas más usadas para gestionar defectos, analizar código y administrar pruebas.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <div class="hero-card">
+        <div class="symbol">⚒️</div>
+        <h3>Caja de herramientas</h3>
+        <p>8 herramientas en 3 categorías.</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="herramientas">
+      <div class="section-head">
+        <div>
+          <div class="kicker">CATÁLOGO</div>
+          <h2>Herramientas de calidad</h2>
+        </div>
+        <p>Usá los filtros para ver solo un tipo.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filtrar herramientas">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Todas</button>
+        <button class="filter" type="button" data-filter="bug" aria-pressed="false">Bug Trackers</button>
+        <button class="filter" type="button" data-filter="linter" aria-pressed="false">Linters</button>
+        <button class="filter" type="button" data-filter="test" aria-pressed="false">Test Management</button>
+      </div>
+
+      <div class="grid">
+      <article class="card" data-cat="bug">
+        <span class="tag">BUG TRACKER</span>
+        <div class="icon">⚒️</div>
+        <h3>Jira</h3>
+        <p>Gestiona tareas y defectos con tableros y flujos de trabajo.</p>
+        <a class="explore" href="#ficha-jira">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="bug">
+        <span class="tag">BUG TRACKER</span>
+        <div class="icon">⚒️</div>
+        <h3>GitHub Issues</h3>
+        <p>Registra errores y mejoras junto al código del repositorio.</p>
+        <a class="explore" href="#ficha-github">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="bug">
+        <span class="tag">BUG TRACKER</span>
+        <div class="icon">⚒️</div>
+        <h3>Sentry</h3>
+        <p>Detecta errores en producción y avisa en tiempo real.</p>
+        <a class="explore" href="#ficha-sentry">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="linter">
+        <span class="tag">LINTER</span>
+        <div class="icon">⌁</div>
+        <h3>SonarQube</h3>
+        <p>Analiza el código y reporta defectos, vulnerabilidades y deuda técnica.</p>
+        <a class="explore" href="#ficha-sonarqube">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="linter">
+        <span class="tag">LINTER</span>
+        <div class="icon">⌁</div>
+        <h3>ESLint</h3>
+        <p>Encuentra errores y malas prácticas en código JavaScript.</p>
+        <a class="explore" href="#ficha-eslint">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="test">
+        <span class="tag">TEST MANAGEMENT</span>
+        <div class="icon">✓</div>
+        <h3>TestRail</h3>
+        <p>Organiza casos de prueba y registra sus resultados.</p>
+        <a class="explore" href="#ficha-testrail">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="test">
+        <span class="tag">TEST MANAGEMENT</span>
+        <div class="icon">✓</div>
+        <h3>Zephyr</h3>
+        <p>Gestiona pruebas dentro de Jira.</p>
+        <a class="explore" href="#ficha-zephyr">Ver ficha →</a>
+      </article>
+      <article class="card" data-cat="test">
+        <span class="tag">TEST MANAGEMENT</span>
+        <div class="icon">✓</div>
+        <h3>Postman</h3>
+        <p>Prueba y documenta APIs de forma sencilla.</p>
+        <a class="explore" href="#ficha-postman">Ver ficha →</a>
+      </article>
+      </div>
+    </section>
+
+    <section id="fichas" style="margin-top:48px">
+      <div class="section-head">
+        <div>
+          <div class="kicker">FICHAS</div>
+          <h2>Fichas de herramientas</h2>
+        </div>
+      </div>
+      <article class="ficha" id="ficha-jira">
+        <span class="tag">BUG TRACKER</span>
+        <h3>Jira</h3>
+        <p>Jira permite registrar defectos, asignarlos, priorizarlos y seguir su estado desde que se reporta hasta que se cierra.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-github">
+        <span class="tag">BUG TRACKER</span>
+        <h3>GitHub Issues</h3>
+        <p>GitHub Issues vincula cada defecto con commits y pull requests, así el equipo ve qué cambio lo resolvió.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-sentry">
+        <span class="tag">BUG TRACKER</span>
+        <h3>Sentry</h3>
+        <p>Sentry captura excepciones de la aplicación en funcionamiento y muestra dónde y con qué frecuencia ocurren.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-sonarqube">
+        <span class="tag">LINTER</span>
+        <h3>SonarQube</h3>
+        <p>SonarQube revisa el código fuente de forma continua y mide mantenibilidad, seguridad y cobertura.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-eslint">
+        <span class="tag">LINTER</span>
+        <h3>ESLint</h3>
+        <p>ESLint aplica reglas configurables mientras se escribe el código para mantener un estilo consistente.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-testrail">
+        <span class="tag">TEST MANAGEMENT</span>
+        <h3>TestRail</h3>
+        <p>TestRail centraliza los planes de prueba, las ejecuciones y los informes de avance.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-zephyr">
+        <span class="tag">TEST MANAGEMENT</span>
+        <h3>Zephyr</h3>
+        <p>Zephyr agrega a Jira la planificación y ejecución de casos de prueba con trazabilidad a los requisitos.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+      <article class="ficha" id="ficha-postman">
+        <span class="tag">TEST MANAGEMENT</span>
+        <h3>Postman</h3>
+        <p>Postman permite enviar solicitudes a una API, automatizar verificaciones y compartir colecciones de pruebas.</p>
+        <a href="#herramientas">Volver a las herramientas ↑</a>
+      </article>
+    </section>
+
+    <div class="cta">
+      <div>
+        <h3>Volvé a los fundamentos</h3>
+        <p>Repasá los conceptos clave de calidad, métricas y estándares.</p>
+      </div>
+      <a class="btn" href="calidad.html">Ir a calidad →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <h3>Sistema de Gestión de Calidad</h3>
+      <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      <div class="copyright">© 2026 Sprint 307. Proyecto de los pibes.</div>
+    </div>
+    <div class="footer-links">
+      <a href="figma.html">Inicio</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <script>
+    var buttons = document.querySelectorAll('.filter');
+    var cards = document.querySelectorAll('.grid .card[data-cat]');
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.dataset.filter;
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        cards.forEach(function (c) { c.hidden = !(f === 'all' || c.dataset.cat === f); });
+      });
+    });
+  </script>
+</body>
+</html>
