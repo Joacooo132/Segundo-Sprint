@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos externos: guías, normas, libros y organizaciones de referencia sobre calidad y metodologías.">
+  <title>Enlaces de interés | Sistema de Gestión de Calidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sprint2.css">
+  <script src="sprint2.js" defer></script>
+  <script src="js/enlaces.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="Logotipo del Sistema de Gestión de Calidad" width="58" height="58">
+      <span class="brand-name">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <span>Calidad de software · Sprint 307</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="site-nav" id="menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a href="metodologias-agiles.html">Metodologías</a>
+      <a class="active" href="recursos.html" aria-current="page">Recursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-copy">
+        <span class="story-tag">US-14 · Recursos y aprendizaje</span>
+        <h1>Enlaces de interés para seguir aprendiendo</h1>
+        <p>Guías oficiales, normas, libros y organizaciones de referencia sobre calidad del software y metodologías.</p>
+      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Se abren en otra pestaña</h2>
+        <p>Los enlaces externos se abren en una pestaña nueva de forma segura, para que no pierdas tu lugar en el sitio.</p>
+      </aside>
+    </section>
+
+    <section class="section white" aria-labelledby="bib-titulo">
+      <div class="section-head">
+        <span class="label">Biblioteca</span>
+        <h2 id="bib-titulo">Biblioteca de enlaces de interés</h2>
+      </div>
+      <div class="chips" role="group" aria-label="Filtrar por tipo de recurso" id="tipos">
+        <button class="chip" type="button" data-tipo="todos" aria-pressed="true">Todos</button>
+        <button class="chip" type="button" data-tipo="web" aria-pressed="false">🌐 Web</button>
+        <button class="chip" type="button" data-tipo="pdf" aria-pressed="false">📄 PDF</button>
+        <button class="chip" type="button" data-tipo="libro" aria-pressed="false">📚 Libro</button>
+        <button class="chip" type="button" data-tipo="org" aria-pressed="false">🏛 Organización</button>
+      </div>
+      <p class="text-sm" id="recursos-total" aria-live="polite"></p>
+      <div class="grid-3" id="recursos">
+        <article class="card" data-tipo="web"><span class="res-type"><i aria-hidden="true">🌐</i>Web</span><h3>La Guía de Scrum</h3><p>Definición oficial de Scrum, disponible en varios idiomas, incluido el español.</p><a class="btn ext" href="https://scrumguides.org/" target="_blank" rel="noopener noreferrer">Visitar scrumguides.org</a></article>
+        <article class="card" data-tipo="web"><span class="res-type"><i aria-hidden="true">🌐</i>Web</span><h3>Manifiesto Ágil</h3><p>Los 4 valores y 12 principios del desarrollo ágil de software, en español.</p><a class="btn ext" href="https://agilemanifesto.org/iso/es/manifesto.html" target="_blank" rel="noopener noreferrer">Leer el manifiesto</a></article>
+        <article class="card" data-tipo="web"><span class="res-type"><i aria-hidden="true">🌐</i>Web</span><h3>Portal ISO 25000</h3><p>Explicación en español de la familia de normas ISO/IEC 25000 y su modelo de calidad.</p><a class="btn ext" href="https://iso25000.com/" target="_blank" rel="noopener noreferrer">Visitar iso25000.com</a></article>
+        <article class="card" data-tipo="pdf"><span class="res-type"><i aria-hidden="true">📄</i>PDF</span><h3>Programa ISTQB Foundation Level</h3><p>Programa de estudio de pruebas de software: niveles, tipos y técnicas. Se descarga en PDF desde la página.</p><a class="btn ext" href="https://www.istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">Ver programa ISTQB</a></article>
+        <article class="card" data-tipo="pdf"><span class="res-type"><i aria-hidden="true">📄</i>PDF</span><h3>The Kanban Guide</h3><p>Guía breve que define Kanban, sus prácticas y métricas de flujo. Disponible para descargar.</p><a class="btn ext" href="https://kanbanguides.org/" target="_blank" rel="noopener noreferrer">Visitar kanbanguides.org</a></article>
+        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Ingeniería de Software · Ian Sommerville</h3><p>Texto de referencia sobre procesos, requisitos, pruebas y calidad.</p><a class="btn ext" href="https://openlibrary.org/search?q=Sommerville+Software+Engineering" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
+        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Ingeniería del Software · Roger Pressman</h3><p>Enfoque práctico de modelos de proceso, gestión de la calidad y métricas.</p><a class="btn ext" href="https://openlibrary.org/search?q=Pressman+Software+Engineering+A+Practitioner%27s+Approach" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
+        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Extreme Programming Explained · Kent Beck</h3><p>El libro que presentó XP: valores, principios y prácticas.</p><a class="btn ext" href="https://openlibrary.org/search?q=Extreme+Programming+Explained+Kent+Beck" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
+        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Kanban · David J. Anderson</h3><p>Cómo aplicar Kanban para mejorar procesos de forma evolutiva.</p><a class="btn ext" href="https://openlibrary.org/search?q=Kanban+David+J.+Anderson" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
+        <article class="card" data-tipo="org"><span class="res-type"><i aria-hidden="true">🏛</i>Organización</span><h3>ISO</h3><p>Organización Internacional de Normalización: publica las normas ISO/IEC 25000 e ISO 9001.</p><a class="btn ext" href="https://www.iso.org/" target="_blank" rel="noopener noreferrer">Visitar iso.org</a></article>
+        <article class="card" data-tipo="org"><span class="res-type"><i aria-hidden="true">🏛</i>Organización</span><h3>ISTQB</h3><p>Junta internacional de certificación en pruebas de software.</p><a class="btn ext" href="https://www.istqb.org/" target="_blank" rel="noopener noreferrer">Visitar istqb.org</a></article>
+        <article class="card" data-tipo="org"><span class="res-type"><i aria-hidden="true">🏛</i>Organización</span><h3>Agile Alliance</h3><p>Comunidad sin fines de lucro que difunde los principios ágiles. Glosario y artículos.</p><a class="btn ext" href="https://www.agilealliance.org/" target="_blank" rel="noopener noreferrer">Visitar agilealliance.org</a></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="leer-titulo">
+      <div class="section-head">
+        <span class="label">Cómo aprovechar los recursos</span>
+        <h2 id="leer-titulo">Convierte una lectura en aprendizaje</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card"><span class="pill">1 · Antes</span><h3>Define una pregunta</h3><p>Por ejemplo: «¿Qué cambia en las pruebas entre cascada y Scrum?». Leer con un objetivo ayuda a filtrar.</p></article>
+        <article class="card"><span class="pill">2 · Durante</span><h3>Anota términos nuevos</h3><p>Compáralos con el glosario y escribe un ejemplo propio para cada uno.</p></article>
+        <article class="card"><span class="pill">3 · Después</span><h3>Aplícalo en un caso</h3><p>Resuelve un ejercicio práctico usando lo que leíste y revisa la solución.</p></article>
+      </div>
+      <div class="note">
+        <strong>Prefiere las fuentes primarias</strong>
+        <p>Para Scrum, Kanban o las normas ISO, la guía o norma original es la referencia más confiable. Los artículos y blogs ayudan a entender, pero pueden simplificar o desactualizarse.</p>
+      </div>
+      <div class="row-between"><p class="text">Practica con casos reales de calidad y metodologías.</p><a class="btn primary" href="ejercicios.html">Ir a los ejercicios →</a></div>
+    </section>
+
+    <nav class="pager" aria-label="Recorrido por el sitio">
+      <a class="pager-link" href="faq.html" rel="prev"><span class="label">← Anterior</span><strong>Preguntas frecuentes</strong></a>
+      <a class="pager-home" href="index.html">Todas las secciones</a>
+      <a class="pager-link next" href="ejercicios.html" rel="next"><span class="label">Siguiente →</span><strong>Ejercicios y casos prácticos</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-id">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Sprint 307. Proyecto de los pibes.</span>
+      <span>Aprender · Aplicar · Mejorar</span>
+    </div>
+  </footer>
+</body>
+</html>

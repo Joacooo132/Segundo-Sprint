@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responde cinco preguntas sobre tu proyecto y obtén una sugerencia sobre qué metodología puede ser más adecuada.">
+  <title>Encuesta de preferencias metodológicas | Sistema de Gestión de Calidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sprint2.css">
+  <script src="sprint2.js" defer></script>
+  <script src="js/encuesta.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="Logotipo del Sistema de Gestión de Calidad" width="58" height="58">
+      <span class="brand-name">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <span>Calidad de software · Sprint 307</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="site-nav" id="menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a href="metodologias-agiles.html">Metodologías</a>
+      <a class="active" href="recursos.html" aria-current="page">Recursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-copy">
+        <span class="story-tag">US-19 · Recursos y aprendizaje</span>
+        <h1>Explora qué enfoque puede encajar contigo</h1>
+        <p>Reflexiona sobre tu equipo, la incertidumbre y el flujo de trabajo. Este recorrido ofrece orientación educativa, no una recomendación universal.</p>
+      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Cinco preguntas de contexto</h2>
+        <p>El resultado se calcula con una rúbrica didáctica simple en tu navegador. No se guardan ni se envían tus respuestas.</p>
+      </aside>
+    </section>
+
+    <section class="section white" id="asistente" aria-labelledby="asistente-titulo">
+      <div class="section-head">
+        <span class="label" id="paso-etiqueta">Asistente de preferencias · Paso 1 de 5</span>
+        <h2 id="asistente-titulo">Cuéntanos cómo es tu proyecto</h2>
+      </div>
+      <div class="row-between survey-status">
+        <span class="label" id="paso-ruta">Equipo · Complejidad · Requisitos · Entregas · Flujo</span>
+        <strong class="survey-count" id="paso-contador">Paso 1 / 5</strong>
+      </div>
+      <div class="meter" role="progressbar" aria-label="Progreso del asistente" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1">
+        <span id="paso-barra" style="width: 20%"></span>
+      </div>
+
+      <div class="survey-layout">
+        <form class="survey-question" id="pregunta" novalidate>
+          <span class="label" id="pregunta-etiqueta">Equipo · Una sola opción</span>
+          <h3 id="pregunta-titulo">¿Cuántas personas colaboran en el proyecto?</h3>
+          <p class="text" id="pregunta-ayuda"></p>
+          <fieldset id="opciones">
+            <legend class="sr-only" id="pregunta-legend">Opciones</legend>
+          </fieldset>
+          <p class="error" id="pregunta-error" hidden>Elige una opción para continuar.</p>
+          <div class="row-between">
+            <button class="btn" type="button" id="btn-anterior">← Anterior</button>
+            <button class="btn primary" type="submit" id="btn-siguiente">Siguiente →</button>
+          </div>
+        </form>
+
+        <aside class="survey-summary" aria-labelledby="recorrido-titulo">
+          <h3 id="recorrido-titulo">Tu recorrido</h3>
+          <ol id="recorrido"></ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="resultado" aria-labelledby="resultado-titulo">
+      <div class="section-head">
+        <span class="label" id="resultado-etiqueta">Demostración independiente · Recorrido completo de muestra</span>
+        <h2 id="resultado-titulo">Ejemplo de resultado final · afinidad con Scrum</h2>
+      </div>
+      <div class="note">
+        <strong id="nota-titulo">Orientación ilustrativa, no diagnóstico</strong>
+        <p id="nota-texto">Para mostrar cómo se explicaría un resultado, este ejemplo completa los pasos pendientes con entregas cada dos semanas y desarrollo de nuevas funcionalidades planificables. No es el resultado de un cálculo en funcionamiento ni evidencia científica.</p>
+      </div>
+
+      <div class="grid-3" id="puntajes"></div>
+
+      <div class="card explain">
+        <h3 id="explicacion-titulo">Por qué explorar Scrum en este caso</h3>
+        <p id="explicacion-1">Un equipo de 6 a 9 personas afronta alta incertidumbre, requisitos que cambian y una entrega quincenal. Un Sprint Goal compartido y la inspección con usuarios pueden ayudar a aprender sin perder foco. El trabajo principal son funcionalidades que pueden agruparse alrededor de un objetivo.</p>
+        <p id="explicacion-2">Kanban puede ayudar a visualizar capacidad y limitar el trabajo iniciado dentro de ese proceso. Cascada encaja menos con estos requisitos cambiantes, aunque sus hitos de documentación podrían responder a restricciones específicas. Antes de decidir, revisa autonomía, colaboración con usuarios y prácticas de calidad.</p>
+      </div>
+
+      <h3 class="h3">Cómo se construyen los puntos de este ejemplo</h3>
+      <p class="text-sm">Rúbrica didáctica manual: de 0 a 2 puntos por criterio, hasta 10 por enfoque. Los puntos expresan afinidad ilustrativa, no porcentajes de éxito ni probabilidades.</p>
+
+      <div class="table-wrap">
+        <table class="table rubric">
+          <thead>
+            <tr><th scope="col">Respuestas de muestra</th><th scope="col">Scrum</th><th scope="col">Kanban</th><th scope="col">Cascada</th></tr>
+          </thead>
+          <tbody id="rubrica"></tbody>
+        </table>
+      </div>
+
+      <div class="row-between">
+        <p class="text">Usa el resultado como punto de partida. Contrasta las opciones en el comparador y prueba una mejora pequeña en tu contexto.</p>
+        <div class="actions">
+          <button class="btn" type="button" id="btn-reiniciar">Volver a empezar</button>
+          <a class="btn primary" href="comparador.html">Ver comparador →</a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Recorrido por el sitio">
+      <a class="pager-link" href="comparador.html" rel="prev"><span class="label">← Anterior</span><strong>Comparador de metodologías</strong></a>
+      <a class="pager-home" href="index.html">Todas las secciones</a>
+      <a class="pager-link next" href="nosotros.html" rel="next"><span class="label">Siguiente →</span><strong>Sobre Nosotros</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-id">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Sprint 307. Proyecto de los pibes.</span>
+      <span>Aprender · Aplicar · Mejorar</span>
+    </div>
+  </footer>
+</body>
+</html>

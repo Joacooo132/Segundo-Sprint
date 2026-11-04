@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Esquemas visuales del ciclo del Sprint, el flujo Kanban y el bucle de XP, con vista ampliada.">
+  <title>Ilustraciones de Metodologías Ágiles | Sistema de Gestión de Calidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sprint2.css">
+  <script src="sprint2.js" defer></script>
+  <script src="js/galeria.js" defer></script>
+  <script src="js/indice.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="Logotipo del Sistema de Gestión de Calidad" width="58" height="58">
+      <span class="brand-name">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <span>Calidad de software · Sprint 307</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="site-nav" id="menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="calidad.html">Calidad</a>
+      <a href="procesos.html">Procesos</a>
+      <a class="active" href="metodologias-agiles.html" aria-current="page">Metodologías</a>
+      <a href="recursos.html">Recursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-copy">
+        <span class="story-tag">US-09 · Metodologías ágiles</span>
+        <h1>Esquemas para ver la agilidad en movimiento</h1>
+        <p>El ciclo del Sprint, el flujo de un tablero Kanban y el bucle de prácticas de XP, explicados con diagramas que puedes ampliar.</p>
+      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Tres esquemas visuales</h2>
+        <p>Haz clic en cualquier diagrama o en «Ampliar» para verlo en pantalla completa. Pulsa Esc para cerrar.</p>
+      </aside>
+    </section>
+
+    <nav class="toc-bar" aria-label="Esquemas">
+      <span class="label">Esquemas</span>
+      <div class="chips">
+        <a class="chip" href="#scrum">Ciclo del Sprint</a>
+        <a class="chip" href="#kanban">Flujo Kanban</a>
+        <a class="chip" href="#xp">Bucle de XP</a>
+      </div>
+    </nav>
+
+    <section class="section white" id="scrum" aria-labelledby="scrum-titulo">
+      <div class="section-head">
+        <span class="label">Figura 1 · Scrum</span>
+        <h2 id="scrum-titulo">Scrum · el ciclo del Sprint</h2>
+      </div>
+      <figure class="figure">
+        <div class="figure-head">
+          <p class="text">Del Product Backlog sale el trabajo del Sprint; dentro del límite del Sprint ocurren todos los eventos.</p>
+          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
+        </div>
+        <div class="diagram-area diagram-scroll">
+          <svg class="diagram" viewBox="0 0 1180 470" role="img" aria-labelledby="sp-t sp-d" style="min-width:720px">
+            <title id="sp-t">Ciclo del Sprint en Scrum</title>
+            <desc id="sp-d">El Product Backlog entra a la Sprint Planning, que produce el Sprint Backlog. Durante el Sprint de 1 a 4 semanas se repite la Daily Scrum cada 24 horas. Al final, el Incremento se inspecciona en la Sprint Review y el equipo mejora en la Sprint Retrospective, antes de iniciar el próximo Sprint.</desc>
+            <g font-family="Inter, Arial, sans-serif" font-weight="700" font-size="16">
+              <rect x="10" y="190" width="190" height="90" rx="14" fill="#eaf2f8" stroke="#3f78a8"/>
+              <text x="105" y="230" text-anchor="middle" fill="#102a43">Product</text><text x="105" y="252" text-anchor="middle" fill="#102a43">Backlog</text>
+              <path d="M200 235 H260" stroke="#3f78a8" stroke-width="3" marker-end="url(#fl)"/>
+              <rect x="270" y="20" width="900" height="430" rx="26" fill="#f7fafc" stroke="#abc2db" stroke-width="2" stroke-dasharray="10 8"/>
+              <text x="290" y="52" fill="#3f78a8" font-size="13" letter-spacing="1">LÍMITE DEL SPRINT · 1 A 4 SEMANAS</text>
+              <rect x="300" y="190" width="180" height="90" rx="14" fill="#3f78a8"/>
+              <text x="390" y="230" text-anchor="middle" fill="#fff">Sprint</text><text x="390" y="252" text-anchor="middle" fill="#fff">Planning</text>
+              <path d="M480 235 H530" stroke="#3f78a8" stroke-width="3" marker-end="url(#fl)"/>
+              <circle cx="660" cy="235" r="120" fill="none" stroke="#3f78a8" stroke-width="3" stroke-dasharray="4 0"/>
+              <circle cx="660" cy="235" r="62" fill="#102a43"/>
+              <text x="660" y="230" text-anchor="middle" fill="#fff">Daily</text><text x="660" y="252" text-anchor="middle" fill="#fff">Scrum</text>
+              <text x="660" y="100" text-anchor="middle" fill="#5f7385" font-size="13" font-weight="500">cada 24 h · 15 min</text>
+              <rect x="545" y="335" width="230" height="44" rx="10" fill="#eaf2f8" stroke="#3f78a8"/>
+              <text x="660" y="363" text-anchor="middle" fill="#102a43" font-size="14">Sprint Backlog</text>
+              <path d="M780 235 H830" stroke="#3f78a8" stroke-width="3" marker-end="url(#fl)"/>
+              <rect x="840" y="190" width="140" height="90" rx="14" fill="#102a43"/>
+              <text x="910" y="242" text-anchor="middle" fill="#fff">Incremento</text>
+              <path d="M980 235 H1010" stroke="#3f78a8" stroke-width="3" marker-end="url(#fl)"/>
+              <rect x="1015" y="120" width="140" height="80" rx="14" fill="#3f78a8"/>
+              <text x="1085" y="155" text-anchor="middle" fill="#fff">Sprint</text><text x="1085" y="177" text-anchor="middle" fill="#fff">Review</text>
+              <rect x="1015" y="270" width="140" height="80" rx="14" fill="#3f78a8"/>
+              <text x="1085" y="305" text-anchor="middle" fill="#fff">Sprint</text><text x="1085" y="327" text-anchor="middle" fill="#fff">Retro</text>
+              <path d="M1085 200 V265" stroke="#3f78a8" stroke-width="3" marker-end="url(#fl)"/>
+              <path d="M1085 350 V420 H390 V285" fill="none" stroke="#abc2db" stroke-width="3" marker-end="url(#fl2)"/>
+              <text x="740" y="412" text-anchor="middle" fill="#5f7385" font-size="13" font-weight="500">↺ comienza el siguiente Sprint</text>
+            </g>
+            <defs>
+              <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#3f78a8"/></marker>
+              <marker id="fl2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#abc2db"/></marker>
+            </defs>
+          </svg>
+        </div>
+        <figcaption>Figura 1. Todos los eventos ocurren dentro del Sprint. El aprendizaje de la Review y la Retrospective alimenta la siguiente Sprint Planning.</figcaption>
+      </figure>
+      <div class="row-between"><p class="text">Explora cada evento con su duración sugerida en el cronograma interactivo.</p><a class="btn primary" href="scrum.html#eventos">Ir al cronograma →</a></div>
+    </section>
+
+    <section class="section" id="kanban" aria-labelledby="kanban-titulo">
+      <div class="section-head">
+        <span class="label">Figura 2 · Kanban</span>
+        <h2 id="kanban-titulo">Kanban · hacer visible el flujo y la capacidad</h2>
+      </div>
+      <figure class="figure">
+        <div class="figure-head">
+          <p class="text">El trabajo fluye de izquierda a derecha. Cada columna con límite WIP marca cuánta capacidad hay.</p>
+          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
+        </div>
+        <div class="diagram-area">
+          <div class="board" style="--cols:4" role="img" aria-label="Tablero Kanban de ejemplo con cuatro columnas: Por hacer con 3 tarjetas, En proceso con 2 de 2 tarjetas (límite alcanzado), En revisión con 1 de 2 y Hecho con 2 tarjetas.">
+            <div class="column" aria-hidden="true"><div class="column-head">Por hacer <span class="wip">sin límite</span></div><div class="k-card"><strong>Formulario de contacto</strong><small>Funcionalidad</small></div><div class="k-card"><strong>Corregir enlaces rotos</strong><small>Defecto</small></div><div class="k-card"><strong>Glosario A–Z</strong><small>Contenido</small></div></div>
+            <div class="column full" aria-hidden="true"><div class="column-head">En proceso <span class="wip">WIP 2/2</span></div><div class="k-card"><strong>Buscador del glosario</strong><small>Ana · día 2</small></div><div class="k-card"><strong>Diagrama del Sprint</strong><small>Leo · día 1</small></div></div>
+            <div class="column" aria-hidden="true"><div class="column-head">En revisión <span class="wip">WIP 1/2</span></div><div class="k-card"><strong>Página de FAQ</strong><small>Pruebas de accesibilidad</small></div></div>
+            <div class="column" aria-hidden="true"><div class="column-head">Hecho <span class="wip">✓</span></div><div class="k-card"><strong>Encabezado</strong><small>Publicado</small></div><div class="k-card"><strong>Pie de página</strong><small>Publicado</small></div></div>
+          </div>
+        </div>
+        <div class="legend"><span style="--c:#eaf2f8">Columna con capacidad</span><span style="--c:#fff7e8">Límite WIP alcanzado</span><span style="--c:#3f78a8">Sistema pull: se toma trabajo cuando hay lugar</span></div>
+        <figcaption>Figura 2. Cuando «En proceso» llega a su límite, nadie empieza otra tarjeta: el equipo ayuda a terminar lo iniciado.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section white" id="xp" aria-labelledby="xp-titulo">
+      <div class="section-head">
+        <span class="label">Figura 3 · Extreme Programming</span>
+        <h2 id="xp-titulo">XP · probar, construir y mejorar</h2>
+      </div>
+      <figure class="figure">
+        <div class="figure-head">
+          <p class="text">El bucle de TDD dentro de una iteración corta, apoyado por integración continua.</p>
+          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
+        </div>
+        <div class="diagram-area diagram-scroll" role="img" aria-label="Bucle de XP: historia de usuario, escribir una prueba que falla, código mínimo para pasarla, refactorizar e integrar continuamente; luego se repite.">
+          <div class="flow" aria-hidden="true">
+            <div class="flow-step"><b>Cliente</b><strong>Historia de usuario</strong><p>Pequeña y priorizada por el cliente.</p></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" style="background:#fdeeee;border-color:#f1c4c4"><b>Rojo</b><strong>Prueba que falla</strong><p>Se escribe antes que el código.</p></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" style="background:#eaf6ef;border-color:#b9dfc8"><b>Verde</b><strong>Código mínimo</strong><p>Lo justo para pasar la prueba, en pareja.</p></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b>Refactor</b><strong>Diseño simple</strong><p>Se mejora el código sin cambiar su comportamiento.</p></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step strong"><b>CI</b><strong>Integrar y entregar</strong><p>Pequeñas versiones frecuentes ↺</p></div>
+          </div>
+        </div>
+        <figcaption>Figura 3. Rojo, verde, refactorizar: cada vuelta deja una prueba automatizada que protege el cambio siguiente.</figcaption>
+      </figure>
+      <div class="note">
+        <strong>XP complementa a otros enfoques</strong>
+        <p>Muchos equipos Scrum o Kanban adoptan prácticas de XP —TDD, programación en pareja, integración continua— para sostener la calidad técnica.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="wip-titulo">
+      <div class="section-head">
+        <span class="label">Vista ampliada de muestra</span>
+        <h2 id="wip-titulo">Detalle ampliado · ¿por qué no entra otra tarjeta?</h2>
+      </div>
+      <figure class="figure">
+        <div class="figure-head">
+          <h3>La columna «En proceso» está en su límite (2/2)</h3>
+          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
+        </div>
+        <div class="diagram-area grid-3">
+          <div class="card"><span class="pill">1 · Situación</span><h3>Llega un pedido nuevo</h3><p>«Agregar modo oscuro» está listo para empezar, pero la columna ya tiene dos tarjetas.</p></div>
+          <div class="card"><span class="pill">2 · Política</span><h3>Primero terminar</h3><p>El límite WIP indica que el equipo debe destrabar o terminar trabajo antes de tomar más.</p></div>
+          <div class="card dark"><span class="pill">3 · Resultado</span><h3>Menos espera</h3><p>Al terminar antes, el tiempo de ciclo baja y los bloqueos se vuelven visibles.</p></div>
+        </div>
+        <figcaption>Figura 4. Limitar el trabajo en curso no frena al equipo: reduce el cambio de contexto y acelera las entregas.</figcaption>
+      </figure>
+      <div class="row-between"><p class="text">Pruébalo tú mismo moviendo tarjetas en el tablero interactivo.</p><a class="btn primary" href="kanban.html#tablero">Ir al tablero →</a></div>
+    </section>
+
+    <nav class="pager" aria-label="Recorrido por el sitio">
+      <a class="pager-link" href="metodologias-agiles.html" rel="prev"><span class="label">← Anterior</span><strong>Metodologías Ágiles</strong></a>
+      <a class="pager-home" href="index.html">Todas las secciones</a>
+      <a class="pager-link next" href="scrum.html" rel="next"><span class="label">Siguiente →</span><strong>Scrum en profundidad</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-id">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Sprint 307. Proyecto de los pibes.</span>
+      <span>Aprender · Aplicar · Mejorar</span>
+    </div>
+  </footer>
+</body>
+</html>
