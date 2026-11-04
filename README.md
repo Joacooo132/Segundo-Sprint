@@ -31,6 +31,7 @@ o publicalo con GitHub Pages (Settings → Pages → rama `main`, carpeta raíz)
 - `sprint2.js` · menú para celulares.
 - `js/` · un script por funcionalidad.
 - `img/` · logo e íconos exportados de Figma.
+- `index.html` · página de inicio (portada con acceso a todas las secciones). `figma.html` redirige al inicio.
 - `style.css`, `extra.css` · estilos del Sprint 1 (sin cambios).
 
 ## Pendientes para el equipo
