@@ -3,224 +3,307 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="El Ciclo de Vida del Desarrollo de Software (SDLC) es el camino estructurado que recorre una idea hasta convertirse en un sistema robusto, escalable y listo para operar en producción.">
+  <meta name="description" content="El Ciclo de Vida del Desarrollo de Software (SDLC): sus 6 etapas, por qué cada fase importa para la calidad y los modelos Cascada, en V e Iterativo e incremental.">
   <title>Procesos | Sistema de Gestión de Calidad</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="procesos.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
+  <script src="sprint2.js" defer></script>
 </head>
 <body>
-  <header>
-    <a class="logo" href="index.html">
-      <div class="logo-mark">307</div>
-      <div>
-        <h3>Sistema de Gestión de Calidad</h3>
-        <p>CALIDAD DE SOFTWARE · SPRINT 307</p>
-      </div>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="Logotipo del Sistema de Gestión de Calidad" width="58" height="58">
+      <span class="brand-name">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <span>Calidad de software · Sprint 307</span>
+      </span>
     </a>
-    <nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="site-nav" id="menu" aria-label="Principal">
       <a href="index.html">Inicio</a>
       <a href="calidad.html">Calidad</a>
-      <a class="active" href="procesos.html">Procesos</a>
-      <a href="metodologias.html">Metodologías</a>
+      <a class="active" href="procesos.html" aria-current="page">Procesos</a>
+      <a href="metodologias-agiles.html">Metodologías</a>
       <a href="recursos.html">Recursos</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-copy">
-      <span class="eyebrow">GUÍA DE METODOLOGÍAS E INGENIERÍA</span>
-      <h1>Procesos de Desarrollo de Software y Ciclos de Vida</h1>
-      <p>El Ciclo de Vida del Desarrollo de Software (SDLC) es el camino estructurado que recorre una idea hasta convertirse en un sistema robusto, escalable y listo para operar en producción.</p>
-    </div>
-    <div class="hero-visual">
-      <div class="orb"></div>
-      <div class="hero-card">
-        <div class="symbol">♧</div>
-        <h3>Mapa de Procesos</h3>
-        <p>Navegá cada fase esencial de la ingeniería de software.</p>
-      </div>
-    </div>
-  </section>
-
   <main>
-    <div class="section-head">
-      <div>
-        <div class="kicker">RUTA DE DESARROLLO</div>
-        <h2>Las 6 etapas esenciales del SDLC</h2>
+    <section class="intro intro-home">
+      <div class="intro-copy">
+        <span class="story-tag">US-05 · Guía de metodologías e ingeniería</span>
+        <h1>Procesos de Desarrollo de Software y Ciclos de Vida</h1>
+        <p>El Ciclo de Vida del Desarrollo de Software (SDLC) es el camino estructurado que recorre una idea hasta convertirse en un sistema robusto, escalable y listo para operar en producción. Conoce los modelos clásicos indispensables para un aseguramiento integral de la calidad.</p>
       </div>
-      <p>Cada etapa aporta el rigor necesario para evitar errores y asegurar la estabilidad de la solución.</p>
-    </div>
-
-    <div class="grid">
-      <a class="card" href="#requisitos">
-        <span class="tag">PASO 01</span>
-        <div class="icon">⌕</div>
-        <h3>Requisitos</h3>
-        <p>Capturar y analizar las necesidades del cliente y del negocio.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#diseno">
-        <span class="tag">PASO 02</span>
-        <div class="icon">◇</div>
-        <h3>Diseño</h3>
-        <p>Modelar arquitectura, datos, interfaces y especificaciones.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#desarrollo">
-        <span class="tag">PASO 03</span>
-        <div class="icon">〈〉</div>
-        <h3>Desarrollo</h3>
-        <p>Escribir e integrar código siguiendo buenas prácticas.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#pruebas">
-        <span class="tag">PASO 04</span>
-        <div class="icon">☑</div>
-        <h3>Pruebas</h3>
-        <p>Verificar el producto con pruebas funcionales y no funcionales.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#despliegue">
-        <span class="tag">PASO 05</span>
-        <div class="icon">⇧</div>
-        <h3>Despliegue</h3>
-        <p>Publicar la solución en un entorno preparado y seguro.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#mantenimiento">
-        <span class="tag">PASO 06</span>
-        <div class="icon">⚙</div>
-        <h3>Mantenimiento</h3>
-        <p>Corregir errores, adaptar y mejorar el sistema.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-    </div>
-
-    <div class="panel">
-      <h3>¿Qué es el SDLC?</h3>
-      <p>El ciclo de vida del desarrollo de software es un proceso organizado que acompaña al producto desde la identificación de una necesidad hasta su mantenimiento y evolución.</p>
-    </div>
-
-    <div class="section-head">
-      <div>
-        <div class="kicker">GARANTÍA DE CALIDAD</div>
-        <h2>Por qué cada fase importa</h2>
+      <div class="home-visual">
+        <div class="home-orb" aria-hidden="true"></div>
+        <aside class="home-card">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4Z"/><path d="M9 4v13.5M15 6.5V20"/></svg>
+          <h2>Mapa de Procesos</h2>
+          <p>Navega cada fase esencial de la ingeniería de software y sus paradigmas tradicionales.</p>
+        </aside>
       </div>
-    </div>
+    </section>
 
-    <div class="steps">
-      <article class="step" id="requisitos">
-        <div class="num">TRAZABILIDAD</div>
-        <h3>Requisitos claros</h3>
-        <p>Permiten verificar que el producto responda a la necesidad original.</p>
-      </article>
-      <article class="step" id="diseno">
-        <div class="num">PREVENCIÓN</div>
-        <h3>Diseño revisado</h3>
-        <p>Ayuda a encontrar problemas antes de que sean costosos de corregir.</p>
-      </article>
-      <article class="step" id="desarrollo">
-        <div class="num">CONSTRUCCIÓN</div>
-        <h3>Código mantenible</h3>
-        <p>Las convenciones y revisiones facilitan el trabajo del equipo.</p>
-      </article>
-      <article class="step" id="pruebas">
-        <div class="num">VALIDACIÓN</div>
-        <h3>Pruebas continuas</h3>
-        <p>Detectan defectos y comprueban criterios de aceptación.</p>
-      </article>
-      <article class="step" id="despliegue">
-        <div class="num">ENTREGA</div>
-        <h3>Despliegue controlado</h3>
-        <p>Reduce riesgos al publicar una versión para sus usuarios.</p>
-      </article>
-      <article class="step" id="mantenimiento">
-        <div class="num">EVOLUCIÓN</div>
-        <h3>Mantenimiento</h3>
-        <p>Permite adaptar el sistema a nuevas necesidades y cambios.</p>
-      </article>
-    </div>
-
-    <div class="section-head">
-      <div>
-        <div class="kicker">MODELOS DE CICLO DE VIDA</div>
-        <h2>Comparativa rápida de modelos</h2>
+    <section class="p-band" id="etapas" aria-labelledby="etapas-titulo">
+      <div class="p-wrap">
+      <div class="p-head">
+        <div>
+          <span class="p-kicker">RUTA DE DESARROLLO</span>
+          <h2 id="etapas-titulo">Las 6 etapas esenciales del SDLC</h2>
+        </div>
+        <p>Cada etapa aporta el rigor necesario para evitar el caos técnico y asegurar la estabilidad de la arquitectura.</p>
       </div>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <span class="tag">SECUENCIAL</span>
-        <div class="icon">↘</div>
-        <h3>Modelo en Cascada</h3>
-        <p>Las fases avanzan principalmente en orden. Es útil cuando los requisitos son estables.</p>
-      </article>
-      <article class="card">
-        <span class="tag">VERIFICACIÓN</span>
-        <div class="icon">Ⅴ</div>
-        <h3>Modelo en V</h3>
-        <p>Relaciona las fases de desarrollo con sus correspondientes actividades de prueba.</p>
-      </article>
-      <article class="card">
-        <span class="tag">CÍCLICO</span>
-        <div class="icon">↻</div>
-        <h3>Iterativo e Incremental</h3>
-        <p>Entrega el producto por partes y permite incorporar feedback en cada ciclo.</p>
-      </article>
-    </div>
-
-    <div class="cta">
-      <div>
-        <h3>¿Listo para conocer las metodologías ágiles?</h3>
-        <p>Explorá Scrum, Kanban y las prácticas de trabajo adaptativas.</p>
+        <div class="p-grid-3">
+          <article class="p-card">
+            <div class="p-card-top"><span class="p-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></span><span class="p-paso">PASO 01</span></div>
+            <h3>Requisitos</h3>
+            <p>Captura y análisis de las necesidades del cliente y el negocio para definir qué debe hacer el sistema con total claridad.</p>
+          </article>
+          <article class="p-card">
+            <div class="p-card-top"><span class="p-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7-3-3Z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5Z"/><path d="m2 2 7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span><span class="p-paso">PASO 02</span></div>
+            <h3>Diseño</h3>
+            <p>Modelado de la arquitectura de datos, diagramas de flujo, interfaces de usuario y especificaciones técnicas modulares.</p>
+          </article>
+          <article class="p-card">
+            <div class="p-card-top"><span class="p-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span><span class="p-paso">PASO 03</span></div>
+            <h3>Desarrollo</h3>
+            <p>Fase de codificación e implementación de los módulos bajo las mejores prácticas y estándares acordados por el equipo.</p>
+          </article>
+          <article class="p-card">
+            <div class="p-card-top"><span class="p-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/><path d="m8 11 3 3 9-9"/></svg></span><span class="p-paso">PASO 04</span></div>
+            <h3>Pruebas</h3>
+            <p>Ejecución sistemática de pruebas funcionales y no funcionales para validar la correcta calidad del código y del producto.</p>
+          </article>
+          <article class="p-card">
+            <div class="p-card-top"><span class="p-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17.5A4.5 4.5 0 0 1 6.3 8.6 6 6 0 0 1 17.8 9a4 4 0 0 1-.8 8"/><path d="M12 12v8M8.8 15.2 12 12l3.2 3.2"/></svg></span><span class="p-paso">PASO 05</span></div>
+            <h3>Despliegue</h3>
+            <p>Lanzamiento y puesta en marcha del producto en entornos productivos seguros y de alta disponibilidad.</p>
+          </article>
+          <article class="p-card">
+            <div class="p-card-top"><span class="p-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><span class="p-paso">PASO 06</span></div>
+            <h3>Mantenimiento</h3>
+            <p>Corrección de errores post-lanzamiento, optimizaciones técnicas, parches de seguridad y mejoras continuas de sistema.</p>
+          </article>
+        </div>
       </div>
-      <a class="btn" href="metodologias.html">Explorar agilidad →</a>
-    </div>
+    </section>
 
-    <div class="section-head" style="margin-top:56px">
-      <div>
-        <div class="kicker">SPRINT 2 · MODELOS TRADICIONALES</div>
-        <h2>Mira los modelos en diagramas</h2>
+    <section class="p-band alt" aria-labelledby="garantia-titulo">
+      <div class="p-wrap">
+      <div class="p-head">
+        <div>
+          <span class="p-kicker">GARANTÍA DE CALIDAD</span>
+          <h2 id="garantia-titulo">Por qué cada fase es determinante para la calidad</h2>
+        </div>
+        <p>El rigor preventivo evita catástrofes. Conoce los principios de diseño que aseguran un retorno real.</p>
       </div>
-      <p>Figuras ilustrativas con vista ampliada y comparación con los enfoques ágiles.</p>
-    </div>
+        <div class="p-grid-3">
+          <article class="p-card">
+            <h3 class="p-dot-title"><span class="p-dot" aria-hidden="true"></span>Trazabilidad Absoluta</h3>
+            <p class="p-sub">REQUISITOS → CÓDIGO → PRUEBAS</p>
+            <p>Garantiza que cada línea de código responda directamente a una necesidad real del negocio y sea validada de manera sistemática.</p>
+          </article>
+          <article class="p-card">
+            <h3 class="p-dot-title"><span class="p-dot" aria-hidden="true"></span>Detección Temprana</h3>
+            <p class="p-sub">PREVENIR EN LUGAR DE CORREGIR</p>
+            <p>Encontrar un error en la etapa de análisis cuesta hasta 100 veces menos que repararlo una vez que el sistema ya está operando en producción.</p>
+          </article>
+          <article class="p-card">
+            <h3 class="p-dot-title"><span class="p-dot" aria-hidden="true"></span>Control de Costes</h3>
+            <p class="p-sub">MITIGACIÓN DE CAMBIOS TARDÍOS</p>
+            <p>Los cambios estructurales realizados tardíamente canibalizan el presupuesto de desarrollo y comprometen la escalabilidad general.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <div class="grid">
-      <a class="card" href="ilustraciones-tradicionales.html">
-        <span class="tag">US-07</span>
-        <div class="icon">▤</div>
-        <h3>Ilustraciones de modelos tradicionales</h3>
-        <p>Diagramas de Cascada, Modelo en V e Iterativo, ampliables.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="comparador.html">
-        <span class="tag">US-18</span>
-        <div class="icon">⇄</div>
-        <h3>Comparador de metodologías</h3>
-        <p>Elige dos o más enfoques y compáralos en una tabla.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="encuesta.html">
-        <span class="tag">US-19</span>
-        <div class="icon">✓</div>
-        <h3>Encuesta de preferencias</h3>
-        <p>Cinco preguntas para orientarte sobre qué metodología usar.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-    </div>
+    <section class="p-band" id="cascada" aria-labelledby="cascada-titulo">
+      <div class="p-wrap">
+      <div class="p-head">
+        <div>
+          <span class="p-kicker">FLUJO SECUENCIAL</span>
+          <h2 id="cascada-titulo">Modelo en Cascada (Waterfall)</h2>
+        </div>
+        <p>El enfoque más clásico de la ingeniería: cada etapa debe finalizar con entregables formales antes de dar paso a la siguiente.</p>
+      </div>
+        <div class="p-modelo">
+          <div class="p-estructura">
+            <h3>Estructura cascada</h3>
+            <ol class="p-escalera">
+              <li>1. Análisis de Requisitos</li>
+              <li>2. Diseño del Sistema</li>
+              <li>3. Implementación (Código)</li>
+              <li>4. Integración y Pruebas</li>
+              <li>5. Despliegue y Soporte</li>
+            </ol>
+          </div>
+          <div class="p-info">
+          <div class="p-pros">
+            <h3>Ventajas</h3>
+            <p>• Altamente estructurado y fácil de documentar. • Entregables e hitos muy claros en cada fase secuencial. • Facilita la medición del progreso de manera formal.</p>
+          </div>
+          <div class="p-cons">
+            <h3>Desventajas</h3>
+            <p>• Muy rígido ante cambios tardíos en los requisitos. • El cliente no ve software funcional hasta fases finales. • Pruebas muy tardías disparan los costes de error.</p>
+          </div>
+          <div class="p-cuando">
+            <h3>¿Cuándo utilizarlo?</h3>
+            <p>Ideal para proyectos pequeños con requisitos estables y fijos, tecnologías familiares y donde no se prevén cambios continuos del alcance del sistema.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-band alt" id="modelo-v" aria-labelledby="v-titulo">
+      <div class="p-wrap">
+      <div class="p-head">
+        <div>
+          <span class="p-kicker">VERIFICACIÓN Y VALIDACIÓN</span>
+          <h2 id="v-titulo">Modelo en V (V-Model)</h2>
+        </div>
+        <p>Representa la relación simétrica que existe entre cada etapa de diseño arquitectónico y su correspondiente nivel de validación del software.</p>
+      </div>
+        <div class="p-modelo invertido">
+          <div class="p-info">
+          <div class="p-pros">
+            <h3>Ventajas</h3>
+            <p>• Enfatiza la planificación de pruebas de forma extremadamente temprana. • Robustez técnica muy alta gracias al control de verificación. • Fácil de auditar.</p>
+          </div>
+          <div class="p-cons">
+            <h3>Desventajas</h3>
+            <p>• Tan rígido e inflexible ante requisitos cambiantes como Cascada. • No produce prototipos usables durante el ciclo de vida. • Flujo secuencial.</p>
+          </div>
+          <div class="p-cuando">
+            <h3>¿Cuándo utilizarlo?</h3>
+            <p>Recomendado para sistemas críticos donde el fallo no es admisible (salud, automoción, defensa, o core bancario transaccional).</p>
+          </div>
+          </div>
+          <div class="p-estructura blanca">
+            <h3>Estructura en V</h3>
+            <div class="p-pares">
+              <div class="p-par"><span class="izq">Req. de Usuario</span><span class="flecha" aria-label="se valida con">⇆</span><span class="der">Pruebas de Aceptación</span></div>
+              <div class="p-par"><span class="izq">Diseño del Sistema</span><span class="flecha" aria-label="se valida con">⇆</span><span class="der">Pruebas de Sistema</span></div>
+              <div class="p-par"><span class="izq">Diseño Detallado</span><span class="flecha" aria-label="se valida con">⇆</span><span class="der">Pruebas Unitarias</span></div>
+            </div>
+            <p class="p-base">--- Código Fuente en la base ---</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-band" id="iterativo" aria-labelledby="it-titulo">
+      <div class="p-wrap">
+      <div class="p-head">
+        <div>
+          <span class="p-kicker">EVOLUCIÓN CÍCLICA</span>
+          <h2 id="it-titulo">Modelo Iterativo e Incremental</h2>
+        </div>
+        <p>El software se construye en pequeños bloques funcionales evolutivos, mejorando sistemáticamente con cada ciclo de retroalimentación.</p>
+      </div>
+        <div class="p-modelo">
+          <div class="p-estructura">
+            <h3>Ciclos iterativos</h3>
+            <div class="p-iteraciones">
+              <div class="p-iter"><h4><span class="p-dot" aria-hidden="true"></span>Iteración 1: Core Inicial</h4><p>Diseño e implementación del esqueleto básico del sistema y los casos de uso prioritarios.</p></div>
+              <div class="p-iter"><h4><span class="p-dot" aria-hidden="true"></span>Iteración 2: Expansión</h4><p>Adición de nuevas características opcionales y robustecimiento de la base de código existente.</p></div>
+              <div class="p-iter"><h4><span class="p-dot" aria-hidden="true"></span>Iteración 3: Estabilización</h4><p>Corrección fina, optimización de velocidad de procesos y despliegue formal al usuario.</p></div>
+            </div>
+          </div>
+          <div class="p-info">
+          <div class="p-pros">
+            <h3>Ventajas</h3>
+            <p>• Entrega valor real al usuario de manera temprana. • Facilita la corrección del rumbo sin tirar todo el trabajo. • Reduce la parálisis por análisis.</p>
+          </div>
+          <div class="p-cons">
+            <h3>Desventajas</h3>
+            <p>• Mayor complejidad en la planificación y gestión diaria. • Riesgo latente de crecimiento desmedido del alcance (scope creep).</p>
+          </div>
+          <div class="p-cuando">
+            <h3>¿Cuándo utilizarlo?</h3>
+            <p>La mejor opción para proyectos de mediana y gran escala donde las metas generales están claras, pero los detalles funcionales deben madurar dinámicamente.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-band alt" aria-labelledby="comp-titulo">
+      <div class="p-wrap">
+      <div class="p-head">
+        <div>
+          <span class="p-kicker">GOBERNANZA Y ELECCIÓN</span>
+          <h2 id="comp-titulo">Comparativa rápida de modelos</h2>
+        </div>
+        <p>Diferentes balances entre adaptabilidad técnica, rigor de documentación formal y gestión del riesgo operacional.</p>
+      </div>
+        <div class="p-grid-3">
+          <article class="p-card p-comp">
+            <h3>Cascada (Waterfall)</h3>
+            <dl>
+              <div><dt>Flexibilidad:</dt> <dd>Extremadamente baja</dd></div>
+              <div><dt>Documentación:</dt> <dd>Exhaustiva y mandatoria</dd></div>
+              <div><dt>Riesgos:</dt> <dd>Identificación tardía en pruebas</dd></div>
+              <div><dt>Involucración del Cliente:</dt> <dd>Inicio y final</dd></div>
+            </dl>
+          </article>
+          <article class="p-card p-comp">
+            <h3>Modelo en V</h3>
+            <dl>
+              <div><dt>Flexibilidad:</dt> <dd>Baja</dd></div>
+              <div><dt>Documentación:</dt> <dd>Rigurosa en V&amp;V</dd></div>
+              <div><dt>Riesgos:</dt> <dd>Mitigación técnica excelente</dd></div>
+              <div><dt>Involucración del Cliente:</dt> <dd>Hitos de aprobación</dd></div>
+            </dl>
+          </article>
+          <article class="p-card p-comp">
+            <h3>Iterativo &amp; Incremental</h3>
+            <dl>
+              <div><dt>Flexibilidad:</dt> <dd>Moderada / Alta</dd></div>
+              <div><dt>Documentación:</dt> <dd>Evolutiva por ciclo</dd></div>
+              <div><dt>Riesgos:</dt> <dd>Reducción constante tras iterar</dd></div>
+              <div><dt>Involucración del Cliente:</dt> <dd>Feedback constante</dd></div>
+            </dl>
+          </article>
+        </div>
+        <a class="p-mas" href="ilustraciones-tradicionales.html">Ver los tres modelos en diagramas <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="p-band" aria-label="Siguiente sección">
+      <div class="p-wrap">
+        <div class="p-cta">
+          <div>
+            <h2>¿Listo para migrar hacia las Metodologías Ágiles?</h2>
+            <p>Descubre cómo Scrum, Kanban y las prácticas adaptativas modernas responden con velocidad a las demandas dinámicas de la tecnología actual.</p>
+          </div>
+          <a class="p-btn" href="metodologias-agiles.html">Explorar Agilidad <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="footer-info">
-      <h3>Sistema de Gestión de Calidad</h3>
-      <p>Educación y conocimiento para impulsar mejores procesos y productos de software.</p>
-      <div class="copyright">© 2026 Sprint 307. Proyecto de los pibes.</div>
+      <div class="footer-id">
+        <strong>Sistema de Gestión de Calidad</strong>
+        <p>Educación y conocimiento para impulsar mejores procesos y productos de software bajo estándares internacionales.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Inicio</a>
-      <a href="nosotros.html">Sobre Nosotros</a>
-      <a href="contacto.html">Contacto</a>
+    <div class="footer-legal">
+      <span>© 2026 Sprint 307. Proyecto de los pibes.</span>
+      <span>Aprender · Aplicar · Mejorar</span>
     </div>
   </footer>
 </body>
