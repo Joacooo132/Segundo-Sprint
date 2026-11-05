@@ -484,3 +484,24 @@
 .p-mas:hover span {
   transform: translateX(4px);
 }
+
+/* Que el encabezado y el índice fijo no tapen el título al saltar */
+#etapas,
+#garantia,
+#cascada,
+#modelo-v,
+#iterativo,
+#comparativa {
+  scroll-margin-top: 170px;
+}
+
+@media (max-width: 900px) {
+  #etapas,
+  #garantia,
+  #cascada,
+  #modelo-v,
+  #iterativo,
+  #comparativa {
+    scroll-margin-top: 150px;
+  }
+}
