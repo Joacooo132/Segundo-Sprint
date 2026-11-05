@@ -6,8 +6,10 @@
     if (!sol) return;
     sol.hidden = true;
     btn.addEventListener('click', () => {
-      const mostrar = sol.hidden;
-      sol.hidden = !mostrar;
+      // El estado se lee del botón para que un doble clic durante la animación funcione bien.
+      const mostrar = btn.getAttribute('aria-expanded') !== 'true';
+      if (window.Transiciones) Transiciones.alternar(sol, mostrar);
+      else sol.hidden = !mostrar;
       btn.setAttribute('aria-expanded', String(mostrar));
       btn.textContent = mostrar ? 'Ocultar solución' : 'Mostrar solución';
       btn.classList.toggle('primary', mostrar);

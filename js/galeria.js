@@ -3,9 +3,18 @@
   let ultimoFoco = null;
 
   function cerrar(box) {
-    box.remove();
-    document.body.classList.remove('no-scroll');
-    if (ultimoFoco) ultimoFoco.focus();
+    if (box.classList.contains('saliendo')) return;
+    const quitar = () => {
+      box.remove();
+      document.body.classList.remove('no-scroll');
+      if (ultimoFoco) ultimoFoco.focus();
+    };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      quitar();
+      return;
+    }
+    box.classList.add('saliendo');
+    box.addEventListener('animationend', (e) => { if (e.target === box) quitar(); });
   }
 
   function abrir(figure, boton) {

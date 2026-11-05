@@ -50,6 +50,7 @@
     guardar();
     aviso(`«${tarjeta.titulo}» se movió a ${col.nombre}.`);
     render();
+    if (window.Transiciones) Transiciones.reproducir(board.querySelector(`.k-card[data-id="${tarjeta.id}"]`));
     const btn = board.querySelector(`[data-card="${tarjeta.id}"]`);
     if (btn) btn.focus();
   }
