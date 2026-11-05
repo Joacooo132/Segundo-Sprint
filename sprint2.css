@@ -550,5 +550,5 @@ body.no-scroll { overflow: hidden; }
   to { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .modelo-panel.aparecer { animation: none; }
+  .modelo-panel.aparecer { animation-name: transicion-fundido; }
 }

@@ -1,28 +1,28 @@
 // US-13 · Acordeón con animación de altura y filtro por categoría.
 (() => {
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   document.querySelectorAll('#faq details.acc').forEach((det) => {
     const summary = det.querySelector('summary');
     const body = det.querySelector('.acc-body');
     summary.addEventListener('click', (e) => {
-      if (reduce) return; // comportamiento nativo sin animación
       e.preventDefault();
       if (det.classList.contains('animating')) return;
       const abriendo = !det.open;
       if (abriendo) det.open = true;
-      const alto = body.scrollHeight;
-      body.style.height = abriendo ? '0px' : `${alto}px`;
+      // Se animan la altura y el relleno inferior juntos para que no haya saltos.
+      const cs = getComputedStyle(body);
+      const abierto = { height: `${body.scrollHeight}px`, paddingBottom: cs.paddingBottom, opacity: 1 };
+      const cerrado = { height: '0px', paddingBottom: '0px', opacity: 0 };
       det.classList.add('animating');
-      requestAnimationFrame(() => {
-        body.style.height = abriendo ? `${alto}px` : '0px';
+      body.style.overflow = 'hidden';
+      const anim = body.animate(abriendo ? [cerrado, abierto] : [abierto, cerrado], {
+        duration: 350,
+        easing: 'cubic-bezier(.25, .8, .25, 1)',
       });
-      // Se usa un temporizador (igual a la transición CSS de .3s) por si transitionend no se dispara.
-      setTimeout(() => {
+      anim.onfinish = () => {
         det.classList.remove('animating');
-        body.style.height = '';
+        body.style.overflow = '';
         if (!abriendo) det.open = false;
-      }, 320);
+      };
     });
   });
 

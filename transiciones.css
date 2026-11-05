@@ -88,19 +88,47 @@ textarea {
   to { opacity: 0; transform: scale(.96); }
 }
 
-/* ---------- Signo del acordeón (+ / −) ---------- */
+/* ---------- Signo del acordeón: el + se transforma en − ---------- */
+.acc-sign {
+  position: relative;
+  font-size: 0 !important; /* el texto + / − queda solo para el script; se dibuja con barras */
+}
+.acc-sign::before,
+.acc-sign::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 2px;
+  margin: -1px 0 0 -6px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.acc-sign::after {
+  transform: rotate(90deg);
+}
 .acc-btn[aria-expanded="true"] .acc-sign {
   transform: rotate(180deg);
 }
+.acc-btn[aria-expanded="true"] .acc-sign::after {
+  transform: rotate(0deg);
+  opacity: 0;
+}
+.acc-btn:hover .acc-sign {
+  background: rgba(52, 125, 183, .1);
+}
 
-/* Respeta a quien pidió reducir el movimiento en su sistema */
+/* Con "reducir movimiento" activado en el sistema se mantienen los fundidos
+   y despliegues suaves, pero sin desplazamientos ni zoom. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
+  .entra,
+  .lightbox .lightbox-inner,
+  .lightbox.saliendo .lightbox-inner {
+    animation-name: transicion-fundido;
+  }
+  .lightbox.saliendo .lightbox-inner {
+    animation-name: transicion-fundido-salida;
   }
 }
