@@ -3,10 +3,8 @@
 // 2) Transiciones.alternar(el, mostrar) despliega o pliega un bloque animando su altura.
 // 3) Transiciones.reproducir(el) repite el fundido de entrada (contenido que cambia).
 (() => {
-  const reducir = window.matchMedia('(prefers-reduced-motion: reduce)');
-
   function reproducir(el) {
-    if (!el || reducir.matches) return;
+    if (!el) return;
     el.classList.remove('entra');
     void el.offsetWidth; // reinicia la animación
     el.classList.add('entra');
@@ -22,7 +20,7 @@
   function alternar(el, mostrar) {
     if (!el) return;
     if (el._animacion) el._animacion.cancel();
-    if (reducir.matches || typeof el.animate !== 'function') {
+    if (typeof el.animate !== 'function') {
       el.hidden = !mostrar;
       return;
     }
@@ -46,8 +44,8 @@
     const overflow = el.style.overflow;
     el.style.overflow = 'hidden';
     const anim = el.animate(mostrar ? [cerrado, abierto] : [abierto, cerrado], {
-      duration: 300,
-      easing: 'ease',
+      duration: 350,
+      easing: 'cubic-bezier(.25, .8, .25, 1)',
     });
     el._animacion = anim;
     const terminar = () => {
