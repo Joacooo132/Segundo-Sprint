@@ -541,3 +541,84 @@ body {
     padding: 28px 24px;
   }
 }
+
+/* ---------- Índice "En esta página" (igual que en Metodologías) ---------- */
+.toc-bar {
+  position: sticky;
+  top: 92px;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 22px var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.toc-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-2);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.chip:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.chip.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+/* Que el encabezado y la barra fija no tapen el título al saltar */
+#conceptos,
+#metricas,
+#mejora,
+#iso,
+#niveles,
+#cajas,
+#tecnicas-diseno,
+#herramientas-calidad {
+  scroll-margin-top: 190px;
+}
+
+@media (max-width: 900px) {
+  .toc-bar {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  #conceptos,
+  #metricas,
+  #mejora,
+  #iso,
+  #niveles,
+  #cajas,
+  #tecnicas-diseno,
+  #herramientas-calidad {
+    scroll-margin-top: 180px;
+  }
+}
