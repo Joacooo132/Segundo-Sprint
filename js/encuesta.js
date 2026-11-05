@@ -109,6 +109,7 @@
       fs.appendChild(label);
     });
 
+    if (window.Transiciones) Transiciones.reproducir($('pregunta'));
     $('btn-anterior').disabled = actual === 0;
     $('btn-siguiente').textContent = actual === PASOS.length - 1 ? 'Ver resultado →' : 'Siguiente →';
     renderRecorrido();
