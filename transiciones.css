@@ -1,0 +1,106 @@
+/* Transiciones compartidas por todas las páginas.
+   Suavizan los cambios de color, borde, sombra y posición de botones,
+   enlaces y tarjetas, y hacen que lo que aparece entre con un fundido. */
+
+/* ---------- Cambios de estado suaves (hover, seleccionado, activo) ---------- */
+a,
+button,
+.btn,
+.chip,
+.filter,
+.option,
+.check-option,
+.event-btn,
+.card,
+.acc,
+.acc summary,
+.acc-sign,
+.pager-link,
+.radio,
+.box,
+.k-card,
+.column,
+input,
+select,
+textarea {
+  transition:
+    color .2s ease,
+    background-color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+/* Pequeño "hundimiento" al presionar un botón */
+.btn:active,
+.chip:active,
+.filter:active,
+.event-btn:active,
+.acc-btn:active .acc-sign {
+  transform: scale(.97);
+}
+
+/* ---------- Entrada de elementos que aparecen ---------- */
+.entra {
+  animation: transicion-entrar .3s ease both;
+}
+
+@keyframes transicion-entrar {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Visor ampliado (Lightbox) ---------- */
+.lightbox {
+  animation: transicion-fundido .25s ease both;
+}
+
+.lightbox .lightbox-inner {
+  animation: transicion-zoom .28s ease both;
+}
+
+.lightbox.saliendo {
+  animation: transicion-fundido-salida .2s ease both;
+}
+
+.lightbox.saliendo .lightbox-inner {
+  animation: transicion-zoom-salida .2s ease both;
+}
+
+@keyframes transicion-fundido {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes transicion-fundido-salida {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes transicion-zoom {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes transicion-zoom-salida {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: scale(.96); }
+}
+
+/* ---------- Signo del acordeón (+ / −) ---------- */
+.acc-btn[aria-expanded="true"] .acc-sign {
+  transform: rotate(180deg);
+}
+
+/* Respeta a quien pidió reducir el movimiento en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
