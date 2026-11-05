@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="sprint2.css">
   <script src="sprint2.js" defer></script>
   <script src="js/galeria.js" defer></script>
-  <script src="js/indice.js" defer></script>
+  <script src="js/modelos-tabs.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -46,16 +46,16 @@
       </aside>
     </section>
 
-    <nav class="toc-bar" aria-label="Índice visual">
-      <span class="label">Índice visual</span>
-      <div class="chips">
-        <a class="chip" href="#cascada">Cascada</a>
-        <a class="chip" href="#modelo-v">Modelo en V</a>
-        <a class="chip" href="#iterativo">Iterativo e incremental</a>
+    <nav class="toc-bar" aria-label="Modelos tradicionales">
+      <span class="label">Elegí un modelo</span>
+      <div class="chips" role="tablist" aria-label="Modelos tradicionales">
+        <button class="chip" type="button" role="tab" id="tab-cascada" aria-controls="cascada" aria-selected="true">Cascada</button>
+        <button class="chip" type="button" role="tab" id="tab-modelo-v" aria-controls="modelo-v" aria-selected="false" tabindex="-1">Modelo en V</button>
+        <button class="chip" type="button" role="tab" id="tab-iterativo" aria-controls="iterativo" aria-selected="false" tabindex="-1">Iterativo e incremental</button>
       </div>
     </nav>
 
-    <section class="section white" id="cascada" aria-labelledby="cascada-titulo">
+    <section class="section white modelo-panel" id="cascada" role="tabpanel" aria-labelledby="cascada-titulo">
       <div class="section-head">
         <span class="label">Figura 1 · Modelo en cascada</span>
         <h2 id="cascada-titulo">Una galería para entender el proceso</h2>
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <section class="section" id="modelo-v" aria-labelledby="v-titulo">
+    <section class="section white modelo-panel" id="modelo-v" role="tabpanel" aria-labelledby="v-titulo" hidden>
       <div class="section-head">
         <span class="label">Figura 2 · Modelo en V</span>
         <h2 id="v-titulo">Modelo en V · planificar la prueba desde el diseño</h2>
@@ -135,7 +135,7 @@
       </div>
     </section>
 
-    <section class="section white" id="iterativo" aria-labelledby="it-titulo">
+    <section class="section white modelo-panel" id="iterativo" role="tabpanel" aria-labelledby="it-titulo" hidden>
       <div class="section-head">
         <span class="label">Figura 3 · Iterativo e incremental</span>
         <h2 id="it-titulo">Iterativo e incremental · aprender y añadir valor</h2>
