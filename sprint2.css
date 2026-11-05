@@ -533,3 +533,15 @@ body.no-scroll { overflow: hidden; }
   .pager-link.next { text-align: left; }
   .pager-home { justify-self: center; order: 3; }
 }
+
+/* ---------- US-07 · Pestañas de modelos tradicionales ---------- */
+.chip[role="tab"] { cursor: pointer; font-family: inherit; }
+.chip[role="tab"]:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.modelo-panel.aparecer { animation: modelo-aparecer .35s ease both; }
+@keyframes modelo-aparecer {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modelo-panel.aparecer { animation: none; }
+}
