@@ -552,3 +552,40 @@ body.no-scroll { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .modelo-panel.aparecer { animation-name: transicion-fundido; }
 }
+
+/* ---------- Portada · Ruta de aprendizaje (diseño de Figma) ---------- */
+.ruta { background: #f3f8fc; padding-top: 72px; padding-bottom: 80px; gap: 40px; }
+.ruta-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; }
+.ruta-head > div { display: flex; flex-direction: column; gap: 10px; max-width: 700px; }
+.ruta-head h2 { font-size: clamp(30px, 3.4vw, 42px); font-weight: 400; line-height: 1.15; letter-spacing: -.8px; color: var(--ink); }
+.ruta-head > p { max-width: 360px; text-align: right; font-size: 16px; color: var(--muted); }
+.ruta-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.ruta-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: 22px;
+  padding: 28px; display: flex; flex-direction: column;
+  box-shadow: 0 4px 14px rgba(16, 42, 67, .04);
+}
+.ruta-card:hover { transform: translateY(-4px); border-color: var(--sky); box-shadow: 0 14px 30px rgba(16, 42, 67, .1); }
+.ruta-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.ruta-icon {
+  width: 52px; height: 52px; border-radius: 12px; background: var(--pale); color: var(--blue);
+  display: grid; place-items: center;
+  transition: background-color .2s ease, color .2s ease;
+}
+.ruta-card:hover .ruta-icon { background: var(--blue); color: var(--white); }
+.ruta-tag { font-size: 11px; font-weight: 700; color: #1d7a8c; letter-spacing: .4px; margin-top: 4px; }
+.ruta-card h3 {
+  font-size: clamp(24px, 2.2vw, 30px); font-weight: 400; line-height: 1.12; letter-spacing: -.4px;
+  color: var(--ink); margin-bottom: 12px; min-height: 2.24em; display: flex; align-items: flex-end;
+}
+.ruta-card p { font-size: 15px; color: var(--muted); line-height: 1.55; margin-bottom: 24px; flex: 1; }
+.ruta-explorar { font-size: 14px; font-weight: 700; color: var(--blue); }
+.ruta-explorar span { display: inline-block; margin-left: 4px; transition: transform .2s ease; }
+.ruta-card:hover .ruta-explorar span { transform: translateX(4px); }
+@media (max-width: 1000px) { .ruta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) {
+  .ruta-grid { grid-template-columns: 1fr; }
+  .ruta-head { flex-direction: column; align-items: flex-start; }
+  .ruta-head > p { text-align: left; }
+  .ruta-card h3 { min-height: 0; }
+}
