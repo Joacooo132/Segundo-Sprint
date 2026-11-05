@@ -1,0 +1,150 @@
+/* Encabezado, introducción y pie compartidos.
+   Se carga en las páginas que todavía usan style.css (Calidad, Metodologías,
+   Recursos, Técnicas y Herramientas) para que se vean del mismo tamaño
+   que el resto del sitio (sprint2.css). */
+
+:root {
+  --ink: #102a43;
+  --ink-2: #19354d;
+  --blue: #3f78a8;
+  --muted: #5f7385;
+  --line: #d7e3ed;
+  --pale: #eaf2f8;
+  --bg: #f7fafc;
+  --sky: #abc2db;
+  --soft: #c8d9e8;
+  --footer-muted: #9fb7ca;
+  --white: #fff;
+  --navy: #102a43;
+  --shadow: 0 6px 20px rgba(16, 42, 67, .06);
+  --gutter: 96px;
+}
+
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Encabezado ---------- */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  min-height: 92px;
+  padding: 12px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand img { width: 58px; height: 58px; border-radius: 999px; object-fit: cover; }
+.brand-name { display: flex; flex-direction: column; gap: 2px; line-height: normal; }
+.brand-name strong { font-size: 20px; font-weight: 700; color: var(--ink); }
+.brand-name span {
+  font-size: 11px; font-weight: 600; color: var(--blue);
+  letter-spacing: 1.2px; text-transform: uppercase;
+}
+.site-nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.site-nav a {
+  font-size: 14px; font-weight: 600; color: var(--ink-2); line-height: normal;
+  padding: 6px 0; border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--blue); border-color: var(--blue); }
+.site-nav a.active { font-size: 14px; font-weight: 600; color: var(--blue); border-color: var(--blue); }
+.nav-toggle {
+  font: inherit; cursor: pointer;
+  display: none; background: none; border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 12px; color: var(--ink); font-weight: 700;
+}
+
+/* ---------- Introducción (mismo tamaño que Inicio y Procesos) ---------- */
+.intro {
+  background: linear-gradient(to bottom, var(--pale), var(--sky));
+  padding: 56px var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+.intro-copy { flex: 0 1 820px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.story-tag {
+  background: var(--white);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px; font-weight: 700; color: var(--blue);
+  letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;
+}
+.intro-home { justify-content: space-between; min-height: 520px; }
+.intro-home h1 {
+  font-size: clamp(38px, 4.6vw, 60px); font-weight: 400;
+  line-height: 1.06; letter-spacing: -1.2px; max-width: 720px; color: var(--ink); margin: 0;
+}
+.intro-home .intro-copy > p { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 720px; }
+.home-visual {
+  flex: 0 0 330px; height: 330px; position: relative;
+  display: grid; place-items: center; margin-right: 24px;
+}
+.home-orb { position: absolute; inset: 0; border-radius: 50%; background: rgba(255, 255, 255, .35); }
+.home-card {
+  position: relative; width: 310px; min-height: 250px;
+  background: var(--white); border-radius: 22px; padding: 30px 28px;
+  box-shadow: 0 18px 40px rgba(16, 42, 67, .12);
+  display: flex; flex-direction: column; gap: 14px; color: var(--blue);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 4px rgba(63, 120, 168, .12), 0 22px 46px rgba(16, 42, 67, .16);
+}
+.home-card h2 { font-size: 23px; font-weight: 400; line-height: 1.2; color: var(--ink); margin-top: 8px; letter-spacing: 0; }
+.home-card p { font-size: 15px; color: var(--muted); line-height: 1.5; }
+.home-symbol { font-size: 36px; line-height: 1; color: var(--blue); }
+
+/* ---------- Pie de página ---------- */
+.site-footer {
+  background: var(--ink); color: var(--white); border-top: 0;
+  min-height: 210px; padding: 44px var(--gutter);
+  display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; gap: 30px;
+}
+.footer-info { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; }
+.footer-id { max-width: 480px; display: flex; flex-direction: column; gap: 10px; }
+.footer-id strong { font-size: 20px; }
+.footer-id p { font-size: 14px; color: var(--soft); line-height: 1.5; margin: 0; }
+.footer-links { display: flex; gap: 32px; font-size: 14px; font-weight: 600; flex-wrap: wrap; }
+.footer-links a { color: var(--white); }
+.footer-links a:hover { color: var(--sky); }
+.footer-legal { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--footer-muted); flex-wrap: wrap; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  :root { --gutter: 48px; }
+  .site-header { padding: 12px 32px; }
+}
+@media (max-width: 900px) {
+  .intro { flex-direction: column; align-items: stretch; }
+  .intro-copy { flex: none; }
+  .intro-home { min-height: 0; }
+  .home-visual { align-self: center; margin-right: 0; }
+  .nav-toggle { display: inline-block; }
+  .site-nav {
+    width: 100%; flex-direction: column; align-items: flex-start; gap: 14px;
+    padding-top: 0; max-height: 0; opacity: 0; overflow: hidden; visibility: hidden;
+    transition: max-height .3s ease, opacity .25s ease, padding-top .3s ease, visibility 0s linear .3s;
+  }
+  .site-header { flex-wrap: wrap; }
+  .site-header.open .site-nav {
+    padding-top: 12px; max-height: 420px; opacity: 1; visibility: visible;
+    transition: max-height .3s ease, opacity .25s ease, padding-top .3s ease, visibility 0s;
+  }
+}
+@media (max-width: 680px) {
+  :root { --gutter: 16px; }
+  .site-header { padding: 12px 16px; }
+  .brand img { width: 44px; height: 44px; }
+  .brand-name strong { font-size: 16px; }
+  .footer-info { flex-direction: column; align-items: flex-start; }
+  .home-visual { flex-basis: auto; width: 290px; height: 290px; }
+  .home-card { width: 270px; min-height: 0; }
+  .home-card h2 { white-space: normal; }
+}
