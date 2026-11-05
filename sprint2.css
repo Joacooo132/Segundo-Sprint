@@ -56,9 +56,13 @@ button { font: inherit; cursor: pointer; }
   letter-spacing: 1.2px; text-transform: uppercase;
 }
 .site-nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-.site-nav a { font-size: 14px; font-weight: 500; color: var(--ink-2); line-height: normal; }
-.site-nav a:hover { color: var(--blue); }
-.site-nav a.active { font-size: 20px; font-weight: 700; color: var(--blue); }
+.site-nav a {
+  font-size: 14px; font-weight: 600; color: var(--ink-2); line-height: normal;
+  padding: 6px 0; border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--blue); border-color: var(--blue); }
+/* El enlace activo mantiene el mismo tamaño para que el menú no se mueva al cambiar de página */
+.site-nav a.active { font-size: 14px; font-weight: 600; color: var(--blue); border-color: var(--blue); }
 .nav-toggle {
   display: none; background: none; border: 1px solid var(--line);
   border-radius: 10px; padding: 8px 12px; color: var(--ink); font-weight: 700;
@@ -591,7 +595,6 @@ body.no-scroll { overflow: hidden; }
 }
 
 /* ---------- Portada · Encabezado (diseño de Figma) ---------- */
-.home .brand-name strong { font-weight: 400; }
 .intro-home { justify-content: space-between; min-height: 520px; }
 .intro-home h1 {
   font-size: clamp(38px, 4.6vw, 60px); font-weight: 400;
@@ -614,7 +617,7 @@ body.no-scroll { overflow: hidden; }
   transform: translateY(-4px);
   box-shadow: 0 0 0 4px rgba(63, 120, 168, .12), 0 22px 46px rgba(16, 42, 67, .16);
 }
-.home-card h2 { font-size: 23px; white-space: nowrap; font-weight: 400; line-height: 1.2; color: var(--ink); margin-top: 8px; }
+.home-card h2 { font-size: 23px; font-weight: 400; line-height: 1.2; color: var(--ink); margin-top: 8px; }
 .home-card p { font-size: 15px; color: var(--muted); line-height: 1.5; }
 @media (max-width: 900px) {
   .intro-home { min-height: 0; }
