@@ -1,0 +1,486 @@
+/* Procesos · Secciones del diseño de Figma (SDLC y modelos tradicionales).
+   Usa las variables y el encabezado/pie de sprint2.css. */
+
+.p-band {
+  background: #fdfefe;
+  padding: 72px var(--gutter);
+}
+
+.p-band.alt {
+  background: #f1f7fc;
+}
+
+.p-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Encabezado de cada sección */
+.p-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.p-head > div {
+  max-width: 660px;
+}
+
+.p-kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: .4px;
+  margin-bottom: 10px;
+}
+
+.p-head h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.7px;
+  color: var(--ink);
+}
+
+.p-head > p {
+  max-width: 340px;
+  text-align: right;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Tarjetas */
+.p-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.p-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px 24px;
+  box-shadow: 0 8px 22px rgba(16, 42, 67, .05);
+}
+
+.p-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--sky);
+  box-shadow: 0 14px 30px rgba(16, 42, 67, .1);
+}
+
+.p-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.p-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--pale);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.p-card:hover .p-icon {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.p-paso {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d7a8c;
+}
+
+.p-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.p-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.p-dot-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px !important;
+}
+
+.p-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #1d7a8c;
+  flex-shrink: 0;
+}
+
+.p-card .p-sub {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: .3px;
+  margin-bottom: 14px;
+}
+
+/* ---------- Modelos: estructura + ventajas/desventajas ---------- */
+.p-modelo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.p-modelo.invertido {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.p-estructura {
+  background: #f3f8fc;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 18px 24px;
+}
+
+.p-estructura.blanca {
+  background: var(--white);
+  box-shadow: 0 10px 26px rgba(16, 42, 67, .08);
+}
+
+.p-estructura h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1d7a8c;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  margin-bottom: 14px;
+}
+
+/* Cascada: escalera */
+.p-escalera {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-escalera li {
+  position: relative;
+  align-self: flex-start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-left: 22px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.p-escalera li::before {
+  content: "↘";
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue);
+  font-size: 16px;
+}
+
+.p-escalera li:nth-child(2) { margin-left: 38px; }
+.p-escalera li:nth-child(3) { margin-left: 54px; }
+.p-escalera li:nth-child(4) { margin-left: 70px; }
+.p-escalera li:nth-child(5) { margin-left: 86px; }
+
+.p-escalera li:hover {
+  transform: translateX(4px);
+  border-color: var(--blue);
+}
+
+/* Ventajas / desventajas / cuándo */
+.p-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.p-pros,
+.p-cons {
+  border-radius: 14px;
+  padding: 16px 16px 18px;
+}
+
+.p-pros {
+  background: #e9f7ee;
+  border: 1px solid #c9ead4;
+}
+
+.p-cons {
+  background: #fbecec;
+  border: 1px solid #f1d0d0;
+}
+
+.p-pros h3,
+.p-cons h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.p-pros h3 { color: #1e7a3c; }
+.p-cons h3 { color: #9b2a2a; }
+
+.p-pros p,
+.p-cons p {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.p-cuando {
+  grid-column: 1 / -1;
+  background: #f3f8fc;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 18px 20px;
+}
+
+.p-cuando h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.p-cuando p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Modelo en V: pares desarrollo ⇆ prueba */
+.p-pares {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p-par {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+}
+
+.p-par span {
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.p-par .izq {
+  background: #f3f8fc;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.p-par .der {
+  background: #eaf3fb;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+
+.p-par .flecha {
+  padding: 0;
+  font-size: 18px;
+  color: var(--blue);
+}
+
+.p-base {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1d7a8c;
+  margin-top: 18px;
+}
+
+/* Iterativo */
+.p-iteraciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-iter {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 12px 14px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.p-iter:hover {
+  transform: translateX(4px);
+  border-color: var(--blue);
+}
+
+.p-iter h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.p-iter .p-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+}
+
+.p-iter p {
+  font-size: 12px;
+  color: var(--muted);
+  padding-left: 16px;
+}
+
+/* Comparativa */
+.p-comp h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.p-comp dl div {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.p-comp dt {
+  display: inline;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.p-comp dd {
+  display: inline;
+  color: var(--muted);
+}
+
+/* Llamado final */
+.p-cta {
+  background: #e8f0f8;
+  border-radius: 24px;
+  padding: 48px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.p-cta h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.4px;
+  margin-bottom: 8px;
+}
+
+.p-cta p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 600px;
+}
+
+.p-btn {
+  flex-shrink: 0;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(16, 42, 67, .25);
+}
+
+.p-btn:hover {
+  background: #245777;
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .p-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .p-modelo,
+  .p-modelo.invertido {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .p-band {
+    padding: 52px var(--gutter);
+  }
+  .p-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .p-head > p {
+    text-align: left;
+  }
+  .p-grid-3,
+  .p-info {
+    grid-template-columns: 1fr;
+  }
+  .p-escalera li:nth-child(n) {
+    margin-left: 22px;
+  }
+  .p-par {
+    gap: 8px;
+  }
+  .p-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+  }
+}
+
+/* Enlace a los diagramas de US-07 */
+.p-mas {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.p-mas span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.p-mas:hover span {
+  transform: translateX(4px);
+}
