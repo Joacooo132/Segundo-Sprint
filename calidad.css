@@ -1,0 +1,585 @@
+/* Calidad · Secciones del diseño de Figma (ISO, niveles, cajas, técnicas,
+   buenas prácticas, herramientas y cómo elegirlas). */
+
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Bandas a todo el ancho */
+.cal-band {
+  background: #fdfefe;
+  padding: 72px 20px;
+}
+
+.cal-band.alt {
+  background: #f1f7fc;
+}
+
+#iso {
+  padding-top: 24px;
+}
+
+.cal-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Encabezado de cada sección */
+.cal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.cal-kicker {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+.cal-head h2 {
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -.6px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.cal-head > p {
+  max-width: 330px;
+  text-align: right;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Grillas */
+.cal-grid-2,
+.cal-grid-3,
+.cal-grid-4 {
+  display: grid;
+  gap: 20px;
+}
+
+.cal-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cal-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cal-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Tarjeta base */
+.cal-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 22px;
+  box-shadow: 0 8px 22px #233f550d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cal-card:hover {
+  transform: translateY(-3px);
+  border-color: #bfd8e9;
+  box-shadow: 0 14px 28px #233f5517;
+}
+
+.cal-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.cal-card.mini {
+  padding: 20px 18px;
+}
+
+.cal-card.mini h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.cal-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--pale);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.cal-card:hover .cal-icon {
+  background: var(--blue);
+  color: #fff;
+}
+
+.cal-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d7a8c;
+  margin-bottom: 10px;
+}
+
+.cal-tag {
+  font-size: 9px;
+  font-weight: 700;
+  color: #1d7a8c;
+  letter-spacing: .3px;
+  margin-bottom: 2px;
+}
+
+.cal-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.cal-text {
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.cal-text.muted {
+  color: var(--muted);
+}
+
+.cal-question {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.cal-strong {
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.cal-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pale);
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.cal-link {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.cal-link span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.cal-link:hover span {
+  transform: translateX(3px);
+}
+
+/* Llamado a la acción */
+.cal-cta {
+  margin-top: 28px;
+  background: #e8f0f8;
+  border-radius: 22px;
+  padding: 40px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.cal-cta h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.cal-cta p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.cal-btn {
+  flex-shrink: 0;
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px #102d4633;
+}
+
+.cal-btn:hover {
+  background: #245777;
+  transform: translateY(-2px);
+}
+
+/* ---------- ISO: pestañas ---------- */
+.iso-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.iso-tab {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  background: #eef4fa;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+.iso-tab:hover {
+  border-color: var(--blue);
+}
+
+.iso-tab[aria-selected="true"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  box-shadow: 0 6px 14px #347db733;
+}
+
+.iso-tab:focus-visible,
+.herr-filtro:focus-visible,
+.tec-toggle:focus-visible {
+  outline: 3px solid #9cc6e4;
+  outline-offset: 2px;
+}
+
+.iso-panel {
+  background: #f3f8fc;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 30px 28px;
+}
+
+.iso-panel h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.iso-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.iso-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.iso-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.iso-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 16px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.iso-item:hover {
+  transform: translateY(-2px);
+  border-color: #bfd8e9;
+  box-shadow: 0 8px 18px #233f5512;
+}
+
+.iso-item h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.iso-item .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #1d7a8c;
+  flex-shrink: 0;
+}
+
+.iso-item p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.iso-panel.entra {
+  animation: transicion-entrar .3s ease both;
+}
+
+/* ---------- Técnicas desplegables ---------- */
+.tec-grid {
+  align-items: start;
+}
+
+.tec-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 20px;
+  transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.tec-card.abierta {
+  background: #f3f8fc;
+  border-color: #6f9cc2;
+  box-shadow: 0 10px 24px #233f5512;
+}
+
+.tec-card .cal-tag {
+  display: block;
+}
+
+.tec-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.tec-toggle {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 0;
+  background: #e5eef6;
+  color: var(--ink);
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.tec-toggle:hover {
+  background: #d3e3f0;
+}
+
+.tec-card.abierta .tec-toggle {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* Signo + que se convierte en − */
+.tec-toggle span::before,
+.tec-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  margin: -1px 0 0 -5px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.tec-toggle span::after {
+  transform: rotate(90deg);
+}
+
+.tec-card.abierta .tec-toggle span::after {
+  transform: rotate(0deg);
+  opacity: 0;
+}
+
+.tec-card .cal-text {
+  font-size: 12px;
+}
+
+.tec-body {
+  margin-top: 16px;
+  background: #e6eef6;
+  border-radius: 10px;
+  padding: 14px 12px;
+}
+
+.tec-body p {
+  font-size: 12px;
+  color: var(--ink);
+}
+
+/* ---------- Herramientas con filtro ---------- */
+.herr-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -12px 0 30px;
+}
+
+.herr-filtro {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  background: #eef4fa;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.herr-filtro:hover {
+  border-color: var(--blue);
+}
+
+.herr-filtro[aria-pressed="true"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.herr-grid {
+  row-gap: 28px;
+}
+
+.herr-card {
+  padding: 18px 18px 20px;
+}
+
+.herr-card .cal-icon {
+  margin-bottom: 4px;
+}
+
+.herr-card .cal-tag {
+  align-self: center;
+  margin-left: 18px;
+}
+
+.herr-card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.herr-card .cal-text {
+  font-size: 11px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .cal-grid-4,
+  .iso-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cal-grid-3,
+  .iso-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .cal-band {
+    padding: 52px 20px;
+  }
+  .cal-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cal-head > p {
+    text-align: left;
+  }
+  .cal-grid-2,
+  .cal-grid-3,
+  .cal-grid-4,
+  .iso-grid,
+  .iso-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .cal-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+}
+
+/* ---------- Pie de página oscuro, como en el diseño ---------- */
+footer {
+  background: #102a43;
+  border-top: 0;
+  color: #fff;
+  padding: 44px max(20px, calc((100% - 1120px) / 2)) 36px;
+  align-items: flex-start;
+}
+
+footer .footer-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+footer .footer-info p {
+  font-size: 13px;
+  color: #c8d9e8;
+  max-width: 420px;
+  margin-bottom: 18px;
+}
+
+footer .copyright {
+  font-size: 12px;
+  color: #9fb7ca;
+}
+
+footer .footer-links {
+  display: flex;
+  gap: 28px;
+}
+
+footer .footer-links a {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+footer .footer-links a:hover {
+  color: #abc2db;
+}

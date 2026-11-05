@@ -6,8 +6,13 @@
   <meta name="description" content="Esta sección reúne los pilares fundamentales de la calidad del software. Aprendé a evaluar si un producto es confiable y cómo mejorar su proceso.">
   <title>Calidad | Sistema de Gestión de Calidad</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="calidad.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
+  <script src="js/calidad.js" defer></script>
 </head>
 <body>
   <header>
@@ -142,10 +147,6 @@
       </div>
     </section>
 
-    <div class="panel">
-      <h3>Estándares ISO de calidad</h3>
-      <p>La familia ISO/IEC 25000 ofrece modelos para especificar y evaluar la calidad del producto de software. ISO 9001 aborda los sistemas de gestión de calidad en las organizaciones.</p>
-    </div>
 
     <section id="mejora">
       <div class="section-head">
@@ -174,14 +175,281 @@
       </div>
     </section>
 
-    <div class="cta">
-      <div>
-        <h3>Conocé cómo se desarrolla el software</h3>
-        <p>Pasá a la sección de procesos y explorá las etapas del ciclo de vida.</p>
-      </div>
-      <a class="btn" href="procesos.html">Ver procesos →</a>
-    </div>
   </main>
+
+  <!-- ===== Estándares ISO (pestañas) ===== -->
+  <section class="cal-band" id="iso" aria-labelledby="iso-titulo">
+    <div class="cal-wrap">
+      <h2 class="sr-only" id="iso-titulo">Estándares ISO de calidad</h2>
+      <div class="iso-tabs" role="tablist" aria-label="Estándares ISO">
+        <button class="iso-tab" type="button" role="tab" id="tab-9126" aria-controls="panel-9126" aria-selected="true">ISO/IEC 9126 (Modelo Activo)</button>
+        <button class="iso-tab" type="button" role="tab" id="tab-25000" aria-controls="panel-25000" aria-selected="false" tabindex="-1">ISO/IEC 25000 (SQuaRE)</button>
+      </div>
+      <div class="iso-panel" id="panel-9126" role="tabpanel" aria-labelledby="tab-9126">
+        <h3>Modelo de Calidad del Producto: ISO 9126</h3>
+        <p class="iso-desc">Estándar internacional que clasifica la calidad del producto software en 6 características clave esenciales para la confiabilidad.</p>
+        <div class="iso-grid">
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Funcionalidad</h4><p>Grado en que el software provee funciones que cumplen con las necesidades declaradas.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Fiabilidad</h4><p>Capacidad del producto para mantener un nivel especificado de rendimiento bajo condiciones dadas.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Usabilidad</h4><p>Atributos del software que facilitan que sea comprendido, aprendido, usado y atractivo al usuario.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Eficiencia</h4><p>Nivel de desempeño en relación con la cantidad de recursos de cómputo utilizados.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Mantenibilidad</h4><p>Facilidad y esfuerzo necesario para realizar modificaciones, adaptaciones o correcciones técnicas.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Portabilidad</h4><p>Capacidad de la aplicación informática para transferirse de un entorno o plataforma a otro.</p></div>
+        </div>
+      </div>
+      <div class="iso-panel" id="panel-25000" role="tabpanel" aria-labelledby="tab-25000" hidden>
+        <h3>Familia SQuaRE: ISO/IEC 25000</h3>
+        <p class="iso-desc">Evolución de ISO 9126. Su modelo de calidad del producto (ISO/IEC 25010) amplía la evaluación a 8 características.</p>
+        <div class="iso-grid iso-grid-4">
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Adecuación funcional</h4><p>Las funciones cubren las necesidades declaradas e implícitas de forma completa y correcta.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Eficiencia de desempeño</h4><p>Tiempos de respuesta y uso de recursos adecuados bajo las condiciones establecidas.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Compatibilidad</h4><p>Capacidad de intercambiar información y convivir con otros sistemas en el mismo entorno.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Usabilidad</h4><p>Facilidad para aprender, operar y usar el producto, con una interfaz accesible y agradable.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Fiabilidad</h4><p>Funciona sin fallos durante un período determinado y se recupera ante errores.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Seguridad</h4><p>Protege la información y los datos, con acceso solo para personas y sistemas autorizados.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Mantenibilidad</h4><p>El producto puede modificarse, corregirse y probarse con eficacia y eficiencia.</p></div>
+            <div class="iso-item"><h4><span class="dot" aria-hidden="true"></span>Portabilidad</h4><p>Se adapta, instala o reemplaza en distintos entornos de hardware o software.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Niveles de prueba ===== -->
+  <section class="cal-band" aria-labelledby="niveles-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">DE LO PEQUEÑO AL SISTEMA</span>
+          <h2 id="niveles-titulo">Tres niveles, una cobertura coherente</h2>
+        </div>
+        <p>Cada nivel responde una pregunta distinta y reduce riesgos antes de llegar a producción.</p>
+      </div>
+      <div class="cal-grid-3">
+        <article class="cal-card">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m9 9 6 6M15 9l-6 6"/></svg></span>
+          <span class="cal-num">01</span>
+          <h3>Unitarias</h3>
+          <p class="cal-meta">Alcance: Una función o clase · Velocidad: Muy rápidas</p>
+          <p class="cal-text">Aíslan errores en la base del código.</p>
+        </article>
+        <article class="cal-card">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><circle cx="9" cy="9" r="1.6"/><circle cx="15" cy="7" r="1.6"/><circle cx="16" cy="14" r="1.6"/><path d="M10.4 8.5 13.5 7.4M15.3 8.6l.5 3.8M14.6 14.6 9 16"/></svg></span>
+          <span class="cal-num">02</span>
+          <h3>Integración</h3>
+          <p class="cal-meta">Alcance: Módulos conectados · Velocidad: Rápidas</p>
+          <p class="cal-text">Comprueban contratos, APIs y datos.</p>
+        </article>
+        <article class="cal-card">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg></span>
+          <span class="cal-num">03</span>
+          <h3>Sistema</h3>
+          <p class="cal-meta">Alcance: Producto completo · Velocidad: Más lentas</p>
+          <p class="cal-text">Validan recorridos reales de principio a fin.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Caja negra y caja blanca ===== -->
+  <section class="cal-band alt" aria-labelledby="cajas-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">DOS PERSPECTIVAS</span>
+          <h2 id="cajas-titulo">Caja Negra y Caja Blanca</h2>
+        </div>
+        <p>Combina la mirada del comportamiento observable con el conocimiento de la estructura interna.</p>
+      </div>
+      <div class="cal-grid-2">
+        <article class="cal-card">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20c.8-3.8 3.8-6 7.5-6s6.7 2.2 7.5 6"/></svg></span>
+          <h3>Caja Negra</h3>
+          <p class="cal-question">¿Qué hace el software?</p>
+          <p class="cal-strong">Se diseña desde: Requisitos, entradas y salidas</p>
+          <p class="cal-text muted">Ideal para validación funcional y aceptación.</p>
+        </article>
+        <article class="cal-card">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="7" r="2"/><path d="M6 7v10M18 9c0 5-6 4-11.4 8.6"/></svg></span>
+          <h3>Caja Blanca</h3>
+          <p class="cal-question">¿Cómo lo hace?</p>
+          <p class="cal-strong">Se diseña desde: Código, decisiones y caminos</p>
+          <p class="cal-text muted">Ideal para localizar huecos lógicos y medir cobertura.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Técnicas desplegables ===== -->
+  <section class="cal-band" aria-labelledby="tecnicas-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">TARJETAS DESPLEGABLES</span>
+          <h2 id="tecnicas-titulo">Técnicas para diseñar mejores casos</h2>
+        </div>
+        <p>Estados abiertos y cerrados muestran cómo profundizar sin perder una lectura escaneable.</p>
+      </div>
+      <div class="cal-grid-2 tec-grid">
+        <article class="tec-card abierta">
+          <span class="cal-tag">CAJA NEGRA</span>
+          <h3 id="tec-t1">Partición de equivalencia</h3>
+          <button class="tec-toggle" type="button" aria-expanded="true" aria-controls="tec-b1" aria-label="Ocultar ejemplo de Partición de equivalencia"><span aria-hidden="true"></span></button>
+          <p class="cal-text muted">Agrupa entradas con comportamiento equivalente y prueba un valor representativo de cada grupo.</p>
+          <div class="tec-body" id="tec-b1"><p>Ejemplo: para una edad válida de 18–65, probar 25 representa la partición válida.</p></div>
+        </article>
+        <article class="tec-card">
+          <span class="cal-tag">CAJA NEGRA</span>
+          <h3 id="tec-t2">Valores límite</h3>
+          <button class="tec-toggle" type="button" aria-expanded="false" aria-controls="tec-b2" aria-label="Mostrar ejemplo de Valores límite"><span aria-hidden="true"></span></button>
+          <p class="cal-text muted">Prioriza los bordes de cada rango, donde suelen concentrarse los defectos.</p>
+          <div class="tec-body" id="tec-b2" hidden><p>Ejemplo: para el rango 18–65, probar 17, 18, 65 y 66.</p></div>
+        </article>
+        <article class="tec-card abierta">
+          <span class="cal-tag">CAJA BLANCA</span>
+          <h3 id="tec-t3">Cobertura de sentencias y ramas</h3>
+          <button class="tec-toggle" type="button" aria-expanded="true" aria-controls="tec-b3" aria-label="Ocultar ejemplo de Cobertura de sentencias y ramas"><span aria-hidden="true"></span></button>
+          <p class="cal-text muted">Mide qué instrucciones y decisiones internas fueron ejecutadas por el conjunto de pruebas.</p>
+          <div class="tec-body" id="tec-b3"><p>Objetivo práctico: cubrir cada rama relevante sin perseguir un 100% vacío de intención.</p></div>
+        </article>
+        <article class="tec-card">
+          <span class="cal-tag">CAJA BLANCA</span>
+          <h3 id="tec-t4">Pruebas de caminos</h3>
+          <button class="tec-toggle" type="button" aria-expanded="false" aria-controls="tec-b4" aria-label="Mostrar ejemplo de Pruebas de caminos"><span aria-hidden="true"></span></button>
+          <p class="cal-text muted">Diseña casos para recorrer secuencias lógicas independientes del código.</p>
+          <div class="tec-body" id="tec-b4" hidden><p>Ejemplo: una función con dos decisiones tiene tres caminos independientes que conviene probar.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Buenas prácticas ===== -->
+  <section class="cal-band alt" aria-labelledby="practicas-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">BUENAS PRÁCTICAS</span>
+          <h2 id="practicas-titulo">Cómo usar las técnicas con criterio</h2>
+        </div>
+        <p>Una prueba aporta valor cuando reduce incertidumbre y comunica riesgo.</p>
+      </div>
+      <div class="cal-grid-4">
+        <article class="cal-card mini"><span class="cal-num">01</span><h3>Parte del riesgo, no de la herramienta.</h3></article>
+        <article class="cal-card mini"><span class="cal-num">02</span><h3>Mantén casos pequeños, claros y repetibles.</h3></article>
+        <article class="cal-card mini"><span class="cal-num">03</span><h3>Automatiza lo estable; explora lo incierto.</h3></article>
+        <article class="cal-card mini"><span class="cal-num">04</span><h3>Registra evidencia y aprende de cada fallo.</h3></article>
+      </div>
+      <div class="cal-cta">
+        <div>
+          <h3>Convierte el riesgo en una estrategia de pruebas</h3>
+          <p>Selecciona un flujo crítico, define el nivel adecuado y aplica una técnica para crear tu próximo caso de prueba.</p>
+        </div>
+        <a class="cal-btn" href="tecnicas.html#mapa">Crear mi mapa de pruebas <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Herramientas con filtro ===== -->
+  <section class="cal-band" aria-labelledby="herr-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">EXPLORA EL ECOSISTEMA</span>
+          <h2 id="herr-titulo">Herramientas para cada necesidad</h2>
+        </div>
+        <p>Filtra por categoría y compara opciones reconocibles antes de incorporarlas a tu flujo.</p>
+      </div>
+      <div class="herr-filtros" role="group" aria-label="Filtrar herramientas por categoría">
+        <button class="herr-filtro" type="button" data-cat="todas" aria-pressed="true">Todas</button>
+        <button class="herr-filtro" type="button" data-cat="bug" aria-pressed="false">Bug Trackers</button>
+        <button class="herr-filtro" type="button" data-cat="lint" aria-pressed="false">Linters</button>
+        <button class="herr-filtro" type="button" data-cat="test" aria-pressed="false">Test Management</button>
+      </div>
+      <p class="sr-only" id="herr-estado" aria-live="polite">Mostrando 8 herramientas.</p>
+      <div class="cal-grid-4 herr-grid">
+        <article class="cal-card herr-card" data-cat="bug">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 21 12l-9 9-9-9 9-9Z"/></svg></span>
+          <span class="cal-tag">BUG TRACKERS</span>
+          <h3>Jira</h3>
+          <p class="cal-text muted">Planifica, prioriza y sigue incidencias con flujos configurables.</p>
+          <a class="cal-link" href="herramientas.html#ficha-jira">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="bug">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></span>
+          <span class="cal-tag">BUG TRACKERS</span>
+          <h3>GitHub Issues</h3>
+          <p class="cal-text muted">Conecta reportes, código, responsables y entregas en un mismo lugar.</p>
+          <a class="cal-link" href="herramientas.html#ficha-github">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="lint">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><circle cx="9" cy="9" r="1.6"/><circle cx="15" cy="7" r="1.6"/><circle cx="16" cy="14" r="1.6"/><path d="M10.4 8.5 13.5 7.4M15.3 8.6l.5 3.8M14.6 14.6 9 16"/></svg></span>
+          <span class="cal-tag">LINTERS</span>
+          <h3>SonarQube</h3>
+          <p class="cal-text muted">Detecta deuda técnica, vulnerabilidades y code smells continuamente.</p>
+          <a class="cal-link" href="herramientas.html#ficha-sonarqube">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="lint">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+          <span class="cal-tag">LINTERS</span>
+          <h3>ESLint</h3>
+          <p class="cal-text muted">Analiza JavaScript y TypeScript con reglas compartidas por el equipo.</p>
+          <a class="cal-link" href="herramientas.html#ficha-eslint">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="test">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+          <span class="cal-tag">TEST MANAGEMENT</span>
+          <h3>TestRail</h3>
+          <p class="cal-text muted">Organiza casos, ejecuciones, cobertura y reportes de pruebas.</p>
+          <a class="cal-link" href="herramientas.html#ficha-testrail">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="test">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m9 9 6 6M15 9l-6 6"/></svg></span>
+          <span class="cal-tag">TEST MANAGEMENT</span>
+          <h3>Zephyr</h3>
+          <p class="cal-text muted">Integra planificación y ejecución de pruebas dentro del flujo ágil.</p>
+          <a class="cal-link" href="herramientas.html#ficha-zephyr">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="bug">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+          <span class="cal-tag">BUG TRACKERS</span>
+          <h3>Sentry</h3>
+          <p class="cal-text muted">Captura errores en producción con contexto para acelerar el diagnóstico.</p>
+          <a class="cal-link" href="herramientas.html#ficha-sentry">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cal-card herr-card" data-cat="test">
+          <span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m9 9 6 6M15 9l-6 6"/></svg></span>
+          <span class="cal-tag">TEST MANAGEMENT</span>
+          <h3>Postman</h3>
+          <p class="cal-text muted">Diseña, automatiza y documenta pruebas de APIs colaborativamente.</p>
+          <a class="cal-link" href="herramientas.html#ficha-postman">Ver ficha <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cómo elegir herramientas ===== -->
+  <section class="cal-band alt" aria-labelledby="elegir-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">DECIDE CON CRITERIO</span>
+          <h2 id="elegir-titulo">Cómo elegir herramientas de calidad</h2>
+        </div>
+        <p>La mejor herramienta es la que encaja en el problema, el equipo y el flujo real.</p>
+      </div>
+      <div class="cal-grid-3">
+        <article class="cal-card"><span class="cal-badge">1</span><h3>Define la necesidad</h3><p class="cal-text muted">¿Seguimiento, análisis estático o gestión de pruebas? Empieza por el problema y el resultado esperado.</p></article>
+        <article class="cal-card"><span class="cal-badge">2</span><h3>Evalúa la integración</h3><p class="cal-text muted">Comprueba compatibilidad con repositorios, CI/CD, permisos y forma de trabajo.</p></article>
+        <article class="cal-card"><span class="cal-badge">3</span><h3>Prueba con el equipo</h3><p class="cal-text muted">Ejecuta un piloto pequeño y mide adopción, señal útil, esfuerzo y tiempo de respuesta.</p></article>
+      </div>
+      <div class="cal-cta">
+        <div>
+          <h3>Diseña un ecosistema que tu equipo sí use</h3>
+          <p>Elige una categoría, compara dos alternativas y valida el encaje con un piloto breve y medible.</p>
+        </div>
+        <a class="cal-btn" href="herramientas.html#herramientas">Preparar mi evaluación <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-info">
