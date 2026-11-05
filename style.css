@@ -394,3 +394,157 @@ footer {
     0 12px 30px rgba(52, 84, 107, 0.15);
   transform: translateY(-3px);
 }
+/* MÉTRICAS DE CALIDAD DEL SOFTWARE (calidad.html) */
+.metricas {
+  margin: 48px 0;
+}
+
+.metricas .section-head h2 {
+  font-size: clamp(28px, 3.2vw, 36px);
+  font-weight: 700;
+  letter-spacing: -.6px;
+}
+
+.metricas .section-head > p {
+  font-size: 15px;
+  max-width: 360px;
+}
+
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.metrica {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 30px 28px;
+  box-shadow: 0 8px 22px #233f5512;
+}
+
+.metrica:hover {
+  transform: translateY(-4px);
+  border-color: #bfd8e9;
+  box-shadow: 0 14px 28px #233f551c;
+}
+
+.metrica-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 36px;
+  margin-bottom: 14px;
+}
+
+.metrica-head h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  line-height: 1.3;
+}
+
+.metrica-badge {
+  flex-shrink: 0;
+  background: var(--pale);
+  color: #1e5f7a;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 7px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.metrica-valor {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+
+.metrica-valor strong {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.metrica-valor span {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.metrica-valor span.chico {
+  font-size: 16px;
+}
+
+.metrica-texto {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .metricas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .metricas-grid {
+    grid-template-columns: 1fr;
+  }
+  .metricas .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .metricas .section-head > p {
+    text-align: left;
+  }
+}
+
+/* CELULAR: páginas del Sprint 1 (calidad, procesos, metodologías, recursos, técnicas, herramientas) */
+@media (max-width: 800px) {
+  header {
+    flex-wrap: wrap;
+  }
+  .logo {
+    min-width: 0;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+  .hero-visual {
+    width: 100%;
+    min-width: 0;
+  }
+  main {
+    padding: 40px 20px 48px;
+  }
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-head > p {
+    text-align: left;
+  }
+  .grid,
+  .steps,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .cta,
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
