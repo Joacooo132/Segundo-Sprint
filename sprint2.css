@@ -265,9 +265,16 @@ textarea.input { min-height: 140px; resize: vertical; }
   .intro-copy { flex: none; }
   .grid-3 { grid-template-columns: 1fr; }
   .nav-toggle { display: inline-block; }
-  .site-nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 14px; padding-top: 12px; }
+  .site-nav {
+    width: 100%; flex-direction: column; align-items: flex-start; gap: 14px;
+    padding-top: 0; max-height: 0; opacity: 0; overflow: hidden; visibility: hidden;
+    transition: max-height .3s ease, opacity .25s ease, padding-top .3s ease, visibility 0s linear .3s;
+  }
   .site-header { flex-wrap: wrap; }
-  .site-header.open .site-nav { display: flex; }
+  .site-header.open .site-nav {
+    padding-top: 12px; max-height: 420px; opacity: 1; visibility: visible;
+    transition: max-height .3s ease, opacity .25s ease, padding-top .3s ease, visibility 0s;
+  }
 }
 @media (max-width: 680px) {
   :root { --gutter: 16px; }

@@ -119,6 +119,7 @@
 
     $('comparativa').hidden = !suficiente;
     if (!suficiente) return;
+    if (window.Transiciones) Transiciones.reproducir($('tabla-cabecera').closest('table'));
 
     $('comparativa-titulo').textContent = `${listaNombres(ids)}: diferencias esenciales`;
     const elegidos = ENFOQUES.filter((e) => seleccion.has(e.id));

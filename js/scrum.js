@@ -63,6 +63,10 @@
     $('ev-duracion').textContent = duracion(ev);
     $('ev-quienes').textContent = ev.quienes;
     $('ev-salida').textContent = ev.salida;
+    if (window.Transiciones) {
+      Transiciones.reproducir($('evento-detalle'));
+      Transiciones.reproducir(cont);
+    }
   }
 
   document.querySelectorAll('#duracion .chip').forEach((b) => b.addEventListener('click', () => { semanas = Number(b.dataset.semanas); render(); }));
