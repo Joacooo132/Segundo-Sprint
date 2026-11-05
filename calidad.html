@@ -15,6 +15,7 @@
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
   <script src="js/calidad.js" defer></script>
+  <script src="js/indice.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -51,7 +52,22 @@
     </div>
   </section>
 
+  <nav class="toc-bar" aria-label="Tabla de contenidos">
+    <span class="toc-label">En esta página</span>
+    <div class="chips">
+      <a class="chip" href="#conceptos">Conceptos</a>
+      <a class="chip" href="#metricas">Métricas</a>
+      <a class="chip" href="#mejora">Mejora continua</a>
+      <a class="chip" href="#iso">Estándares ISO</a>
+      <a class="chip" href="#niveles">Niveles de prueba</a>
+      <a class="chip" href="#cajas">Caja negra y blanca</a>
+      <a class="chip" href="#tecnicas-diseno">Técnicas</a>
+      <a class="chip" href="#herramientas-calidad">Herramientas</a>
+    </div>
+  </nav>
+
   <main>
+    <section id="conceptos">
     <div class="section-head">
       <div>
         <div class="kicker">BASES CONCEPTUALES</div>
@@ -104,6 +120,8 @@
         <span class="explore">Explorar sección →</span>
       </a>
     </div>
+
+    </section>
 
     <section id="metricas" class="metricas" aria-labelledby="metricas-titulo">
       <div class="section-head">
@@ -218,7 +236,7 @@
   </section>
 
   <!-- ===== Niveles de prueba ===== -->
-  <section class="cal-band" aria-labelledby="niveles-titulo">
+  <section class="cal-band" id="niveles" aria-labelledby="niveles-titulo">
     <div class="cal-wrap">
       <div class="cal-head">
         <div>
@@ -254,7 +272,7 @@
   </section>
 
   <!-- ===== Caja negra y caja blanca ===== -->
-  <section class="cal-band alt" aria-labelledby="cajas-titulo">
+  <section class="cal-band alt" id="cajas" aria-labelledby="cajas-titulo">
     <div class="cal-wrap">
       <div class="cal-head">
         <div>
@@ -283,7 +301,7 @@
   </section>
 
   <!-- ===== Técnicas desplegables ===== -->
-  <section class="cal-band" aria-labelledby="tecnicas-titulo">
+  <section class="cal-band" id="tecnicas-diseno" aria-labelledby="tecnicas-titulo">
     <div class="cal-wrap">
       <div class="cal-head">
         <div>
@@ -352,7 +370,7 @@
   </section>
 
   <!-- ===== Herramientas con filtro ===== -->
-  <section class="cal-band" aria-labelledby="herr-titulo">
+  <section class="cal-band" id="herramientas-calidad" aria-labelledby="herr-titulo">
     <div class="cal-wrap">
       <div class="cal-head">
         <div>
