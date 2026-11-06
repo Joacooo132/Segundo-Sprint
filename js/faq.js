@@ -1,6 +1,6 @@
 // US-13 · Acordeón con animación de altura y filtro por categoría.
 (() => {
-  document.querySelectorAll('#faq details.acc').forEach((det) => {
+  document.querySelectorAll('#faq details').forEach((det) => {
     const summary = det.querySelector('summary');
     const body = det.querySelector('.acc-body');
     summary.addEventListener('click', (e) => {
@@ -30,7 +30,7 @@
   chips.forEach((chip) => chip.addEventListener('click', () => {
     const cat = chip.dataset.cat;
     chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
-    document.querySelectorAll('#faq details.acc').forEach((d) => {
+    document.querySelectorAll('#faq details').forEach((d) => {
       d.hidden = cat !== 'todas' && d.dataset.cat !== cat;
     });
   }));

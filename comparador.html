@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -34,20 +35,17 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
         <span class="story-tag">US-18 · Recursos y aprendizaje</span>
         <h1>Compara enfoques con el contexto a la vista</h1>
         <p>Observa cómo cambian la planificación, las responsabilidades y la entrega. No hay un enfoque superior en todos los proyectos.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2 id="aside-titulo">Tres enfoques seleccionados</h2>
-          <p id="aside-texto">Cascada, Scrum y Kanban. La tabla refleja esta selección; el mínimo para comparar es de dos enfoques.</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2 id="aside-titulo">Tres enfoques seleccionados</h2>
+        <p id="aside-texto">Cascada, Scrum y Kanban. La tabla refleja esta selección; el mínimo para comparar es de dos enfoques.</p>
+      </aside>
     </section>
 
     <section class="section white" aria-labelledby="seleccion-titulo">
@@ -101,10 +99,6 @@
           <p>Revisa trazabilidad, riesgo, disponibilidad del cliente y capacidad técnica del equipo.</p>
         </article>
       </div>
-      <div class="row-between">
-        <p class="text">¿No sabes por dónde empezar? Responde cinco preguntas sobre tu proyecto.</p>
-        <a class="btn primary" href="encuesta.html">Hacer la encuesta →</a>
-      </div>
     </section>
 
     <section class="section" aria-labelledby="falta-titulo">
@@ -129,11 +123,6 @@
       </div>
     </section>
 
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="ejercicios.html" rel="prev"><span class="label">← Anterior</span><strong>Ejercicios y casos prácticos</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="encuesta.html" rel="next"><span class="label">Siguiente →</span><strong>Encuesta de preferencias metodológicas</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">

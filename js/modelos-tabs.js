@@ -1,7 +1,7 @@
 // US-07 · Pestañas de modelos tradicionales: solo se muestra el modelo elegido
 // (su diagrama y su información). Cascada aparece seleccionado al entrar.
 (() => {
-  const tabs = [...document.querySelectorAll('.toc-bar [role="tab"]')];
+  const tabs = [...document.querySelectorAll('[data-modelos] [role="tab"]')];
   if (!tabs.length) return;
   const panel = (tab) => document.getElementById(tab.getAttribute('aria-controls'));
 

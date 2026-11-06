@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kanban como herramienta de gestión de procesos: tablero interactivo, límites WIP, políticas y métricas de flujo.">
-  <title>Kanban en profundidad | Sistema de Gestión de Calidad</title>
+  <meta name="description" content="Kanban como sistema de gestión del flujo: principios, tablero didáctico con límite WIP, políticas explícitas y métricas de flujo.">
+  <title>Kanban | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
-  <script src="js/kanban.js" defer></script>
+  <script src="js/tablero.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -34,116 +35,115 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
-        <span class="story-tag">US-11 · Metodologías en detalle</span>
-        <h1>Kanban como herramienta de gestión de procesos</h1>
-        <p>Kanban no es solo un tablero: es una forma de visualizar el trabajo, limitar lo que está en curso y mejorar el flujo de manera continua.</p>
+        <span class="story-tag">US-11 · Aprender agilidad</span>
+        <h1>Kanban: menos trabajo abierto, más valor terminado</h1>
+        <p>Gestiona el proceso como un flujo. Visualiza las tareas, limita el trabajo en curso y mejora con datos antes de empezar más trabajo.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Aprende moviendo tarjetas</h2>
-          <p>En el tablero didáctico puedes arrastrar tarjetas o usar los botones ← →. Observa qué pasa cuando una columna llega a su límite WIP.</p>
-        </aside>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Terminar antes de empezar</h2>
+        <p>El sistema pull protege la capacidad. Un tablero solo es útil si sus políticas se entienden y se respetan.</p>
+      </aside>
+    </section>
+
+    <section class="band" aria-labelledby="principios-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Principios de gestión del flujo</span>
+        <h2 id="principios-titulo">Del tablero a un sistema de trabajo</h2>
+      </div></div>
+      <div class="grid-4">
+        <article class="fcard"><span class="num">01</span><h3>Visualizar</h3><p>Representa los estados reales y los bloqueos. Una tarjeta es una unidad de trabajo, no una persona.</p></article>
+        <article class="fcard"><span class="num">02</span><h3>Limitar WIP</h3><p>Acuerda cuánto trabajo puede estar iniciado y sin terminar. Reduce multitarea y hace visible la saturación.</p></article>
+        <article class="fcard"><span class="num">03</span><h3>Tirar del trabajo</h3><p>Inicia la siguiente tarea solo si existe capacidad en la etapa de destino y cumple la política de entrada.</p></article>
+        <article class="fcard"><span class="num">04</span><h3>Mejorar juntos</h3><p>Inspecciona el flujo, prueba cambios pequeños y observa su efecto con el equipo.</p></article>
       </div>
     </section>
 
-    <section class="section white" aria-labelledby="practicas-titulo">
-      <div class="section-head">
-        <span class="label">Prácticas fundamentales</span>
-        <h2 id="practicas-titulo">Del tablero a un sistema de trabajo</h2>
-      </div>
-      <div class="grid-3">
-        <article class="tile"><h3>Visualizar el flujo</h3><p>Cada etapa del proceso es una columna y cada tarea, una tarjeta.</p></article>
-        <article class="tile"><h3>Limitar el WIP</h3><p>Un número máximo de tarjetas por columna evita la sobrecarga.</p></article>
-        <article class="tile"><h3>Gestionar el flujo</h3><p>Se observa cuánto tarda el trabajo y dónde se detiene.</p></article>
-        <article class="tile"><h3>Políticas explícitas</h3><p>Reglas claras sobre cuándo una tarjeta puede avanzar.</p></article>
-        <article class="tile"><h3>Ciclos de feedback</h3><p>Revisiones periódicas del servicio y del flujo.</p></article>
-        <article class="tile"><h3>Mejorar en colaboración</h3><p>Cambios pequeños, medidos y acordados con el equipo.</p></article>
-      </div>
-    </section>
-
-    <section class="section" id="tablero" aria-labelledby="tablero-titulo">
-      <div class="section-head">
-        <span class="label">Demostración interactiva</span>
+    <section class="band alt" aria-labelledby="tablero-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Ejemplo · tarjetas y límites coherentes</span>
         <h2 id="tablero-titulo">Tablero didáctico · mantenimiento del portal</h2>
+      </div></div>
+      <div class="with-btn">
+        <p class="lead">Objetivo del proceso: resolver mejoras y defectos sin saturar al equipo. Usa «Mover tarjeta» para ver cómo el límite WIP frena la entrada de trabajo nuevo.</p>
+        <span class="mini">Flujo de entrega →</span>
       </div>
-      <div class="row-between">
-        <p class="text">Un equipo de tres personas mantiene este sitio. Mueve las tarjetas de izquierda a derecha y respeta los límites de cada columna.</p>
-        <button class="btn" type="button" id="reiniciar">Reiniciar tablero</button>
+      <div class="kb" data-tablero data-aviso="aviso-kanban">
+        <div class="kb-col" data-nombre="Por hacer">
+          <div class="kb-head"><h3>Por hacer</h3><small data-count>3</small></div>
+          <div class="kb-cards">
+            <article class="kb-card"><span class="meta2">Mejora · preparada</span><span class="asa" aria-hidden="true">⠿</span><strong>Añadir filtro por categoría</strong><button type="button">Mover tarjeta →</button></article>
+            <article class="kb-card"><span class="meta2">Accesibilidad · preparada</span><span class="asa" aria-hidden="true">⠿</span><strong>Revisar contraste del menú</strong><button type="button">Mover tarjeta →</button></article>
+            <article class="kb-card"><span class="meta2">Documentación · preparada</span><span class="asa" aria-hidden="true">⠿</span><strong>Documentar API de cursos</strong><button type="button">Mover tarjeta →</button></article>
+          </div>
+        </div>
+        <div class="kb-col limit" data-wip="2" data-nombre="En proceso">
+          <div class="kb-head"><h3>En proceso</h3><small data-count>2 / 2 · WIP</small></div>
+          <div class="kb-cards">
+            <article class="kb-card"><span class="meta2">Defecto · 2 días</span><span class="asa" aria-hidden="true">⠿</span><strong>Corregir validación de correo</strong><button type="button">Mover tarjeta →</button></article>
+            <article class="kb-card"><span class="meta2">Pruebas · 1 día</span><span class="asa" aria-hidden="true">⠿</span><strong>Probar inscripción a cursos</strong><button type="button">Mover tarjeta →</button></article>
+          </div>
+          <p class="kb-msg">Límite alcanzado: terminar antes de empezar.</p>
+        </div>
+        <div class="kb-col" data-nombre="Hecho">
+          <div class="kb-head"><h3>Hecho</h3><small data-count>2</small></div>
+          <div class="kb-cards">
+            <article class="kb-card"><span class="meta2">Análisis · terminado</span><span class="asa" aria-hidden="true">⠿</span><strong>Definir criterios de aceptación</strong><span class="done">✓ Criterios cumplidos</span></article>
+            <article class="kb-card"><span class="meta2">Documentación · terminada</span><span class="asa" aria-hidden="true">⠿</span><strong>Publicar guía de instalación</strong><span class="done">✓ Criterios cumplidos</span></article>
+          </div>
+        </div>
       </div>
-      <p class="board-msg" id="mensaje" role="status" aria-live="polite"></p>
-      <div class="board" id="board" style="--cols:4"></div>
-      <div class="note">
-        <strong>¿Por qué no puedo mover otra tarjeta a «En proceso»?</strong>
-        <p>Porque la columna alcanzó su límite WIP. En lugar de empezar algo nuevo, el equipo termina o destraba lo que ya está en curso. Así baja el tiempo de espera de todo el sistema.</p>
+      <div class="info warn" id="aviso-kanban" role="status">
+        <strong>Muestra de aviso · límite WIP alcanzado</strong>
+        <p>No se puede incorporar “Añadir filtro por categoría” a En proceso: hay 2 tarjetas y el límite es 2. Primero termina una tarea o ayuda a desbloquearla. No aumentes el límite solo para ocultar el atasco.</p>
       </div>
       <div class="grid-3">
-        <article class="card"><span class="pill">Política · Por hacer</span><p>Solo entran tarjetas con descripción clara y prioridad acordada en la reunión de reposición.</p></article>
-        <article class="card"><span class="pill">Política · En proceso</span><p>Máximo 2 tarjetas. Si hay un bloqueo, se marca y se pide ayuda ese mismo día.</p></article>
-        <article class="card"><span class="pill">Política · En revisión</span><p>Máximo 2. Avanza a «Hecho» solo si pasa la revisión de otra persona y las pruebas.</p></article>
+        <article class="fcard"><h4>Entrada a En proceso</h4><p>La tarea tiene una necesidad clara, criterios de aceptación y capacidad disponible.</p></article>
+        <article class="fcard"><h4>Salida a Hecho</h4><p>Se cumplieron criterios, revisión y pruebas acordadas; la documentación necesaria está actualizada.</p></article>
+        <article class="fcard"><h4>Trabajo bloqueado</h4><p>Se marca el bloqueo y su causa. Sigue contando como WIP mientras no esté terminado.</p></article>
       </div>
     </section>
 
-    <section class="section white" aria-labelledby="medir-titulo">
-      <div class="section-head">
-        <span class="label">Métricas de flujo</span>
-        <h2 id="medir-titulo">Medir el flujo, no la ocupación individual</h2>
-      </div>
-      <div class="diagram-scroll">
-        <div class="flow" role="img" aria-label="Tiempo de entrega desde que se pide hasta que se entrega; dentro de él, el tiempo de ciclo desde que se empieza hasta que se termina.">
-          <div class="flow-step"><b>Pedido</b><strong>Llega la solicitud</strong><p>Empieza el lead time.</p></div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step"><b>Inicio</b><strong>Se empieza a trabajar</strong><p>Empieza el cycle time.</p></div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step"><b>Revisión</b><strong>Se verifica</strong><p>Calidad antes de entregar.</p></div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step strong"><b>Entrega</b><strong>Valor para el usuario</strong><p>Terminan ambos tiempos.</p></div>
+    <section class="band" aria-labelledby="metricas-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Métricas · datos del proceso</span>
+        <h2 id="metricas-titulo">Medir el flujo, no la ocupación individual</h2>
+      </div></div>
+      <div class="diagram-box cycle">
+        <div class="cycle-row">
+          <div class="cycle-step">Solicitud recibida · lunes</div><span class="cycle-arrow" aria-hidden="true">→</span>
+          <div class="cycle-step">Inicio del trabajo · miércoles</div><span class="cycle-arrow" aria-hidden="true">→</span>
+          <div class="cycle-step">Terminado · viernes</div>
         </div>
       </div>
       <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th scope="col">Métrica</th><th scope="col">Qué mide</th><th scope="col">Pregunta que responde</th></tr></thead>
+        <table class="table eq">
+          <thead><tr><th scope="col">Métrica</th><th scope="col">Qué representa</th><th scope="col">Ejemplo didáctico</th></tr></thead>
           <tbody>
-            <tr><td>Lead time</td><td>Tiempo desde el pedido hasta la entrega.</td><td>¿Cuánto espera el usuario?</td></tr>
-            <tr><td>Cycle time</td><td>Tiempo desde que se empieza hasta que se termina.</td><td>¿Cuánto tardamos en hacerlo?</td></tr>
-            <tr><td>Throughput</td><td>Tarjetas terminadas por periodo.</td><td>¿Cuánto entregamos por semana?</td></tr>
-            <tr><td>WIP</td><td>Cantidad de trabajo iniciado y no terminado.</td><td>¿Estamos empezando más de lo que terminamos?</td></tr>
-            <tr><td>Bloqueos</td><td>Tarjetas detenidas y su causa.</td><td>¿Dónde se atasca el flujo?</td></tr>
+            <tr><td>Lead time</td><td>Tiempo desde la solicitud hasta la entrega, según límites de medición acordados.</td><td>Lunes → viernes: incluye la espera antes de iniciar.</td></tr>
+            <tr><td>Cycle time</td><td>Tiempo desde el inicio del trabajo hasta terminarlo.</td><td>Miércoles → viernes: solo desde el punto de inicio definido.</td></tr>
+            <tr><td>Throughput</td><td>Número de unidades terminadas por unidad de tiempo.</td><td>7 tareas terminadas en una semana; no equivale a 7 por persona.</td></tr>
+            <tr><td>WIP</td><td>Unidades iniciadas y todavía no terminadas.</td><td>En el tablero: 2 tarjetas en proceso, incluido cualquier bloqueo.</td></tr>
           </tbody>
         </table>
       </div>
+      <p class="fine">Define días hábiles o corridos y usa siempre los mismos puntos de inicio y fin. Compara distribuciones y tendencias, no solo promedios aislados.</p>
     </section>
 
-    <section class="section" aria-labelledby="mejora-titulo">
-      <div class="section-head">
-        <span class="label">Mejora continua</span>
+    <section class="band alt" aria-labelledby="mejora-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Inspección y mejora continua</span>
         <h2 id="mejora-titulo">Usarlo para mejorar un proceso real</h2>
+      </div></div>
+      <div class="grid-3">
+        <article class="fcard"><h3>Observar</h3><p>Si las tarjetas envejecen en pruebas, identifica la causa: entornos, dependencias o criterios poco claros.</p></article>
+        <article class="fcard"><h3>Experimentar</h3><p>Prueba revisar criterios antes de iniciar o colaborar en las pruebas. Formula una hipótesis y una fecha de revisión.</p></article>
+        <article class="fcard"><h3>Evaluar</h3><p>Comprueba si bajó el cycle time sin aumentar defectos. Conserva el cambio útil o vuelve a ajustar.</p></article>
       </div>
-      <div class="diagram-scroll">
-        <div class="flow">
-          <div class="flow-step"><b>1</b><strong>Empezar con lo que haces hoy</strong><p>Dibuja tu proceso actual, sin cambiar roles.</p></div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step"><b>2</b><strong>Observar</strong><p>Mide tiempos y detecta dónde se acumula trabajo.</p></div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step"><b>3</b><strong>Acordar un cambio pequeño</strong><p>Por ejemplo, bajar un límite WIP.</p></div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step strong"><b>4</b><strong>Medir y ajustar</strong><p>Si mejora, se mantiene; si no, se prueba otra cosa ↺</p></div>
-        </div>
-      </div>
-      <div class="row-between">
-        <p class="text">Compara Kanban con Scrum y los modelos tradicionales.</p>
-        <div class="actions"><a class="btn" href="scrum.html">Scrum en profundidad</a><a class="btn primary" href="comparador.html">Ver comparador →</a></div>
-      </div>
+      <p class="lead">Kanban no prescribe roles nuevos, reuniones obligatorias ni Sprints. Puede aplicarse al proceso existente y convivir con Scrum, haciendo explícitas las políticas de flujo.</p>
     </section>
-
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="scrum.html" rel="prev"><span class="label">← Anterior</span><strong>Scrum en profundidad</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="glosario.html" rel="next"><span class="label">Siguiente →</span><strong>Glosario</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">
