@@ -628,3 +628,4 @@ body.no-scroll { overflow: hidden; }
   .home-card { width: 270px; min-height: 0; }
   .home-card h2 { white-space: normal; }
 }
+.home .brand-name strong { font-weight: 400; }

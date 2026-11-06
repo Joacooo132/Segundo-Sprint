@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Recursos externos: guías, normas, libros y organizaciones de referencia sobre calidad y metodologías.">
+  <meta name="description" content="Biblioteca de fuentes reconocidas sobre calidad, Scrum, Kanban, XP y testing, con guías, artículos, libros y organizaciones.">
   <title>Enlaces de interés | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -34,73 +35,107 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
         <span class="story-tag">US-14 · Recursos y aprendizaje</span>
-        <h1>Enlaces de interés para seguir aprendiendo</h1>
-        <p>Guías oficiales, normas, libros y organizaciones de referencia sobre calidad del software y metodologías.</p>
+        <h1>Fuentes para aprender y contrastar</h1>
+        <p>Una biblioteca seleccionada de guías, artículos, libros y organizaciones. Consulta la fuente original y lleva cada lectura a un caso práctico.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Se abren en otra pestaña</h2>
-          <p>Los enlaces externos se abren en una pestaña nueva de forma segura, para que no pierdas tu lugar en el sitio.</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Leer con criterio</h2>
+        <p>Cada recurso indica para qué sirve, su tipo y el dominio de destino. Los enlaces externos se reconocen por ↗.</p>
+      </aside>
     </section>
 
-    <section class="section white" aria-labelledby="bib-titulo">
-      <div class="section-head">
-        <span class="label">Biblioteca</span>
-        <h2 id="bib-titulo">Biblioteca de enlaces de interés</h2>
-      </div>
-      <div class="chips" role="group" aria-label="Filtrar por tipo de recurso" id="tipos">
+    <section class="band" aria-labelledby="biblioteca-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Recursos externos · fuentes reconocidas</span>
+        <h2 id="biblioteca-titulo">Biblioteca de enlaces de interés</h2>
+      </div></div>
+      <div class="chips" id="tipos" role="group" aria-label="Filtrar por tipo">
         <button class="chip" type="button" data-tipo="todos" aria-pressed="true">Todos</button>
-        <button class="chip" type="button" data-tipo="web" aria-pressed="false">🌐 Web</button>
-        <button class="chip" type="button" data-tipo="pdf" aria-pressed="false">📄 PDF</button>
-        <button class="chip" type="button" data-tipo="libro" aria-pressed="false">📚 Libro</button>
-        <button class="chip" type="button" data-tipo="org" aria-pressed="false">🏛 Organización</button>
+        <button class="chip" type="button" data-tipo="guias" aria-pressed="false">Guías y documentos</button>
+        <button class="chip" type="button" data-tipo="articulos" aria-pressed="false">Artículos</button>
+        <button class="chip" type="button" data-tipo="libros" aria-pressed="false">Libros</button>
+        <button class="chip" type="button" data-tipo="organizaciones" aria-pressed="false">Organizaciones</button>
       </div>
-      <p class="text-sm" id="recursos-total" aria-live="polite"></p>
-      <div class="grid-3" id="recursos">
-        <article class="card" data-tipo="web"><span class="res-type"><i aria-hidden="true">🌐</i>Web</span><h3>La Guía de Scrum</h3><p>Definición oficial de Scrum, disponible en varios idiomas, incluido el español.</p><a class="btn ext" href="https://scrumguides.org/" target="_blank" rel="noopener noreferrer">Visitar scrumguides.org</a></article>
-        <article class="card" data-tipo="web"><span class="res-type"><i aria-hidden="true">🌐</i>Web</span><h3>Manifiesto Ágil</h3><p>Los 4 valores y 12 principios del desarrollo ágil de software, en español.</p><a class="btn ext" href="https://agilemanifesto.org/iso/es/manifesto.html" target="_blank" rel="noopener noreferrer">Leer el manifiesto</a></article>
-        <article class="card" data-tipo="web"><span class="res-type"><i aria-hidden="true">🌐</i>Web</span><h3>Portal ISO 25000</h3><p>Explicación en español de la familia de normas ISO/IEC 25000 y su modelo de calidad.</p><a class="btn ext" href="https://iso25000.com/" target="_blank" rel="noopener noreferrer">Visitar iso25000.com</a></article>
-        <article class="card" data-tipo="pdf"><span class="res-type"><i aria-hidden="true">📄</i>PDF</span><h3>Programa ISTQB Foundation Level</h3><p>Programa de estudio de pruebas de software: niveles, tipos y técnicas. Se descarga en PDF desde la página.</p><a class="btn ext" href="https://www.istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">Ver programa ISTQB</a></article>
-        <article class="card" data-tipo="pdf"><span class="res-type"><i aria-hidden="true">📄</i>PDF</span><h3>The Kanban Guide</h3><p>Guía breve que define Kanban, sus prácticas y métricas de flujo. Disponible para descargar.</p><a class="btn ext" href="https://kanbanguides.org/" target="_blank" rel="noopener noreferrer">Visitar kanbanguides.org</a></article>
-        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Ingeniería de Software · Ian Sommerville</h3><p>Texto de referencia sobre procesos, requisitos, pruebas y calidad.</p><a class="btn ext" href="https://openlibrary.org/search?q=Sommerville+Software+Engineering" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
-        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Ingeniería del Software · Roger Pressman</h3><p>Enfoque práctico de modelos de proceso, gestión de la calidad y métricas.</p><a class="btn ext" href="https://openlibrary.org/search?q=Pressman+Software+Engineering+A+Practitioner%27s+Approach" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
-        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Extreme Programming Explained · Kent Beck</h3><p>El libro que presentó XP: valores, principios y prácticas.</p><a class="btn ext" href="https://openlibrary.org/search?q=Extreme+Programming+Explained+Kent+Beck" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
-        <article class="card" data-tipo="libro"><span class="res-type"><i aria-hidden="true">📚</i>Libro</span><h3>Kanban · David J. Anderson</h3><p>Cómo aplicar Kanban para mejorar procesos de forma evolutiva.</p><a class="btn ext" href="https://openlibrary.org/search?q=Kanban+David+J.+Anderson" target="_blank" rel="noopener noreferrer">Buscar en Open Library</a></article>
-        <article class="card" data-tipo="org"><span class="res-type"><i aria-hidden="true">🏛</i>Organización</span><h3>ISO</h3><p>Organización Internacional de Normalización: publica las normas ISO/IEC 25000 e ISO 9001.</p><a class="btn ext" href="https://www.iso.org/" target="_blank" rel="noopener noreferrer">Visitar iso.org</a></article>
-        <article class="card" data-tipo="org"><span class="res-type"><i aria-hidden="true">🏛</i>Organización</span><h3>ISTQB</h3><p>Junta internacional de certificación en pruebas de software.</p><a class="btn ext" href="https://www.istqb.org/" target="_blank" rel="noopener noreferrer">Visitar istqb.org</a></article>
-        <article class="card" data-tipo="org"><span class="res-type"><i aria-hidden="true">🏛</i>Organización</span><h3>Agile Alliance</h3><p>Comunidad sin fines de lucro que difunde los principios ágiles. Glosario y artículos.</p><a class="btn ext" href="https://www.agilealliance.org/" target="_blank" rel="noopener noreferrer">Visitar agilealliance.org</a></article>
+      <p class="sr-only" id="recursos-total" aria-live="polite"></p>
+      <div class="grid-2" id="recursos">
+          <article class="link-card" data-tipo="guias">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Fuente original</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>Manifiesto Ágil</h3>
+            <p>Lee los cuatro valores y los doce principios en su fuente original. Útil para contrastar prácticas con la intención de la agilidad.</p>
+            <span class="lc-note">Documento abierto</span>
+            <div class="lc-foot"><span>agilemanifesto.org</span><a href="https://agilemanifesto.org/iso/es/manifesto.html">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="guias">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg>Guía oficial</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>The Scrum Guide</h3>
+            <p>Consulta la definición de Scrum, sus responsabilidades, eventos, artefactos y compromisos. Incluye traducciones para estudiar en español.</p>
+            <span class="lc-note">Guía gratuita</span>
+            <div class="lc-foot"><span>scrumguides.org</span><a href="https://scrumguides.org/">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="guias">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></svg>Guía</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>The Kanban Guide</h3>
+            <p>Profundiza en definición del flujo de trabajo, control del WIP y métricas de flujo. No confundir un tablero con todo el sistema.</p>
+            <span class="lc-note">Guía gratuita</span>
+            <div class="lc-foot"><span>kanbanguides.org</span><a href="https://kanbanguides.org/">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="organizaciones">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Organización</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>ISO · estándares de calidad</h3>
+            <p>Explora el catálogo oficial y verifica edición y alcance de ISO 9001 e ISO/IEC 25010. El texto completo de algunas normas es de pago.</p>
+            <span class="lc-note">Catálogo y normas</span>
+            <div class="lc-foot"><span>iso.org</span><a href="https://www.iso.org/">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="organizaciones">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Organización</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>ISTQB · fundamentos de testing</h3>
+            <p>Consulta programas de estudio y terminología de pruebas. Una base para distinguir técnicas, niveles y objetivos de prueba.</p>
+            <span class="lc-note">Material de estudio</span>
+            <div class="lc-foot"><span>istqb.org</span><a href="https://www.istqb.org/">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="articulos">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Artículos</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>Martin Fowler · ingeniería de software</h3>
+            <p>Encuentra explicaciones sobre integración continua, refactorización y diseño. Usa cada artículo para conectar una práctica con un problema técnico.</p>
+            <span class="lc-note">Lectura técnica</span>
+            <div class="lc-foot"><span>martinfowler.com</span><a href="https://martinfowler.com/">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="libros">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg>Libro</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>Refactoring · Martin Fowler</h3>
+            <p>Aprende a mejorar el diseño de código existente sin cambiar su comportamiento. Busca el libro y su catálogo de refactorizaciones en el sitio del autor.</p>
+            <span class="lc-note">Libro de consulta · de pago</span>
+            <div class="lc-foot"><span>martinfowler.com</span><a href="https://martinfowler.com/books/refactoring.html">Visitar sitio ↗</a></div>
+          </article>
+          <article class="link-card" data-tipo="libros">
+            <div class="lc-top"><span class="lc-type"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg>Libro</span><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></div>
+            <h3>Extreme Programming Explained · Kent Beck</h3>
+            <p>Estudia los valores y prácticas de XP y cómo se refuerzan entre sí. Consulta la edición y disponibilidad en el catálogo editorial.</p>
+            <span class="lc-note">Libro de consulta · de pago</span>
+            <div class="lc-foot"><span>informit.com</span><a href="https://www.informit.com/store/extreme-programming-explained-embrace-change-9780321278654">Visitar sitio ↗</a></div>
+          </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="leer-titulo">
-      <div class="section-head">
-        <span class="label">Cómo aprovechar los recursos</span>
-        <h2 id="leer-titulo">Convierte una lectura en aprendizaje</h2>
-      </div>
+    <section class="band alt" aria-labelledby="ruta-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Ruta sugerida</span>
+        <h2 id="ruta-titulo">Convierte una lectura en aprendizaje</h2>
+      </div></div>
       <div class="grid-3">
-        <article class="card"><span class="pill">1 · Antes</span><h3>Define una pregunta</h3><p>Por ejemplo: «¿Qué cambia en las pruebas entre cascada y Scrum?». Leer con un objetivo ayuda a filtrar.</p></article>
-        <article class="card"><span class="pill">2 · Durante</span><h3>Anota términos nuevos</h3><p>Compáralos con el glosario y escribe un ejemplo propio para cada uno.</p></article>
-        <article class="card"><span class="pill">3 · Después</span><h3>Aplícalo en un caso</h3><p>Resuelve un ejercicio práctico usando lo que leíste y revisa la solución.</p></article>
+        <article class="fcard flat"><span class="num">01</span><h3>Ve a la fuente</h3><p>Empieza por el Manifiesto o la guía del enfoque que estudias. Identifica su propósito antes de buscar herramientas.</p></article>
+        <article class="fcard flat"><span class="num">02</span><h3>Contrasta una idea</h3><p>Anota un concepto que no entendías y relaciónalo con un ejemplo del portal. Distingue la definición de una opinión.</p></article>
+        <article class="fcard flat"><span class="num">03</span><h3>Practica y revisa</h3><p>Resuelve un ejercicio. Vuelve al recurso para explicar por qué tu decisión encaja o qué límite has descubierto.</p></article>
       </div>
-      <div class="note">
-        <strong>Prefiere las fuentes primarias</strong>
-        <p>Para Scrum, Kanban o las normas ISO, la guía o norma original es la referencia más confiable. Los artículos y blogs ayudan a entender, pero pueden simplificar o desactualizarse.</p>
+      <div class="info">
+        <strong>Antes de salir del sitio</strong>
+        <p>Estos recursos pertenecen a terceros y pueden cambiar. Comprueba idioma, edición y condiciones de acceso. Los dominios visibles te permiten reconocer el destino sin depender del icono.</p>
       </div>
-      <div class="row-between"><p class="text">Practica con casos reales de calidad y metodologías.</p><a class="btn primary" href="ejercicios.html">Ir a los ejercicios →</a></div>
     </section>
-
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="faq.html" rel="prev"><span class="label">← Anterior</span><strong>Preguntas frecuentes</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="ejercicios.html" rel="next"><span class="label">Siguiente →</span><strong>Ejercicios y casos prácticos</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">

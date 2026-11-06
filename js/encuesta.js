@@ -182,7 +182,6 @@
         : pos === 1 ? 'Puede complementar tu forma de trabajo'
         : 'Menor ajuste a tu contexto actual';
       card.innerHTML = `<h3></h3><p class="score-value">${o.t} / 10</p>
-        <p class="score-pct">${o.t * 10} % de coincidencia</p>
         <div class="meter" aria-hidden="true"><span style="width:${o.t * 10}%"></span></div><p></p>`;
       card.querySelector('h3').textContent = o.n;
       card.querySelector('p:last-child').textContent = interp;

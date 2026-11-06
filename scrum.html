@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Roles, eventos y artefactos de Scrum con un cronograma interactivo del Sprint de 1 a 4 semanas.">
-  <title>Scrum en profundidad | Sistema de Gestión de Calidad</title>
+  <meta name="description" content="Roles, eventos y artefactos de Scrum, con un cronograma de referencia del Sprint y un ejemplo práctico de Product Backlog.">
+  <title>Scrum | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -35,148 +36,120 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
-        <span class="story-tag">US-10 · Metodologías en detalle</span>
-        <h1>Scrum en profundidad</h1>
-        <p>Roles, Sprints, backlog, Daily Scrum, Sprint Review y Sprint Retrospective, explicados con un cronograma que puedes explorar.</p>
+        <span class="story-tag">US-10 · Aprender agilidad</span>
+        <h1>Scrum: del objetivo al Incremento</h1>
+        <p>Un marco ligero para resolver problemas complejos. Aprende quién asume cada responsabilidad, para qué sirve cada evento y cómo se hace visible el progreso.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Basado en la Guía de Scrum</h2>
-          <p>Usamos la terminología de la Guía de Scrum 2020: responsabilidades, eventos y artefactos con compromisos.</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Inspeccionar y adaptar</h2>
+        <p>Transparencia, inspección y adaptación sostienen Scrum. El Sprint da un ritmo estable al aprendizaje.</p>
+      </aside>
     </section>
 
-    <nav class="toc-bar" aria-label="Bloques de aprendizaje">
-      <span class="label">Bloques de aprendizaje</span>
+    <nav class="page-index plain" aria-label="En esta página">
       <div class="chips">
-        <a class="chip" href="#roles">1 · Roles</a>
-        <a class="chip" href="#eventos">2 · Eventos</a>
-        <a class="chip" href="#artefactos">3 · Artefactos</a>
-        <a class="chip" href="#backlog">Backlog práctico</a>
+        <a class="chip" href="#roles">Roles</a>
+        <a class="chip active" href="#eventos">Eventos</a>
+        <a class="chip" href="#artefactos">Artefactos</a>
+        <a class="chip" href="#backlog">Ejemplo de backlog</a>
       </div>
     </nav>
 
-    <section class="section white" id="roles" aria-labelledby="roles-titulo">
-      <div class="section-head">
-        <span class="label">1 · Scrum Team</span>
+    <section class="band alt" id="roles" aria-labelledby="roles-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Roles · Scrum Team</span>
         <h2 id="roles-titulo">Un equipo, tres responsabilidades</h2>
-        <p>El Scrum Team es pequeño (normalmente 10 personas o menos), multifuncional y autogestionado. No hay subequipos ni jerarquías.</p>
-      </div>
+      </div></div>
       <div class="grid-3">
-        <article class="card"><div class="icon-box" aria-hidden="true">PO</div><h3>Product Owner</h3><p>Maximiza el valor del producto. Define el Product Goal y ordena el Product Backlog. Es una persona, no un comité.</p></article>
-        <article class="card"><div class="icon-box" aria-hidden="true">SM</div><h3>Scrum Master</h3><p>Ayuda a que Scrum se entienda y se aplique. Elimina impedimentos y sirve al equipo y a la organización como líder.</p></article>
-        <article class="card"><div class="icon-box" aria-hidden="true">D</div><h3>Developers</h3><p>Crean el Incremento en cada Sprint. Planifican el Sprint Backlog, cumplen la Definition of Done y se adaptan a diario.</p></article>
+        <article class="fcard"><h3>Product Owner</h3><p class="sub caps">Maximizar el valor</p><p>Comunica el Product Goal, ordena el Product Backlog y garantiza que sea visible y comprendido. Es una persona, no un comité. Puede delegar trabajo, no su responsabilidad.</p><p class="ex">Ejemplo: prioriza inscripción antes que certificados.</p></article>
+        <article class="fcard"><h3>Scrum Master</h3><p class="sub caps">Mejorar la eficacia</p><p>Ayuda al equipo y a la organización a entender Scrum; promueve autogestión, facilita eventos útiles y ayuda a eliminar impedimentos. No asigna las tareas del día.</p><p class="ex">Ejemplo: facilita resolver una dependencia externa.</p></article>
+        <article class="fcard"><h3>Developers</h3><p class="sub caps">Crear un Incremento útil</p><p>Elaboran el Sprint Backlog, incorporan calidad mediante la Definition of Done y adaptan su plan cada día hacia el Sprint Goal. Son un equipo multifuncional.</p><p class="ex">Ejemplo: diseñan, programan y prueban la inscripción.</p></article>
       </div>
+      <p class="fine">El Scrum Team es autogestionado: decide internamente quién hace qué, cuándo y cómo. No hay subequipos ni jerarquías dentro del equipo.</p>
     </section>
 
-    <section class="section" id="eventos" aria-labelledby="eventos-titulo">
-      <div class="section-head">
-        <span class="label">2 · Eventos</span>
+    <section class="band" id="eventos" aria-labelledby="eventos-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Eventos · Cronograma de referencia</span>
         <h2 id="eventos-titulo">El Sprint reúne todos los eventos</h2>
-        <p>Elige la duración del Sprint y haz clic en cada evento para ver su objetivo y duración máxima sugerida.</p>
+      </div></div>
+      <p class="lead">El Sprint dura un mes o menos; aquí se representa un ejemplo de cuatro semanas. Para un Sprint de una a tres semanas, se comprime el mismo ciclo y los eventos suelen ser más cortos.</p>
+      <div class="weeks" id="semanas" role="group" aria-label="Semanas del Sprint">
+        <button class="week" type="button" data-semana="1" aria-pressed="true"><small>Semana 1</small><strong>Planning → iniciar trabajo</strong></button>
+        <button class="week" type="button" data-semana="2" aria-pressed="false"><small>Semana 2</small><strong>Construir + probar</strong></button>
+        <button class="week" type="button" data-semana="3" aria-pressed="false"><small>Semana 3</small><strong>Integrar + adaptar</strong></button>
+        <button class="week" type="button" data-semana="4" aria-pressed="false"><small>Semana 4</small><strong>Review → Retrospective</strong></button>
       </div>
-      <div class="row-between">
-        <div class="chips" role="group" aria-label="Duración del Sprint" id="duracion">
-          <button class="chip" type="button" data-semanas="1" aria-pressed="false">1 semana</button>
-          <button class="chip" type="button" data-semanas="2" aria-pressed="true">2 semanas</button>
-          <button class="chip" type="button" data-semanas="3" aria-pressed="false">3 semanas</button>
-          <button class="chip" type="button" data-semanas="4" aria-pressed="false">4 semanas</button>
+      <div class="daily-bar">↻ Daily Scrum · 15 minutos cada día de trabajo · inspeccionar el avance al Sprint Goal</div>
+      <div class="event-card" id="evento" aria-live="polite">
+        <span class="mini" id="ev-label">Evento seleccionado · Sprint Planning</span>
+        <h3 id="ev-titulo">¿Por qué es valioso este Sprint y cómo lo lograremos?</h3>
+        <p class="lead" id="ev-texto">Todo el Scrum Team acuerda un Sprint Goal, selecciona trabajo del Product Backlog y define un plan inicial. Los Developers deciden cuánto pueden realizar según capacidad, desempeño pasado y Definition of Done.</p>
+        <div class="two">
+          <div><strong>Resultado</strong><p class="lead" id="ev-resultado">Sprint Backlog: objetivo, elementos seleccionados y plan de entrega.</p></div>
+          <div><strong id="ev-max">Máximo 8 horas</strong><p class="lead" id="ev-max-texto">Para un Sprint de un mes; normalmente menos para Sprints más cortos.</p></div>
         </div>
-        <span class="label" id="duracion-texto">Sprint de 2 semanas · 10 días hábiles</span>
       </div>
-      <div class="timeline" id="cronograma" role="group" aria-label="Eventos del Sprint">
-        <button class="event-btn" type="button" data-evento="planning" aria-pressed="true"><small>Día 1</small><strong>Sprint Planning</strong></button>
-        <button class="event-btn" type="button" data-evento="daily" aria-pressed="false"><small>Cada día</small><strong>Daily Scrum</strong></button>
-        <button class="event-btn" type="button" data-evento="refinement" aria-pressed="false"><small>Durante el Sprint</small><strong>Refinamiento</strong></button>
-        <button class="event-btn" type="button" data-evento="review" aria-pressed="false"><small>Último día</small><strong>Sprint Review</strong></button>
-        <button class="event-btn" type="button" data-evento="retro" aria-pressed="false"><small>Último día</small><strong>Sprint Retrospective</strong></button>
-      </div>
-      <div>
-        <span class="label">Cadencia diaria</span>
-        <div class="days" id="dias" aria-hidden="true"></div>
-      </div>
-      <article class="card" id="evento-detalle" aria-live="polite">
-        <span class="pill" id="ev-cuando">Día 1 · al inicio del Sprint</span>
-        <h3 id="ev-nombre">Sprint Planning</h3>
-        <p id="ev-objetivo"></p>
-        <div class="grid-3">
-          <div class="tile"><h3 id="ev-duracion">4 h</h3><p>Duración máxima sugerida</p></div>
-          <div class="tile"><h3 id="ev-quienes">Todo el Scrum Team</h3><p>Participan</p></div>
-          <div class="tile"><h3 id="ev-salida">Sprint Goal</h3><p>Resultado esperado</p></div>
-        </div>
-      </article>
       <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th scope="col">Evento</th><th scope="col">Propósito</th><th scope="col">Máximo para un Sprint de un mes</th></tr></thead>
+        <table class="table eq">
+          <thead><tr><th scope="col">Evento</th><th scope="col">Propósito</th><th scope="col">Duración máxima</th></tr></thead>
           <tbody>
-            <tr><td>Sprint</td><td>Contenedor de los demás eventos; produce un Incremento.</td><td>1 mes o menos</td></tr>
-            <tr><td>Sprint Planning</td><td>Definir por qué, qué y cómo del Sprint.</td><td>8 horas</td></tr>
-            <tr><td>Daily Scrum</td><td>Inspeccionar el avance hacia el Sprint Goal y adaptar el plan.</td><td>15 minutos</td></tr>
-            <tr><td>Sprint Review</td><td>Inspeccionar el Incremento con interesados y adaptar el Product Backlog.</td><td>4 horas</td></tr>
-            <tr><td>Sprint Retrospective</td><td>Planificar mejoras de calidad y efectividad.</td><td>3 horas</td></tr>
+            <tr><td>Sprint Planning</td><td>Iniciar el Sprint con objetivo y plan compartidos.</td><td>8 h para un Sprint de un mes.</td></tr>
+            <tr><td>Daily Scrum</td><td>Developers inspeccionan el avance y adaptan su plan; no es un reporte al jefe.</td><td>15 minutos.</td></tr>
+            <tr><td>Sprint Review</td><td>Equipo e interesados inspeccionan resultados y cambios del entorno; adaptan qué hacer después.</td><td>4 h para un Sprint de un mes.</td></tr>
+            <tr><td>Sprint Retrospective</td><td>El Scrum Team planifica mejoras de calidad y eficacia: personas, procesos y herramientas.</td><td>3 h para un Sprint de un mes.</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="note">
-        <strong>El refinamiento no es un evento formal</strong>
-        <p>Refinar el Product Backlog es una actividad continua: se dividen y detallan elementos para que estén listos. Muchos equipos le dedican hasta un 10 % de su capacidad.</p>
+      <div class="info">
+        <strong>Review no es Retrospective</strong>
+        <p>La Review explora el producto y su siguiente dirección con los interesados. La Retrospective mejora cómo trabaja el equipo. No son la misma reunión ni se sustituyen entre sí.</p>
       </div>
     </section>
 
-    <section class="section white" id="artefactos" aria-labelledby="art-titulo">
-      <div class="section-head">
-        <span class="label">3 · Artefactos</span>
-        <h2 id="art-titulo">Artefactos con compromisos explícitos</h2>
-      </div>
+    <section class="band alt" id="artefactos" aria-labelledby="artefactos-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Artefactos · Transparencia</span>
+        <h2 id="artefactos-titulo">Artefactos con compromisos explícitos</h2>
+      </div></div>
       <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th scope="col">Artefacto</th><th scope="col">Qué es</th><th scope="col">Compromiso</th><th scope="col">Responsable</th></tr></thead>
+        <table class="table eq">
+          <thead><tr><th scope="col">Artefacto</th><th scope="col">Qué hace visible</th><th scope="col">Compromiso y ejemplo</th></tr></thead>
           <tbody>
-            <tr><td>Product Backlog</td><td>Lista emergente y ordenada de lo necesario para mejorar el producto.</td><td>Product Goal</td><td>Product Owner</td></tr>
-            <tr><td>Sprint Backlog</td><td>Sprint Goal, elementos elegidos y plan para entregar el Incremento.</td><td>Sprint Goal</td><td>Developers</td></tr>
-            <tr><td>Incremento</td><td>Paso concreto hacia el Product Goal; debe ser utilizable.</td><td>Definition of Done</td><td>Scrum Team</td></tr>
+            <tr><td>Product Backlog</td><td>Lista emergente y ordenada de lo necesario para mejorar el producto. El refinamiento añade detalle, orden y tamaño.</td><td>Product Goal: permitir que estudiantes encuentren y reserven cursos.</td></tr>
+            <tr><td>Sprint Backlog</td><td>Plan creado por y para los Developers. Se actualiza al aprender sin poner en riesgo el Sprint Goal.</td><td>Sprint Goal: completar una inscripción con confirmación de plaza.</td></tr>
+            <tr><td>Incremento</td><td>Paso utilizable hacia el Product Goal. Los incrementos se suman y funcionan juntos.</td><td>Definition of Done: código revisado, pruebas acordadas superadas, accesibilidad comprobada y sin defectos críticos conocidos.</td></tr>
           </tbody>
         </table>
       </div>
+      <p class="lead">La Definition of Done define el estado de calidad del Incremento. Un elemento que no la cumple no forma parte del Incremento. Los criterios de aceptación detallan una historia; no reemplazan la DoD.</p>
     </section>
 
-    <section class="section" id="backlog" aria-labelledby="bl-titulo">
-      <div class="section-head">
-        <span class="label">Ejemplo aplicado</span>
-        <h2 id="bl-titulo">Backlog práctico · plataforma de cursos</h2>
-      </div>
-      <div class="note">
-        <strong>Product Goal: que un estudiante pueda inscribirse y completar un curso en línea sin ayuda</strong>
-        <p>Los elementos están ordenados por valor. Los primeros están refinados y listos para un Sprint; los últimos todavía son ideas grandes.</p>
+    <section class="band" id="backlog" aria-labelledby="backlog-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Aplicación · Ordenar por valor y riesgo</span>
+        <h2 id="backlog-titulo">Backlog práctico · plataforma de cursos</h2>
+      </div></div>
+      <div class="info">
+        <strong>Product Goal → Sprint Goal</strong>
+        <p>Meta de producto: facilitar la reserva de cursos. Meta del Sprint: un estudiante puede inscribirse y saber si obtuvo una plaza, sin sobrepasar el cupo disponible.</p>
       </div>
       <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th scope="col">Orden</th><th scope="col">Historia de usuario</th><th scope="col">Estimación</th><th scope="col">Estado</th></tr></thead>
+        <table class="table backlog-table">
+          <thead><tr><th scope="col">Orden</th><th scope="col">Elemento del Product Backlog</th><th scope="col">Criterio de aceptación</th><th scope="col">Selección de ejemplo</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>Como estudiante, quiero registrarme con mi correo para acceder a los cursos.</td><td>3 puntos</td><td>Lista para el Sprint</td></tr>
-            <tr><td>2</td><td>Como estudiante, quiero ver el catálogo filtrado por tema.</td><td>5 puntos</td><td>Lista para el Sprint</td></tr>
-            <tr><td>3</td><td>Como estudiante, quiero inscribirme en un curso con un clic.</td><td>3 puntos</td><td>En refinamiento</td></tr>
-            <tr><td>4</td><td>Como docente, quiero subir videos a una lección.</td><td>8 puntos</td><td>En refinamiento</td></tr>
-            <tr><td>5</td><td>Como estudiante, quiero obtener un certificado al terminar.</td><td>Sin estimar</td><td>Idea (épica)</td></tr>
+            <tr><td>1</td><td>Consultar cursos con plazas disponibles.</td><td>Dado un curso sin plazas, se indica “Completo” y no se ofrece inscripción.</td><td>Incluido en el Sprint</td></tr>
+            <tr><td>2</td><td>Reservar una plaza como estudiante.</td><td>Dos solicitudes simultáneas no pueden ocupar la última plaza a la vez.</td><td>Incluido en el Sprint</td></tr>
+            <tr><td>3</td><td>Ver confirmación de inscripción.</td><td>Tras reservar, se muestra curso, fecha y estado confirmado.</td><td>Incluido en el Sprint</td></tr>
+            <tr><td>4</td><td>Descargar certificado de finalización.</td><td>Solo se ofrece al cumplir las condiciones de finalización acordadas.</td><td>Pendiente: otro Sprint</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="row-between">
-        <p class="text">Compara Scrum con Kanban y otros modelos.</p>
-        <div class="actions"><a class="btn" href="kanban.html">Kanban en profundidad</a><a class="btn primary" href="comparador.html">Ver comparador →</a></div>
-      </div>
+      <p class="fine">Ejemplo educativo, no compromiso real de un equipo. Los Developers negocian el alcance con el Product Owner al aprender; el Sprint Goal mantiene la dirección.</p>
     </section>
-
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="ilustraciones-agiles.html" rel="prev"><span class="label">← Anterior</span><strong>Ilustraciones de Metodologías Ágiles</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="kanban.html" rel="next"><span class="label">Siguiente →</span><strong>Kanban en profundidad</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">

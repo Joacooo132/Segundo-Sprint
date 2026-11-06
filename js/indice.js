@@ -1,6 +1,6 @@
 // Tabla de contenidos dinámica: resalta el enlace de la sección visible (US-07, US-08).
 (() => {
-  const links = [...document.querySelectorAll('.toc-bar a[href^="#"]')];
+  const links = [...document.querySelectorAll('.toc-bar a[href^="#"], .page-index a[href^="#"]')];
   if (!links.length || !('IntersectionObserver' in window)) return;
   const mapa = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
   const obs = new IntersectionObserver((entradas) => {
