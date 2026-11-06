@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="contacto.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -29,110 +30,130 @@
       <a href="calidad.html">Calidad</a>
       <a href="procesos.html">Procesos</a>
       <a href="metodologias-agiles.html">Metodologías</a>
-      <a href="recursos.html">Recursos</a>
+      <a class="active" href="recursos.html" aria-current="page">Recursos</a>
     </nav>
   </header>
 
   <main>
     <section class="intro intro-home">
       <div class="intro-copy">
-        <span class="story-tag">US-17 · Contacto</span>
-        <h1>Envíanos tu consulta o feedback</h1>
-        <p>Cuéntanos qué te resultó útil, qué falta o si encontraste un error. Leemos todos los mensajes para mejorar el sitio.</p>
+        <span class="story-tag">US-17 · Recursos y aprendizaje</span>
+        <h1>Tus preguntas también mejoran el proyecto</h1>
+        <p>Comparte una consulta sobre los contenidos, señala un error o propone una mejora. Cuéntanos qué estabas intentando comprender y en qué sección.</p>
       </div>
       <div class="home-visual">
         <div class="home-orb" aria-hidden="true"></div>
         <aside class="home-card">
           <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Antes de escribir</h2>
-          <p>Tal vez tu duda ya está respondida en las <a href="faq.html"><u>preguntas frecuentes</u></a> o en el <a href="glosario.html"><u>glosario</u></a>.</p>
+          <h2>Conversemos con contexto</h2>
+          <p>Una pregunta concreta y un ejemplo ayudan a entender tu necesidad. No incluyas contraseñas ni información sensible.</p>
         </aside>
       </div>
     </section>
 
-    <section class="section white" aria-labelledby="form-titulo">
-      <div class="section-head">
+    <section class="section white c-band" aria-labelledby="form-titulo">
+      <div class="c-head">
         <span class="label">Formulario de contacto</span>
         <h2 id="form-titulo">Escribe al equipo del proyecto</h2>
-        <p>Los campos marcados con * son obligatorios.</p>
       </div>
-      <div class="contact-layout">
-        <form class="card contact-form" id="form-contacto" novalidate>
-          <div class="success" id="confirmacion" role="status" tabindex="-1" hidden></div>
-          <div class="grid-2">
-            <div class="field">
-              <label for="nombre">Nombre *</label>
-              <input class="input" id="nombre" name="nombre" type="text" autocomplete="name" required maxlength="80" aria-describedby="nombre-error">
-              <p class="error" id="nombre-error" hidden></p>
-            </div>
-            <div class="field">
-              <label for="email">Correo electrónico *</label>
-              <input class="input" id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" aria-describedby="email-error">
-              <p class="error" id="email-error" hidden></p>
-            </div>
+      <div class="c-layout">
+        <form class="c-form" id="form-contacto" novalidate>
+          <p class="c-nota">Los campos marcados con * son obligatorios. Este formulario se representa como un diseño estático.</p>
+
+          <div class="c-field">
+            <label for="nombre">Nombre *</label>
+            <input class="c-input" id="nombre" name="nombre" type="text" autocomplete="name" required maxlength="80" placeholder="Tu nombre" aria-describedby="nombre-ayuda nombre-error">
+            <p class="c-error" id="nombre-error" hidden></p>
+            <p class="c-ayuda" id="nombre-ayuda">Indica cómo prefieres que nos dirijamos a ti.</p>
           </div>
-          <div class="field">
-            <label for="motivo">Motivo *</label>
-            <select class="input" id="motivo" name="motivo" required aria-describedby="motivo-error">
-              <option value="">Selecciona una opción</option>
-              <option>Consulta sobre un tema</option>
-              <option>Sugerencia de contenido</option>
-              <option>Reporte de error</option>
-              <option>Feedback general</option>
-            </select>
-            <p class="error" id="motivo-error" hidden></p>
+
+          <div class="c-field">
+            <label for="email">Correo electrónico *</label>
+            <input class="c-input" id="email" name="email" type="email" autocomplete="email" required placeholder="estudiante@ejemplo.com" aria-describedby="email-ayuda email-error">
+            <p class="c-error" id="email-error" hidden></p>
+            <p class="c-ayuda" id="email-ayuda">Usa un correo con formato nombre@dominio.com para poder recibir una respuesta.</p>
           </div>
-          <div class="field">
+
+          <div class="c-field">
+            <label for="tipo">Tipo de consulta *</label>
+            <div class="c-select">
+              <select class="c-input" id="tipo" name="tipo" required aria-describedby="tipo-ayuda tipo-error">
+                <option value="">Selecciona una opción</option>
+                <option>Consulta de contenido</option>
+                <option>Corrección</option>
+                <option>Sugerencia</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <p class="c-error" id="tipo-error" hidden></p>
+            <p class="c-ayuda" id="tipo-ayuda">Consulta de contenido · Corrección · Sugerencia · Otro</p>
+          </div>
+
+          <div class="c-field">
+            <label for="asunto">Asunto *</label>
+            <input class="c-input" id="asunto" name="asunto" type="text" required maxlength="120" placeholder="Resume tu consulta en una frase" aria-describedby="asunto-error">
+            <p class="c-error" id="asunto-error" hidden></p>
+          </div>
+
+          <div class="c-field">
             <label for="mensaje">Mensaje *</label>
-            <textarea class="input" id="mensaje" name="mensaje" required minlength="10" maxlength="1000" aria-describedby="mensaje-ayuda mensaje-error"></textarea>
-            <p class="text-sm" id="mensaje-ayuda"><span id="mensaje-cuenta">0</span> / 1000 caracteres · mínimo 10</p>
-            <p class="error" id="mensaje-error" hidden></p>
+            <textarea class="c-input" id="mensaje" name="mensaje" required minlength="10" maxlength="1000" placeholder="Incluye la sección, tu pregunta y un ejemplo si es necesario." aria-describedby="mensaje-ayuda mensaje-error"></textarea>
+            <p class="c-error" id="mensaje-error" hidden></p>
+            <p class="c-ayuda" id="mensaje-ayuda">Describe el contexto. No compartas datos privados de otras personas.</p>
           </div>
-          <label class="check-option">
-            <input type="checkbox" id="acepto" name="acepto" required aria-describedby="acepto-error">
-            <span class="box" aria-hidden="true">✓</span>
-            <span>Acepto que el equipo use mi correo solo para responder esta consulta *</span>
-          </label>
-          <p class="error" id="acepto-error" hidden></p>
-          <div class="actions">
-            <button class="btn primary" type="submit">Enviar mensaje</button>
-            <button class="btn" type="reset">Borrar</button>
-          </div>
+
+          <div class="c-exito" id="confirmacion" role="status" tabindex="-1" hidden></div>
+
+          <button class="c-btn" type="submit">Enviar mensaje <span aria-hidden="true">→</span></button>
+          <p class="c-ayuda">La acción Enviar es solo visual: este diseño no transmite ni almacena mensajes.</p>
         </form>
-        <aside class="contact-aside">
-          <div class="tile"><h3>Consultas</h3><p>Dudas sobre un concepto o cómo aplicarlo en un proyecto.</p></div>
-          <div class="tile"><h3>Sugerencias</h3><p>Temas, términos o ejercicios que te gustaría ver en el sitio.</p></div>
-          <div class="tile"><h3>Errores</h3><p>Indica la página y qué esperabas ver. Nos ayuda a corregir rápido.</p></div>
+
+        <aside class="c-aside">
+          <div class="c-box pale">
+            <h3>¿Qué puedes compartir?</h3>
+            <p>• Una duda sobre un concepto o diagrama. • Una inconsistencia en un ejemplo. • Una barrera de lectura o accesibilidad. • Un recurso o ejercicio que te gustaría encontrar.</p>
+          </div>
+          <div class="c-box">
+            <h3>Quizá ya tengamos una guía</h3>
+            <p>Consulta primero el glosario y las preguntas frecuentes para ubicar términos y dudas comunes.</p>
+            <a class="c-link" href="faq.html">Ver preguntas frecuentes <span aria-hidden="true">→</span></a>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="estados-titulo">
-      <div class="section-head">
-        <span class="label">Estados de muestra</span>
+    <section class="section c-band c-estados" aria-labelledby="estados-titulo">
+      <div class="c-head">
+        <span class="label">Demostración visual · no corresponde a un envío real</span>
         <h2 id="estados-titulo">Estados de muestra del formulario</h2>
       </div>
-      <div class="grid-2">
-        <div class="card">
-          <span class="label">Error de validación</span>
-          <div class="field">
-            <label for="muestra-email">Correo electrónico *</label>
-            <input class="input invalid" id="muestra-email" type="text" value="usuario@correo" readonly aria-describedby="muestra-error">
-            <p class="error" id="muestra-error">Escribe un correo válido, por ejemplo nombre@dominio.com.</p>
+      <div class="c-grid-2">
+        <div class="c-card">
+          <span class="label c-mini">Muestra A · Campos con error</span>
+          <h3>Revisa los datos indicados</h3>
+          <div class="c-field">
+            <label for="muestra-nombre">Nombre *</label>
+            <input class="c-input invalid" id="muestra-nombre" type="text" value="Sin completar" readonly aria-invalid="true" aria-describedby="muestra-nombre-error">
+            <p class="c-error" id="muestra-nombre-error"><span aria-hidden="true">▲</span> Escribe tu nombre. Este campo es obligatorio.</p>
           </div>
+          <div class="c-field">
+            <label for="muestra-email">Correo electrónico *</label>
+            <input class="c-input invalid" id="muestra-email" type="text" value="estudiante@" readonly aria-invalid="true" aria-describedby="muestra-email-error">
+            <p class="c-error" id="muestra-email-error"><span aria-hidden="true">▲</span> Introduce un correo válido, por ejemplo: nombre@dominio.com.</p>
+          </div>
+          <p class="c-ayuda">El borde, el ícono y el texto identifican el error sin depender solo del color. El resto de los campos conserva su contenido.</p>
         </div>
-        <div class="card">
-          <span class="label">Confirmación</span>
-          <div class="success"><strong>¡Gracias, Ana!</strong> Recibimos tu mensaje sobre «Sugerencia de contenido». Te responderemos a ana@correo.com.</div>
+        <div class="c-card">
+          <span class="label c-mini">Muestra B · Confirmación hipotética</span>
+          <div class="c-exito">
+            <strong><span aria-hidden="true">✓</span> Mensaje recibido · ejemplo de estado final</strong>
+            <p>En una implementación funcional, aquí se confirmaría la recepción del mensaje. Esta muestra no indica que se haya enviado ningún dato.</p>
+          </div>
+          <p class="c-texto">El mensaje de confirmación debe ser claro y no prometer un plazo de respuesta que el equipo no haya acordado.</p>
+          <a class="c-btn outline" href="#form-titulo">Escribir otro mensaje</a>
         </div>
       </div>
     </section>
-
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="nosotros.html" rel="prev"><span class="label">← Anterior</span><strong>Sobre Nosotros</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="index.html" rel="next"><span class="label">Siguiente →</span><strong>Volver al inicio</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">
