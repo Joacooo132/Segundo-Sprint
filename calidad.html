@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Esta sección reúne los pilares fundamentales de la calidad del software. Aprendé a evaluar si un producto es confiable y cómo mejorar su proceso.">
+  <meta name="description" content="Conceptos clave de calidad del software, métricas, estándares ISO, niveles y técnicas de prueba, y herramientas de calidad.">
   <title>Calidad | Sistema de Gestión de Calidad</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,18 +36,18 @@
     </nav>
   </header>
 
-  <section class="intro intro-home">
+  <section class="intro intro-home intro-cal">
     <div class="intro-copy">
       <span class="story-tag">US-02 · fundamentos de calidad</span>
       <h1>Conceptos clave de calidad, métricas y estándares</h1>
-      <p>Esta sección reúne los pilares fundamentales de la calidad del software. Aprendé a evaluar si un producto es confiable y cómo mejorar su proceso.</p>
+      <p>Esta sección cubre los pilares fundamentales de la calidad del software. Aprende la diferencia entre asegurar la calidad del producto y del proceso, cómo medir la fiabilidad y qué estándares rigen la industria informática internacional.</p>
     </div>
     <div class="home-visual">
       <div class="home-orb" aria-hidden="true"></div>
       <aside class="home-card">
-        <span class="home-symbol" aria-hidden="true">♧</span>
+        <svg class="home-symbol-svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
         <h2>Modelos de Calidad</h2>
-        <p>Criterios para medir, evaluar y mejorar la calidad del software.</p>
+        <p>Guía práctica para entender y certificar la fiabilidad del software que desarrollamos.</p>
       </aside>
     </div>
   </section>
@@ -57,7 +57,6 @@
     <div class="chips">
       <a class="chip" href="#conceptos">Conceptos</a>
       <a class="chip" href="#metricas">Métricas</a>
-      <a class="chip" href="#mejora">Mejora continua</a>
       <a class="chip" href="#iso">Estándares ISO</a>
       <a class="chip" href="#niveles">Niveles de prueba</a>
       <a class="chip" href="#cajas">Caja negra y blanca</a>
@@ -66,67 +65,56 @@
     </div>
   </nav>
 
-  <main>
-    <section id="conceptos">
-    <div class="section-head">
-      <div>
-        <div class="kicker">BASES CONCEPTUALES</div>
-        <h2>Conceptos clave de calidad</h2>
-      </div>
-      <p>La calidad se construye con principios, mediciones y prácticas que se aplican en cada etapa.</p>
-    </div>
-
-    <div class="grid">
-      <a class="card" href="#metricas">
-        <span class="tag">PRODUCTO</span>
-        <div class="icon">◈</div>
-        <h3>Calidad del Producto</h3>
-        <p>Evalúa si el software satisface los requisitos y las necesidades del usuario.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#metricas">
-        <span class="tag">PROCESO</span>
-        <div class="icon">⌁</div>
-        <h3>Calidad del Proceso</h3>
-        <p>Mide la solidez del trabajo y la capacidad del equipo para entregar valor.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="tecnicas.html">
-        <span class="tag">VERIFICACIÓN</span>
-        <div class="icon">✓</div>
-        <h3>Verificación y Validación</h3>
-        <p>Comprueba que el producto cumple requisitos y resuelve el problema correcto.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="herramientas.html">
-        <span class="tag">PREVENCIÓN</span>
-        <div class="icon">⚒</div>
-        <h3>Gestión de Defectos</h3>
-        <p>Detecta, registra, analiza y prioriza defectos para reducir riesgos.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#mejora">
-        <span class="tag">ENFOQUE</span>
-        <div class="icon">↻</div>
-        <h3>Mejora Continua</h3>
-        <p>Usa resultados y retroalimentación para perfeccionar el proceso.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-      <a class="card" href="#metricas">
-        <span class="tag">INDICADORES</span>
-        <div class="icon">▥</div>
-        <h3>Métricas de Calidad</h3>
-        <p>Convierte datos en información útil para tomar decisiones.</p>
-        <span class="explore">Explorar sección →</span>
-      </a>
-    </div>
-
-    </section>
-
-    <section id="metricas" class="metricas" aria-labelledby="metricas-titulo">
-      <div class="section-head">
+  <main class="cal-main">
+  <section class="cal-band" id="conceptos" aria-labelledby="conceptos-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
         <div>
-          <div class="kicker">INDICADORES CLAVE</div>
+          <span class="cal-kicker">BASES CONCEPTUALES</span>
+          <h2 id="conceptos-titulo">Conceptos Clave de Calidad</h2>
+        </div>
+        <p>Fundamentos que diferencian el aseguramiento técnico y los principios organizacionales de software.</p>
+      </div>
+      <div class="cal-grid-3">
+        <article class="cal-card concepto">
+          <div class="concepto-top"><span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 14 2 2 4-4"/></svg></span><span class="concepto-tag">Producto</span></div>
+          <h3>Calidad del Producto</h3>
+          <p class="cal-text">Evaluación de las características intrínsecas del software terminado: funcionalidad, usabilidad, rendimiento y seguridad.</p>
+        </article>
+        <article class="cal-card concepto">
+          <div class="concepto-top"><span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span><span class="concepto-tag">Proceso</span></div>
+          <h3>Calidad del Proceso</h3>
+          <p class="cal-text">Mejora de las actividades de ingeniería y ciclo de vida para prevenir defectos antes de que ocurran en el desarrollo.</p>
+        </article>
+        <article class="cal-card concepto">
+          <div class="concepto-top"><span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 5-5"/></svg></span><span class="concepto-tag">Ingeniería</span></div>
+          <h3>Verificación y Validación</h3>
+          <p class="cal-text">V&amp;V asegura que construimos el producto correctamente según especificaciones, y que cumple con las necesidades reales.</p>
+        </article>
+        <article class="cal-card concepto">
+          <div class="concepto-top"><span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 3M15 4l-1.5 3M8 11H4M20 11h-4M8 15H5M19 15h-3M12 11v7"/></svg></span><span class="concepto-tag">Mantenimiento</span></div>
+          <h3>Gestión de Defectos</h3>
+          <p class="cal-text">Detección, registro, análisis de causa raíz y resolución sistemática de anomalías de software en ciclos ágiles y tradicionales.</p>
+        </article>
+        <article class="cal-card concepto">
+          <div class="concepto-top"><span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"/><path d="M20 20v-4h-4"/></svg></span><span class="concepto-tag">Estrategia</span></div>
+          <h3>Mejora Continua</h3>
+          <p class="cal-text">Modelos de evolución constante como el ciclo PDCA (Plan-Do-Check-Act) para madurar constantemente los flujos técnicos.</p>
+        </article>
+        <article class="cal-card concepto">
+          <div class="concepto-top"><span class="cal-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20v-6M12 20V8M18 20v-9"/></svg></span><span class="concepto-tag">Gobernanza</span></div>
+          <h3>Métricas de Calidad</h3>
+          <p class="cal-text">Medidas cuantitativas que permiten objetivar el nivel de excelencia del desarrollo en base a datos reales y repetibles.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+    <section id="metricas" class="metricas cal-band alt" aria-labelledby="metricas-titulo">
+    <div class="cal-wrap">
+      <div class="cal-head">
+        <div>
+          <span class="cal-kicker">INDICADORES CLAVE</span>
           <h2 id="metricas-titulo">Métricas de Calidad del Software</h2>
         </div>
         <p>Cómo cuantificar el rendimiento, la robustez y la excelencia operativa de un equipo técnico.</p>
@@ -166,42 +154,19 @@
           <p class="metrica-texto">Tiempo medio entre fallos consecutivos del sistema bajo cargas nominales normales de producción.</p>
         </article>
       </div>
+    </div>
     </section>
-
-
-    <section id="mejora">
-      <div class="section-head">
-        <div>
-          <div class="kicker">MEJORA CONTINUA</div>
-          <h2>Cómo mejorar la calidad</h2>
-        </div>
-      </div>
-
-      <div class="steps">
-        <article class="step">
-          <div class="num">PASO 01</div>
-          <h3>Definir criterios</h3>
-          <p>Establecer requisitos y condiciones de aceptación claras.</p>
-        </article>
-        <article class="step">
-          <div class="num">PASO 02</div>
-          <h3>Medir resultados</h3>
-          <p>Usar pruebas e indicadores para reconocer problemas.</p>
-        </article>
-        <article class="step">
-          <div class="num">PASO 03</div>
-          <h3>Aplicar mejoras</h3>
-          <p>Priorizar cambios, revisar su efecto y volver a medir.</p>
-        </article>
-      </div>
-    </section>
-
-  </main>
 
   <!-- ===== Estándares ISO (pestañas) ===== -->
   <section class="cal-band" id="iso" aria-labelledby="iso-titulo">
     <div class="cal-wrap">
-      <h2 class="sr-only" id="iso-titulo">Estándares ISO de calidad</h2>
+      <div class="cal-head center">
+        <div>
+          <span class="cal-kicker">CERTIFICACIONES INTERNACIONALES</span>
+          <h2 id="iso-titulo">Estándares ISO de Calidad</h2>
+          <p>Explora los modelos internacionales estándar que definen, regulan y auditan la calidad integral de los productos informáticos.</p>
+        </div>
+      </div>
       <div class="iso-tabs" role="tablist" aria-label="Estándares ISO">
         <button class="iso-tab" type="button" role="tab" id="tab-9126" aria-controls="panel-9126" aria-selected="true">ISO/IEC 9126 (Modelo Activo)</button>
         <button class="iso-tab" type="button" role="tab" id="tab-25000" aria-controls="panel-25000" aria-selected="false" tabindex="-1">ISO/IEC 25000 (SQuaRE)</button>
@@ -471,6 +436,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="site-footer">
     <div class="footer-info">

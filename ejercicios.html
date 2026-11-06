@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ejercicios y casos prácticos de calidad, procesos y metodologías ágiles con soluciones desplegables.">
+  <meta name="description" content="Cuatro desafíos sobre formas de trabajo, niveles de prueba, Product Backlog y límites WIP, con pauta de evaluación y solución desplegable.">
   <title>Ejercicios y casos prácticos | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -34,110 +35,93 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
         <span class="story-tag">US-15 · Recursos y aprendizaje</span>
-        <h1>Ejercicios y casos prácticos</h1>
-        <p>Aplica lo aprendido en situaciones reales: elige un desafío, piensa tu respuesta y después compárala con la solución.</p>
+        <h1>Aprende tomando decisiones</h1>
+        <p>Aplica la teoría a situaciones concretas. Escribe tu razonamiento antes de consultar una solución y usa la pauta para revisar la calidad de tu respuesta.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Primero piensa, luego revisa</h2>
-          <p>Las soluciones están ocultas. Escribe tu respuesta antes de pulsar «Mostrar solución».</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Practicar, no memorizar</h2>
+        <p>Cuatro desafíos con criterios claros. Los tiempos son orientativos y no hay una calificación automática.</p>
+      </aside>
     </section>
 
-    <section class="section white" aria-labelledby="ej-titulo">
-      <div class="section-head">
-        <span class="label">Práctica guiada</span>
+    <section class="band alt" aria-labelledby="ej-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Ejercicios principales · soluciones cerradas</span>
         <h2 id="ej-titulo">Elige un desafío y argumenta tu respuesta</h2>
-      </div>
-      <div class="chips" role="group" aria-label="Filtrar ejercicios por tema" id="temas">
-        <button class="chip" type="button" data-tema="todos" aria-pressed="true">Todos</button>
-        <button class="chip" type="button" data-tema="calidad" aria-pressed="false">Calidad</button>
-        <button class="chip" type="button" data-tema="procesos" aria-pressed="false">Procesos</button>
-        <button class="chip" type="button" data-tema="agil" aria-pressed="false">Agilidad</button>
+      </div></div>
+      <div class="chips" id="temas" role="group" aria-label="Filtrar por nivel">
+        <button class="chip" type="button" data-tema="todos" aria-pressed="true">Todos los ejercicios</button>
+        <button class="chip" type="button" data-tema="inicial" aria-pressed="false">Inicial</button>
+        <button class="chip" type="button" data-tema="intermedio" aria-pressed="false">Intermedio</button>
       </div>
       <div class="grid-2" id="ejercicios">
-        <article class="card" data-tema="calidad">
-          <div class="meta"><span class="pill">Calidad</span><span class="pill">Nivel inicial</span></div>
-          <h3>1 · ¿Verificación o validación?</h3>
-          <p>Clasifica cada actividad: (a) revisar que el código cumpla el estándar del equipo; (b) mostrar un prototipo a usuarios para ver si resuelve su problema; (c) ejecutar pruebas unitarias.</p>
-          <button class="btn" type="button" data-sol="sol1" aria-expanded="false" aria-controls="sol1">Mostrar solución</button>
-          <div class="solution" id="sol1" hidden><strong>Solución</strong><p>(a) Verificación: se comprueba contra una especificación. (b) Validación: se comprueba que es lo que el usuario necesita. (c) Verificación: el código cumple lo especificado para cada unidad.</p></div>
+        <article class="ex-card" data-tema="intermedio">
+          <span class="mini">Intermedio · 15 min sugeridos</span>
+          <h3>Elegir una forma de trabajo</h3>
+          <span class="obj">Objetivo de aprendizaje</span>
+          <p>Relacionar contexto, incertidumbre y cadencia.</p>
+          <h4>Tu desafío</h4>
+          <p class="reto">Un equipo estable crea un portal educativo. Los docentes pueden revisar avances cada dos semanas y los requisitos cambiarán tras probarlo con estudiantes. Elige entre Cascada, Scrum y Kanban. Justifica tu elección y explica una limitación.</p>
+          <div class="pauta"><strong>Pauta de evaluación</strong><p>Debe usar al menos dos datos del contexto y reconocer un riesgo de la opción elegida. No basta decir “es más ágil”.</p></div>
+          <div class="solution" id="sol-1" hidden><p><strong>Una respuesta posible: Scrum.</strong> El equipo es estable, los docentes pueden revisar cada dos semanas (Sprints de 2 semanas con Review) y los requisitos cambiarán al probar con estudiantes, algo que Cascada absorbe mal.</p><p><strong>Limitación:</strong> exige que alguien asuma el rol de Product Owner y ordene el backlog con los docentes; sin esa disponibilidad, las Reviews pierden valor.</p></div>
+          <div class="ex-foot"><span class="estado" aria-live="polite">Solución oculta</span><button class="btn sm" type="button" data-sol="sol-1" aria-expanded="false" aria-controls="sol-1">Mostrar solución +</button></div>
         </article>
-        <article class="card" data-tema="calidad">
-          <div class="meta"><span class="pill">Calidad</span><span class="pill">Nivel intermedio</span></div>
-          <h3>2 · Partición de equivalencia</h3>
-          <p>Un campo acepta edades entre 18 y 65 años. Propón los casos de prueba mínimos usando particiones de equivalencia y valores límite.</p>
-          <button class="btn" type="button" data-sol="sol2" aria-expanded="false" aria-controls="sol2">Mostrar solución</button>
-          <div class="solution" id="sol2" hidden><strong>Solución</strong><p>Particiones: menor de 18 (inválida), 18–65 (válida), mayor de 65 (inválida). Valores límite: 17, 18, 65 y 66. Un conjunto mínimo razonable: 17, 18, 40, 65 y 66.</p></div>
+        <article class="ex-card" data-tema="inicial">
+          <span class="mini">Inicial · 10 min sugeridos</span>
+          <h3>Clasificar niveles de prueba</h3>
+          <span class="obj">Objetivo de aprendizaje</span>
+          <p>Distinguir unidad, integración, sistema y aceptación.</p>
+          <h4>Tu desafío</h4>
+          <p class="reto">Clasifica: A) calcular un descuento en una función aislada; B) guardar una inscripción desde la API en la base de datos; C) recorrer la inscripción completa en el portal; D) un docente comprueba que el proceso cubre su necesidad. Explica el alcance de cada prueba.</p>
+          <div class="pauta"><strong>Pauta de evaluación</strong><p>Identifica los cuatro niveles y justifica con la unidad evaluada, las conexiones o la necesidad del usuario.</p></div>
+          <div class="solution" id="sol-2" hidden><p><strong>A · Unitaria:</strong> una función aislada. <strong>B · Integración:</strong> la conexión entre API y base de datos. <strong>C · Sistema:</strong> el recorrido completo del producto. <strong>D · Aceptación:</strong> el usuario confirma que resuelve su necesidad.</p></div>
+          <div class="ex-foot"><span class="estado" aria-live="polite">Solución oculta</span><button class="btn sm" type="button" data-sol="sol-2" aria-expanded="false" aria-controls="sol-2">Mostrar solución +</button></div>
         </article>
-        <article class="card" data-tema="procesos">
-          <div class="meta"><span class="pill">Procesos</span><span class="pill">Caso práctico</span></div>
-          <h3>3 · Sistema para un laboratorio</h3>
-          <p>Un laboratorio necesita un sistema regulado. Los requisitos están definidos por normativa y cada uno debe demostrar que fue probado. ¿Qué modelo propondrías?</p>
-          <button class="btn" type="button" data-sol="sol3" aria-expanded="false" aria-controls="sol3">Mostrar solución</button>
-          <div class="solution" id="sol3" hidden><strong>Solución</strong><p>El Modelo en V encaja bien: los requisitos son estables y exige trazabilidad entre cada requisito y su prueba. Cascada también sería posible, pero el V planifica la verificación desde el inicio.</p></div>
+        <article class="ex-card" data-tema="intermedio">
+          <span class="mini">Intermedio · 20 min sugeridos</span>
+          <h3>Priorizar un Product Backlog</h3>
+          <span class="obj">Objetivo de aprendizaje</span>
+          <p>Ordenar por valor, riesgo y dependencias.</p>
+          <h4>Tu desafío</h4>
+          <p class="reto">Meta: permitir una inscripción segura. Ordena: consultar plazas; reservar sin duplicados; confirmar inscripción; cambiar el color del perfil; emitir certificado. El error de cupo es el mayor riesgo y el certificado requiere terminar un curso. Propón un Sprint Goal y un primer alcance coherente.</p>
+          <div class="pauta"><strong>Pauta de evaluación</strong><p>El orden protege cupos y habilita un recorrido útil. El Sprint Goal describe un resultado, no una lista de tareas; se reconocen dependencias.</p></div>
+          <div class="solution" id="sol-3" hidden><p><strong>Orden:</strong> 1) consultar plazas, 2) reservar sin duplicados, 3) confirmar inscripción, 4) emitir certificado, 5) cambiar el color del perfil.</p><p><strong>Sprint Goal:</strong> “Un estudiante puede reservar una plaza sin superar el cupo y recibir la confirmación”. Alcance: elementos 1 a 3.</p></div>
+          <div class="ex-foot"><span class="estado" aria-live="polite">Solución oculta</span><button class="btn sm" type="button" data-sol="sol-3" aria-expanded="false" aria-controls="sol-3">Mostrar solución +</button></div>
         </article>
-        <article class="card" data-tema="procesos">
-          <div class="meta"><span class="pill">Procesos</span><span class="pill">Nivel inicial</span></div>
-          <h3>4 · Ordena las fases</h3>
-          <p>Ordena las fases del ciclo de vida en cascada: Pruebas, Requisitos, Mantenimiento, Implementación, Diseño.</p>
-          <button class="btn" type="button" data-sol="sol4" aria-expanded="false" aria-controls="sol4">Mostrar solución</button>
-          <div class="solution" id="sol4" hidden><strong>Solución</strong><p>Requisitos → Diseño → Implementación → Pruebas → Mantenimiento.</p></div>
-        </article>
-        <article class="card" data-tema="agil">
-          <div class="meta"><span class="pill">Agilidad</span><span class="pill">Caso práctico</span></div>
-          <h3>5 · La Daily se alarga</h3>
-          <p>La Daily Scrum de un equipo dura 45 minutos y cada persona le reporta al Scrum Master. ¿Qué está fallando y qué propondrías?</p>
-          <button class="btn" type="button" data-sol="sol5" aria-expanded="false" aria-controls="sol5">Mostrar solución</button>
-          <div class="solution" id="sol5" hidden><strong>Solución</strong><p>La Daily es de 15 minutos y es para los Developers, no un reporte. Propuesta: centrarla en el avance hacia el Sprint Goal, mover los temas técnicos a reuniones aparte y que el Scrum Master facilite sin dirigir.</p></div>
-        </article>
-        <article class="card" data-tema="agil">
-          <div class="meta"><span class="pill">Agilidad</span><span class="pill">Nivel intermedio</span></div>
-          <h3>6 · Demasiado trabajo empezado</h3>
-          <p>En un tablero Kanban hay 9 tarjetas «En proceso» para 3 personas y casi nada llega a «Hecho». ¿Qué harías?</p>
-          <button class="btn" type="button" data-sol="sol6" aria-expanded="false" aria-controls="sol6">Mostrar solución</button>
-          <div class="solution" id="sol6" hidden><strong>Solución</strong><p>Fijar un límite WIP (por ejemplo, 3 o 4), dejar de empezar tareas nuevas y ayudar a terminar las iniciadas. Luego medir el tiempo de ciclo para ver si mejora el flujo.</p></div>
+        <article class="ex-card" data-tema="intermedio">
+          <span class="mini">Intermedio · 15 min sugeridos</span>
+          <h3>Interpretar un cuello de botella WIP</h3>
+          <span class="obj">Objetivo de aprendizaje</span>
+          <p>Decidir cómo mejorar el flujo sin iniciar más trabajo.</p>
+          <h4>Tu desafío</h4>
+          <p class="reto">Un tablero tiene 5 tarjetas en Por hacer, 3 en En proceso (límite WIP 3) y 4 en Hecho. Dos tarjetas en proceso esperan entorno de pruebas desde hace 2 días. ¿Entra otra tarea? Describe una acción inmediata y una métrica para revisar la mejora.</p>
+          <div class="pauta"><strong>Pauta de evaluación</strong><p>Respeta WIP; los bloqueos siguen contando. Propone actuar sobre la causa y una métrica de flujo, sin confundir productividad con ocupación.</p></div>
+          <div class="solution" id="sol-4" hidden><p><strong>No entra otra tarea:</strong> En proceso está en 3 / 3 y las bloqueadas cuentan como WIP. <strong>Acción:</strong> resolver el acceso al entorno o colaborar en las pruebas. <strong>Métrica:</strong> antigüedad de las tarjetas y cycle time.</p></div>
+          <div class="ex-foot"><span class="estado" aria-live="polite">Solución oculta</span><button class="btn sm" type="button" data-sol="sol-4" aria-expanded="false" aria-controls="sol-4">Mostrar solución +</button></div>
         </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="muestra-titulo">
-      <div class="section-head">
-        <span class="label">Ejemplo de respuesta completa</span>
+    <section class="band" aria-labelledby="muestra-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Estado de muestra · independiente de los ejercicios cerrados</span>
         <h2 id="muestra-titulo">Así se muestra una solución desarrollada</h2>
-      </div>
-      <article class="card">
-        <div class="meta"><span class="pill">Agilidad</span><span class="pill">Caso integrador</span></div>
-        <h3>Una startup lanza una app de turnos médicos</h3>
-        <p>El equipo tiene 6 personas, el cliente cambia prioridades cada semana tras probar la app y necesitan publicar mejoras cada dos semanas. ¿Qué enfoque recomendarías y cómo cuidarías la calidad?</p>
-        <div class="solution">
-          <strong>Pauta de evaluación</strong>
-          <ul class="list">
-            <li><b>Enfoque:</b> Scrum con Sprints de 2 semanas, porque hay incertidumbre, requisitos cambiantes y entregas regulares.</li>
-            <li><b>Roles:</b> un Product Owner que ordena el backlog con el cliente; un Scrum Master; Developers multifuncionales.</li>
-            <li><b>Calidad:</b> Definition of Done con pruebas automatizadas, revisión de código e integración continua (prácticas de XP).</li>
-            <li><b>Feedback:</b> Sprint Review con usuarios reales para ajustar prioridades.</li>
-            <li><b>Argumento:</b> una buena respuesta explica por qué otro enfoque (por ejemplo, Cascada) encajaría menos.</li>
-          </ul>
+      </div></div>
+      <div class="sol-sample">
+        <div class="row-between"><h3>Ejemplo · cuello de botella WIP</h3><span class="zs-x" aria-hidden="true" style="color:var(--blue)">−</span></div>
+        <p>No entra una nueva tarjeta: En proceso ya está en 3 / 3 y las dos bloqueadas cuentan como trabajo iniciado. Aumentar WIP escondería la espera y añadiría multitarea.</p>
+        <div class="grid-3">
+          <div><strong>Acción inmediata</strong><p>Resolver el acceso al entorno o colaborar en las pruebas de las tarjetas ya iniciadas antes de tirar de otra tarea.</p></div>
+          <div><strong>Experimento de mejora</strong><p>Preparar el entorno antes de iniciar y registrar los bloqueos. Revisar el acuerdo en una semana.</p></div>
+          <div><strong>Evidencia a observar</strong><p>Seguir antigüedad de tarjetas y cycle time. Comprobar si se reduce la espera sin aumentar defectos.</p></div>
         </div>
-      </article>
-      <div class="row-between">
-        <p class="text">¿Quieres orientación para tu propio proyecto?</p>
-        <div class="actions"><a class="btn" href="comparador.html">Ver comparador</a><a class="btn primary" href="encuesta.html">Hacer la encuesta →</a></div>
+        <p class="fine">También son válidas otras acciones si actúan sobre la causa del atasco y respetan la política acordada. La solución es una guía de razonamiento, no una respuesta universal.</p>
       </div>
     </section>
-
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="enlaces.html" rel="prev"><span class="label">← Anterior</span><strong>Enlaces de interés</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="comparador.html" rel="next"><span class="label">Siguiente →</span><strong>Comparador de metodologías</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">

@@ -1,75 +1,51 @@
-// US-10 · Cronograma interactivo del Sprint (1 a 4 semanas).
-// Duraciones máximas de la Guía de Scrum para un Sprint de un mes, escaladas proporcionalmente.
+// US-10 · Cronograma de referencia: cada semana del Sprint muestra el evento que la caracteriza.
 (() => {
-  const EVENTOS = {
-    planning: {
-      nombre: 'Sprint Planning', cuando: 'Día 1 · al inicio del Sprint', maxMes: 8, unidad: 'h',
-      objetivo: 'El Scrum Team define por qué el Sprint es valioso (Sprint Goal), qué elementos del Product Backlog se pueden terminar y cómo se hará el trabajo.',
-      quienes: 'Todo el Scrum Team', salida: 'Sprint Goal y Sprint Backlog', dias: (n) => [1],
+  const SEMANAS = {
+    1: {
+      label: 'Evento seleccionado · Sprint Planning',
+      titulo: '¿Por qué es valioso este Sprint y cómo lo lograremos?',
+      texto: 'Todo el Scrum Team acuerda un Sprint Goal, selecciona trabajo del Product Backlog y define un plan inicial. Los Developers deciden cuánto pueden realizar según capacidad, desempeño pasado y Definition of Done.',
+      resultado: 'Sprint Backlog: objetivo, elementos seleccionados y plan de entrega.',
+      max: 'Máximo 8 horas', maxTexto: 'Para un Sprint de un mes; normalmente menos para Sprints más cortos.',
     },
-    daily: {
-      nombre: 'Daily Scrum', cuando: 'Cada día, a la misma hora y lugar', fijo: '15 min',
-      objetivo: 'Los Developers inspeccionan el avance hacia el Sprint Goal y adaptan el Sprint Backlog. No es una reunión de reporte al jefe.',
-      quienes: 'Developers', salida: 'Plan para las próximas 24 h', dias: (n) => Array.from({ length: n }, (_, i) => i + 1),
+    2: {
+      label: 'Evento seleccionado · Daily Scrum',
+      titulo: '¿Cómo avanzamos hoy hacia el Sprint Goal?',
+      texto: 'Los Developers construyen y prueban los elementos seleccionados. Cada día inspeccionan el avance y adaptan el Sprint Backlog; los impedimentos se hacen visibles para resolverlos pronto.',
+      resultado: 'Plan actualizado para el siguiente día de trabajo y trabajo que cumple la Definition of Done.',
+      max: 'Máximo 15 minutos', maxTexto: 'Cada día de trabajo, a la misma hora y en el mismo lugar.',
     },
-    refinement: {
-      nombre: 'Refinamiento del Product Backlog', cuando: 'Actividad continua durante el Sprint', fijo: '≈10 % de la capacidad',
-      objetivo: 'Dividir y detallar elementos del Product Backlog, agregar descripciones, orden y estimaciones, para que estén listos para próximos Sprints.',
-      quienes: 'Product Owner y Developers', salida: 'Elementos listos para planificar', dias: (n) => Array.from({ length: n }, (_, i) => i + 1).filter((d) => d % 5 === 3),
+    3: {
+      label: 'Actividad seleccionada · Refinamiento',
+      titulo: '¿Qué debemos ajustar para cumplir el objetivo?',
+      texto: 'El equipo integra lo construido y adapta el plan sin poner en riesgo el Sprint Goal. En paralelo, Product Owner y Developers refinan elementos del Product Backlog para próximos Sprints.',
+      resultado: 'Incremento integrado y elementos del Product Backlog más claros, ordenados y estimados.',
+      max: 'Actividad continua', maxTexto: 'No es un evento formal; suele ocupar una parte pequeña de la capacidad.',
     },
-    review: {
-      nombre: 'Sprint Review', cuando: 'Último día · antes de la Retrospective', maxMes: 4, unidad: 'h',
-      objetivo: 'Inspeccionar el resultado del Sprint con los interesados y decidir las próximas adaptaciones. Es una sesión de trabajo, no una presentación.',
-      quienes: 'Scrum Team e interesados', salida: 'Product Backlog actualizado', dias: (n) => [n],
-    },
-    retro: {
-      nombre: 'Sprint Retrospective', cuando: 'Último día · cierra el Sprint', maxMes: 3, unidad: 'h',
-      objetivo: 'Revisar cómo fue el Sprint en personas, interacciones, procesos, herramientas y Definition of Done, y acordar mejoras concretas.',
-      quienes: 'Todo el Scrum Team', salida: 'Mejoras para el próximo Sprint', dias: (n) => [n],
+    4: {
+      label: 'Eventos seleccionados · Sprint Review y Retrospective',
+      titulo: '¿Qué logramos y cómo trabajaremos mejor?',
+      texto: 'En la Review, el equipo y los interesados inspeccionan el Incremento y adaptan el Product Backlog. En la Retrospective, el Scrum Team acuerda mejoras de calidad y eficacia para el siguiente Sprint.',
+      resultado: 'Product Backlog adaptado y mejoras concretas para el próximo Sprint.',
+      max: 'Máximo 4 h + 3 h', maxTexto: 'Review y Retrospective para un Sprint de un mes; menos para Sprints más cortos.',
     },
   };
 
-  let semanas = 2;
-  let evento = 'planning';
+  const botones = document.querySelectorAll('#semanas .week');
+  if (!botones.length) return;
   const $ = (id) => document.getElementById(id);
 
-  function duracion(ev) {
-    if (ev.fijo) return ev.fijo;
-    const horas = (ev.maxMes * semanas) / 4;
-    return Number.isInteger(horas) ? `${horas} h` : `${Math.floor(horas)} h ${Math.round((horas % 1) * 60)} min`;
+  function mostrar(n) {
+    const s = SEMANAS[n];
+    botones.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.semana === String(n))));
+    $('ev-label').textContent = s.label;
+    $('ev-titulo').textContent = s.titulo;
+    $('ev-texto').textContent = s.texto;
+    $('ev-resultado').textContent = s.resultado;
+    $('ev-max').textContent = s.max;
+    $('ev-max-texto').textContent = s.maxTexto;
+    if (window.Transiciones) Transiciones.reproducir($('evento'));
   }
 
-  function render() {
-    const dias = semanas * 5;
-    const ev = EVENTOS[evento];
-    $('duracion-texto').textContent = `Sprint de ${semanas} ${semanas === 1 ? 'semana' : 'semanas'} · ${dias} días hábiles`;
-    document.querySelectorAll('#duracion .chip').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.semanas) === semanas)));
-    document.querySelectorAll('#cronograma .event-btn').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.evento === evento)));
-
-    const marcados = new Set(ev.dias(dias));
-    const cont = $('dias');
-    cont.style.setProperty('--days', dias);
-    cont.innerHTML = '';
-    for (let d = 1; d <= dias; d++) {
-      const s = document.createElement('span');
-      s.textContent = `D${d}`;
-      if (marcados.has(d)) s.className = 'ev';
-      cont.appendChild(s);
-    }
-
-    $('ev-nombre').textContent = ev.nombre;
-    $('ev-cuando').textContent = ev.cuando;
-    $('ev-objetivo').textContent = ev.objetivo;
-    $('ev-duracion').textContent = duracion(ev);
-    $('ev-quienes').textContent = ev.quienes;
-    $('ev-salida').textContent = ev.salida;
-    if (window.Transiciones) {
-      Transiciones.reproducir($('evento-detalle'));
-      Transiciones.reproducir(cont);
-    }
-  }
-
-  document.querySelectorAll('#duracion .chip').forEach((b) => b.addEventListener('click', () => { semanas = Number(b.dataset.semanas); render(); }));
-  document.querySelectorAll('#cronograma .event-btn').forEach((b) => b.addEventListener('click', () => { evento = b.dataset.evento; render(); }));
-  render();
+  botones.forEach((b) => b.addEventListener('click', () => mostrar(b.dataset.semana)));
 })();

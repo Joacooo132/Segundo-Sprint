@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Definiciones de términos clave de calidad y desarrollo de software, con buscador en tiempo real e índice alfabético.">
+  <meta name="description" content="Glosario de calidad, desarrollo y agilidad: 23 conceptos esenciales con buscador e índice alfabético.">
   <title>Glosario | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -34,67 +35,61 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
         <span class="story-tag">US-12 · Recursos y aprendizaje</span>
-        <h1>Glosario de calidad y desarrollo de software</h1>
-        <p>Definiciones breves de los términos clave del sitio: calidad, pruebas, modelos tradicionales y metodologías ágiles.</p>
+        <h1>Un lenguaje común para hablar de calidad</h1>
+        <p>Consulta conceptos de calidad, desarrollo y agilidad. Definiciones breves para volver a la teoría con más claridad.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Busca o navega por letra</h2>
-          <p>El buscador filtra mientras escribes y no distingue mayúsculas ni tildes. También puedes saltar a una letra del índice.</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>23 conceptos esenciales</h2>
+        <p>Busca por término o recorre el índice alfabético. Cada definición explica una idea, sin depender solo de siglas.</p>
+      </aside>
     </section>
 
-    <section class="section white" aria-labelledby="buscar-titulo">
-      <div class="section-head">
-        <span class="label">Buscador</span>
+    <section class="band" aria-labelledby="buscar-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Búsqueda e índice</span>
         <h2 id="buscar-titulo">Encuentra un concepto</h2>
-      </div>
-      <div class="search" role="search">
-        <label class="label" for="buscar">Buscar término o definición</label>
-        <div class="row-between">
-          <input class="input" id="buscar" type="search" placeholder="Ej.: sprint, validación, WIP…" autocomplete="off" aria-describedby="contador">
-          <button class="btn" type="button" id="limpiar">Limpiar</button>
+      </div></div>
+      <div class="g-search">
+        <label for="buscar">Buscar en el glosario</label>
+        <div class="g-input">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3f78a8" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="buscar" type="search" autocomplete="off" placeholder="Escribe un término, por ejemplo: validación" aria-describedby="buscar-ayuda">
         </div>
-        <p class="text-sm" id="contador" aria-live="polite"></p>
+        <p class="fine" id="buscar-ayuda" style="margin-top:10px">Puedes consultar nombres completos o siglas. Listado principal: todos los términos.</p>
       </div>
-      <nav class="az" id="indice" aria-label="Índice alfabético"></nav>
+      <nav class="g-letters" id="indice" aria-label="Índice alfabético"></nav>
+      <p class="fine">Letras en recuadro azul: con entradas · Letras atenuadas: sin entradas.</p>
     </section>
 
-    <section class="section" aria-labelledby="az-titulo">
-      <div class="section-head">
-        <span class="label">Listado alfabético</span>
-        <h2 id="az-titulo">De A a Z</h2>
-      </div>
-      <div class="note warn" id="sin-resultados" hidden>
-        <strong>Sin resultados para «<span id="sin-termino"></span>»</strong>
-        <p>Revisa la ortografía o prueba con una palabra más general. Si crees que falta un término, <a href="contacto.html"><u>sugiérelo en Contacto</u></a>.</p>
-      </div>
-      <div id="listado"></div>
-    </section>
-
-    <section class="section white" aria-labelledby="no-titulo">
-      <div class="section-head">
-        <span class="label">Estado de muestra</span>
-        <h2 id="no-titulo">Cuando no encuentras un término</h2>
-      </div>
-      <div class="grid-3">
-        <article class="tile"><h3>Prueba un sinónimo</h3><p>«Defecto» y «bug» llevan al mismo concepto. «QA» encuentra Aseguramiento de la calidad.</p></article>
-        <article class="tile"><h3>Revisa las FAQ</h3><p>Algunas dudas se explican mejor con ejemplos en <a href="faq.html"><u>Preguntas frecuentes</u></a>.</p></article>
-        <article class="tile"><h3>Sugiere el término</h3><p>Escríbenos desde <a href="contacto.html"><u>Contacto</u></a> y lo sumaremos en la próxima actualización.</p></article>
+    <section class="band alt" aria-labelledby="listado-titulo">
+      <div class="band-head"><div>
+        <span class="mini" id="contador" aria-live="polite">Listado alfabético · 23 entradas</span>
+        <h2 id="listado-titulo">De A a Z</h2>
+      </div></div>
+      <div class="g-list" id="listado"></div>
+      <div class="fcard flat" id="sin-resultados" hidden>
+        <h3>Sin resultados para “<span id="sin-termino"></span>”</h3>
+        <p>Revisa la ortografía o usa un término más general. Si falta un concepto relacionado con el sitio, puedes sugerirlo desde <a class="go" href="contacto.html">Contacto</a>.</p>
+        <button class="btn sm" type="button" data-limpiar style="align-self:flex-start">Limpiar búsqueda</button>
       </div>
     </section>
 
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="kanban.html" rel="prev"><span class="label">← Anterior</span><strong>Kanban en profundidad</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="faq.html" rel="next"><span class="label">Siguiente →</span><strong>Preguntas frecuentes</strong></a>
-    </nav>
+    <section class="band" aria-labelledby="vacio-titulo">
+      <div class="band-head"><div>
+        <span class="mini">Estado de muestra · sin resultados</span>
+        <h2 id="vacio-titulo">Cuando no encuentras un término</h2>
+      </div></div>
+      <div class="fcard pale">
+        <span class="mini">Ejemplo independiente del listado principal</span>
+        <h3>Sin resultados para “criptografía cuántica”</h3>
+        <p>Revisa la ortografía o usa un término más general. Si falta un concepto relacionado con el sitio, puedes sugerirlo desde Contacto.</p>
+        <button class="btn sm" type="button" data-limpiar style="align-self:flex-start">Limpiar búsqueda</button>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

@@ -622,3 +622,28 @@ body {
     scroll-margin-top: 180px;
   }
 }
+
+/* ---------- Ajustes para igualar la pantalla US-02 de Figma ---------- */
+.cal-main { max-width: none; margin: 0; padding: 0; }
+.cal-band { padding: 72px clamp(20px, 6.7vw, 96px); }
+.cal-wrap { max-width: 1248px; }
+#iso { padding-top: 72px; }
+.metricas.cal-band { margin: 0; border-radius: 0; }
+.cal-head.center { justify-content: center; text-align: center; }
+.cal-head.center > div { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.cal-head.center p { max-width: 560px; font-size: 14px; color: var(--muted); }
+.cal-card.concepto { padding: 26px 28px 28px; }
+.concepto-top { width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; }
+.concepto-tag { font-size: 11px; font-weight: 700; color: #1d7a8c; letter-spacing: .4px; text-transform: uppercase; margin-top: 12px; }
+.cal-card.concepto h3 { font-size: 22px; margin-bottom: 8px; }
+.intro-cal h1 { font-size: clamp(36px, 3.6vw, 52px); max-width: 640px; }
+.intro-cal .home-card h2 { font-weight: 700; }
+.home-symbol-svg { color: var(--blue); }
+.intro-cal h1 { font-size: clamp(34px, 3.3vw, 48px); max-width: 760px; }
+.cal-card.concepto .cal-text { font-size: 14px; color: var(--muted); line-height: 1.55; }
+.cal-text { font-size: 14px; }
+.cal-meta { font-size: 13px; }
+.iso-item p { font-size: 13px; }
+.intro.intro-cal .intro-copy { flex: 0 1 820px; max-width: 820px; }
+.intro.intro-cal h1 { font-size: clamp(34px, 3.3vw, 46px); max-width: 720px; }
+.cal-card.concepto .cal-icon { width: 48px; height: 48px; border-radius: 12px; }

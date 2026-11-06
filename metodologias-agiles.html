@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Scrum, Kanban y XP: los 4 valores y 12 principios del Manifiesto Ágil, roles, ceremonias, artefactos y comparativa con los modelos tradicionales.">
+  <meta name="description" content="Los 4 valores y los 12 principios del Manifiesto Ágil, y una comparación breve entre Scrum, Kanban y Extreme Programming.">
   <title>Metodologías Ágiles | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -34,137 +35,124 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
-        <span class="story-tag">US-08 · Metodologías ágiles</span>
-        <h1>Agilidad: valores, principios y prácticas</h1>
-        <p>Aprende qué propone el Manifiesto Ágil y cómo Scrum, Kanban y XP lo llevan a la práctica con roles, ceremonias y artefactos distintos.</p>
+        <span class="story-tag">US-08 · Aprender agilidad</span>
+        <h1>Agilidad: principios que se convierten en práctica</h1>
+        <p>Comprende el Manifiesto Ágil y distingue tres enfoques: Scrum organiza el aprendizaje, Kanban mejora el flujo y XP fortalece la ingeniería.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="40" height="40">
-          <h2>Lectura sugerida</h2>
-          <p>Empieza por los valores y principios. Luego compara los tres enfoques y revisa en qué problemas encaja cada uno.</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Una base, varios caminos</h2>
+        <p>Explora valores y principios antes de elegir prácticas. Ser ágil no significa trabajar sin planificación.</p>
+      </aside>
     </section>
 
-    <nav class="toc-bar" aria-label="Tabla de contenidos">
-      <span class="label">En esta página</span>
+    <nav class="page-index" aria-label="En esta página">
+      <span class="mini">En esta página</span>
       <div class="chips">
-        <a class="chip" href="#valores">Valores</a>
-        <a class="chip" href="#principios">Principios</a>
-        <a class="chip" href="#enfoques">Scrum, Kanban y XP</a>
-        <a class="chip" href="#roles">Roles y artefactos</a>
-        <a class="chip" href="#comparativa">Comparativa</a>
+        <a class="chip active" href="#valores">01 · Los 4 valores</a>
+        <a class="chip" href="#principios">02 · Los 12 principios</a>
+        <a class="chip" href="#enfoques">03 · Scrum, Kanban y XP</a>
+        <a class="chip" href="#elegir">04 · Cómo elegir</a>
       </div>
     </nav>
 
-    <section class="section white" id="valores" aria-labelledby="valores-titulo">
-      <div class="section-head">
-        <span class="label">Manifiesto Ágil · 2001</span>
+    <section class="band alt" id="valores" aria-labelledby="valores-titulo">
+      <div class="band-head"><div>
+        <span class="mini">01 · Mentalidad</span>
         <h2 id="valores-titulo">Los 4 valores del Manifiesto Ágil</h2>
-        <p>Aunque valoramos los elementos de la derecha, valoramos más los de la izquierda.</p>
-      </div>
+      </div></div>
+      <p class="lead">Valoramos los elementos de la izquierda más que los de la derecha. Esto no elimina el valor de los procesos, la documentación, los contratos ni los planes.</p>
       <div class="grid-2">
-        <article class="card"><span class="pill">Valor 1</span><h3>Individuos e interacciones</h3><p>sobre procesos y herramientas.</p></article>
-        <article class="card"><span class="pill">Valor 2</span><h3>Software funcionando</h3><p>sobre documentación extensiva.</p></article>
-        <article class="card"><span class="pill">Valor 3</span><h3>Colaboración con el cliente</h3><p>sobre negociación contractual.</p></article>
-        <article class="card"><span class="pill">Valor 4</span><h3>Respuesta ante el cambio</h3><p>sobre seguir un plan.</p></article>
+        <article class="fcard"><h3>Individuos e interacciones</h3><p class="sub">sobre procesos y herramientas</p><p>Hablar y colaborar ayuda a resolver problemas que una herramienta por sí sola no resuelve.</p></article>
+        <article class="fcard"><h3>Software funcionando</h3><p class="sub">sobre documentación extensiva</p><p>La evidencia de valor es un producto utilizable; documenta lo necesario para construirlo y mantenerlo.</p></article>
+        <article class="fcard"><h3>Colaboración con el cliente</h3><p class="sub">sobre negociación contractual</p><p>Mantén conversaciones frecuentes para comprender la necesidad real, más allá del acuerdo inicial.</p></article>
+        <article class="fcard"><h3>Respuesta ante el cambio</h3><p class="sub">sobre seguir un plan</p><p>Usa el plan como guía y ajústalo cuando aprendas algo relevante.</p></article>
       </div>
-
-      <div class="section-head" id="principios">
-        <span class="label">Doce principios</span>
-        <h2>Los principios que orientan las decisiones</h2>
-      </div>
-      <div class="grid-2 principles">
-        <article class="tile"><h3>1 · Satisfacer al cliente</h3><p>Mediante la entrega temprana y continua de software con valor.</p></article>
-        <article class="tile"><h3>2 · Aceptar el cambio</h3><p>Incluso tarde en el desarrollo, como ventaja competitiva para el cliente.</p></article>
-        <article class="tile"><h3>3 · Entregar con frecuencia</h3><p>Software funcional cada pocas semanas, preferentemente en periodos cortos.</p></article>
-        <article class="tile"><h3>4 · Trabajar juntos</h3><p>Negocio y desarrolladores colaboran a diario durante todo el proyecto.</p></article>
-        <article class="tile"><h3>5 · Personas motivadas</h3><p>Darles el entorno y el apoyo que necesitan, y confiar en ellas.</p></article>
-        <article class="tile"><h3>6 · Conversación cara a cara</h3><p>Es el método más eficiente y efectivo para comunicar información.</p></article>
-        <article class="tile"><h3>7 · Medir con software</h3><p>El software funcionando es la medida principal de progreso.</p></article>
-        <article class="tile"><h3>8 · Ritmo sostenible</h3><p>Promotores, desarrolladores y usuarios deben poder mantener un ritmo constante.</p></article>
-        <article class="tile"><h3>9 · Excelencia técnica</h3><p>La atención continua a la calidad técnica y al buen diseño mejora la agilidad.</p></article>
-        <article class="tile"><h3>10 · Simplicidad</h3><p>El arte de maximizar la cantidad de trabajo no realizado es esencial.</p></article>
-        <article class="tile"><h3>11 · Equipos autoorganizados</h3><p>De ellos surgen las mejores arquitecturas, requisitos y diseños.</p></article>
-        <article class="tile"><h3>12 · Reflexionar y ajustar</h3><p>A intervalos regulares, el equipo reflexiona cómo ser más efectivo y ajusta su conducta.</p></article>
-      </div>
+      <p class="fine">Fuente de referencia: Manifiesto por el Desarrollo Ágil de Software · agilemanifesto.org</p>
     </section>
 
-    <section class="section" id="enfoques" aria-labelledby="enfoques-titulo">
-      <div class="section-head">
-        <span class="label">Scrum · Kanban · XP</span>
+    <section class="band" id="principios" aria-labelledby="principios-titulo">
+      <div class="band-head"><div>
+        <span class="mini">02 · Del valor al comportamiento</span>
+        <h2 id="principios-titulo">12 principios para guiar las decisiones</h2>
+      </div></div>
+      <ol class="grid-2 principios">
+        <li><b>01</b><div><strong>Satisfacer al cliente</strong><p>Entrega temprana y continua de software con valor.</p></div></li>
+        <li><b>02</b><div><strong>Aceptar cambios</strong><p>Aprovecha los requisitos cambiantes, incluso en etapas tardías.</p></div></li>
+        <li><b>03</b><div><strong>Entregar con frecuencia</strong><p>Publica software funcional en periodos cortos, de semanas a meses.</p></div></li>
+        <li><b>04</b><div><strong>Colaborar a diario</strong><p>Negocio y desarrollo trabajan juntos durante todo el proyecto.</p></div></li>
+        <li><b>05</b><div><strong>Confiar en las personas</strong><p>Da apoyo, entorno y autonomía a personas motivadas.</p></div></li>
+        <li><b>06</b><div><strong>Comunicar directamente</strong><p>La conversación cara a cara es el medio más eficaz de comunicación en el equipo.</p></div></li>
+        <li><b>07</b><div><strong>Medir software funcionando</strong><p>El producto utilizable es la medida principal del progreso.</p></div></li>
+        <li><b>08</b><div><strong>Sostener el ritmo</strong><p>Promotores, equipo y usuarios pueden mantener un ritmo constante indefinidamente.</p></div></li>
+        <li><b>09</b><div><strong>Cuidar la excelencia técnica</strong><p>El buen diseño y la atención continua a la calidad facilitan la adaptación.</p></div></li>
+        <li><b>10</b><div><strong>Buscar la simplicidad</strong><p>Maximiza el trabajo que no es necesario realizar.</p></div></li>
+        <li><b>11</b><div><strong>Favorecer la autoorganización</strong><p>Las mejores arquitecturas, requisitos y diseños emergen de equipos autoorganizados.</p></div></li>
+        <li><b>12</b><div><strong>Reflexionar y ajustar</strong><p>Revisa regularmente cómo ser más eficaz y adapta la forma de trabajar.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="band alt" id="enfoques" aria-labelledby="enfoques-titulo">
+      <div class="band-head"><div>
+        <span class="mini">03 · Marcos, flujo y prácticas</span>
         <h2 id="enfoques-titulo">Tres enfoques, propósitos diferentes</h2>
-      </div>
-      <div class="grid-3" id="roles">
-        <article class="card">
-          <span class="pill">Marco de trabajo</span>
+      </div></div>
+      <div class="grid-3">
+        <article class="fcard enfoque">
+          <span class="mini">Marco de trabajo</span>
           <h3>Scrum</h3>
-          <p>Organiza el trabajo en Sprints de un mes o menos para resolver problemas complejos con inspección y adaptación.</p>
-          <p><strong>Roles:</strong> Product Owner, Scrum Master y Developers.</p>
-          <p><strong>Ceremonias:</strong> Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective.</p>
-          <p><strong>Artefactos:</strong> Product Backlog, Sprint Backlog e Incremento.</p>
-          <a class="btn primary" href="scrum.html">Scrum en profundidad →</a>
+          <p class="big">Empirismo: transparencia, inspección y adaptación. Un equipo crea valor en Sprints de un mes o menos.</p>
+          <h4>Responsabilidades</h4>
+          <p>Product Owner: maximiza valor. Scrum Master: establece Scrum y facilita la eficacia. Developers: crean un Incremento utilizable.</p>
+          <h4>Eventos y artefactos</h4>
+          <p>Sprint, Planning, Daily Scrum, Review y Retrospective. Product Backlog, Sprint Backlog e Incremento, vinculados a Product Goal, Sprint Goal y Definition of Done.</p>
+          <a class="go" href="scrum.html">Profundizar en Scrum →</a>
         </article>
-        <article class="card">
-          <span class="pill">Método de flujo</span>
+        <article class="fcard enfoque">
+          <span class="mini">Gestión del flujo</span>
           <h3>Kanban</h3>
-          <p>Visualiza el trabajo, limita el trabajo en curso (WIP) y mejora el flujo de forma continua y evolutiva.</p>
-          <p><strong>Roles:</strong> no exige roles nuevos; parte de los existentes.</p>
-          <p><strong>Ceremonias:</strong> reuniones de reposición, revisión del flujo y mejora según contexto.</p>
-          <p><strong>Artefactos:</strong> tablero, límites WIP, políticas explícitas y métricas de flujo.</p>
-          <a class="btn primary" href="kanban.html">Kanban en profundidad →</a>
+          <p class="big">Visualiza el trabajo, limita el trabajo en curso y usa un sistema pull: se inicia una tarea solo cuando hay capacidad disponible.</p>
+          <h4>Políticas explícitas</h4>
+          <p>Define qué significa cada estado, cuándo entra o sale un trabajo y cómo tratar bloqueos. No prescribe nuevos roles ni ceremonias obligatorias.</p>
+          <h4>Medir para mejorar</h4>
+          <p>Observa lead time, cycle time, throughput y WIP. Adapta las revisiones del flujo al contexto; no exige Sprints ni un backlog con formato Scrum.</p>
+          <a class="go" href="kanban.html">Profundizar en Kanban →</a>
         </article>
-        <article class="card">
-          <span class="pill">Prácticas de ingeniería</span>
-          <h3>XP · Extreme Programming</h3>
-          <p>Busca calidad técnica alta y respuesta rápida al cambio con prácticas de programación disciplinadas.</p>
-          <p><strong>Roles:</strong> cliente, programadores, coach y tracker.</p>
-          <p><strong>Ceremonias:</strong> planning game, iteraciones cortas y entregas pequeñas.</p>
-          <p><strong>Prácticas:</strong> TDD, programación en pareja, integración continua, refactorización y diseño simple.</p>
-          <a class="btn" href="ilustraciones-agiles.html#xp">Ver el bucle de XP →</a>
+        <article class="fcard enfoque">
+          <span class="mini">Ingeniería de software</span>
+          <h3>Extreme Programming</h3>
+          <p class="big">XP busca responder al cambio con comunicación, simplicidad, feedback, coraje y respeto. Combina pequeñas entregas con disciplina técnica.</p>
+          <h4>Prácticas técnicas</h4>
+          <p>TDD, programación en pareja, integración continua, refactorización, diseño simple, propiedad colectiva y pruebas de aceptación.</p>
+          <h4>Trabajo con el cliente</h4>
+          <p>Historias de usuario, planificación frecuente y feedback cercano. No traslades automáticamente a XP los roles y eventos formales de Scrum.</p>
+          <a class="go" href="ilustraciones-agiles.html#xp">Ver el bucle de XP →</a>
         </article>
       </div>
     </section>
 
-    <section class="section white" id="comparativa" aria-labelledby="comp-titulo">
-      <div class="section-head">
-        <span class="label">Comparativa con los modelos tradicionales</span>
-        <h2 id="comp-titulo">Elige según el problema, no por la etiqueta</h2>
-      </div>
+    <section class="band" id="elegir" aria-labelledby="elegir-titulo">
+      <div class="band-head"><div>
+        <span class="mini">04 · Comparativa breve</span>
+        <h2 id="elegir-titulo">Elige según el problema, no por la etiqueta</h2>
+      </div></div>
       <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th scope="col">Aspecto</th><th scope="col">Modelos tradicionales</th><th scope="col">Enfoques ágiles</th></tr></thead>
+        <table class="table eq">
+          <thead><tr><th scope="col">Pregunta</th><th scope="col">Scrum</th><th scope="col">Kanban</th><th scope="col">XP</th></tr></thead>
           <tbody>
-            <tr><td>Planificación</td><td>Detallada al inicio, por fases.</td><td>Progresiva; se ajusta en cada ciclo.</td></tr>
-            <tr><td>Requisitos</td><td>Se fijan y aprueban al comienzo.</td><td>Emergen y se repriorizan con feedback.</td></tr>
-            <tr><td>Entregas</td><td>Una entrega principal al final.</td><td>Incrementos frecuentes y utilizables.</td></tr>
-            <tr><td>Cliente</td><td>Participa sobre todo al inicio y al final.</td><td>Colabora durante todo el proyecto.</td></tr>
-            <tr><td>Calidad</td><td>Se verifica en fases de prueba.</td><td>Se integra en cada ciclo (DoD, TDD, CI).</td></tr>
+            <tr><td>¿Qué organiza?</td><td>Objetivos y aprendizaje por Sprint.</td><td>Flujo continuo y capacidad.</td><td>Construcción técnica y feedback.</td></tr>
+            <tr><td>¿Dónde aporta?</td><td>Producto complejo con equipo estable y objetivo compartido.</td><td>Soporte, mantenimiento y demanda variable.</td><td>Software cambiante que necesita alta calidad técnica.</td></tr>
+            <tr><td>¿Qué exige cuidar?</td><td>No convertir eventos en reportes ni fijar alcance rígido.</td><td>Hacer explícitas las políticas y respetar límites WIP.</td><td>Sostener pruebas, colaboración y refactorización.</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="note">
-        <strong>Ningún enfoque es superior en todos los casos</strong>
-        <p>Un proyecto con requisitos estables y fuerte regulación puede beneficiarse de un modelo tradicional; uno con alta incertidumbre, de un enfoque ágil. Muchos equipos combinan prácticas.</p>
-      </div>
-      <div class="row-between">
-        <p class="text">Compara en detalle o responde la encuesta para orientarte.</p>
-        <div class="actions">
-          <a class="btn" href="encuesta.html">Hacer la encuesta</a>
-          <a class="btn primary" href="comparador.html">Ver comparador →</a>
-        </div>
+      <div class="info">
+        <strong>No son opciones excluyentes</strong>
+        <p>Un equipo puede usar Scrum con prácticas de XP y técnicas de flujo Kanban. Combina con un propósito claro y conserva las reglas esenciales del enfoque que declares usar.</p>
       </div>
     </section>
-
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="ilustraciones-tradicionales.html" rel="prev"><span class="label">← Anterior</span><strong>Ilustraciones de Modelos Tradicionales</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="ilustraciones-agiles.html" rel="next"><span class="label">Siguiente →</span><strong>Ilustraciones de Metodologías Ágiles</strong></a>
-    </nav>
   </main>
 
   <footer class="site-footer">

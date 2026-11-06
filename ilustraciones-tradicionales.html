@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Diagramas ilustrativos del modelo en cascada, el modelo en V y el modelo iterativo e incremental, con vista ampliada.">
+  <meta name="description" content="Diagramas del modelo en cascada, el modelo en V y el modelo iterativo e incremental, con descripciones alternativas y vista ampliada.">
   <title>Ilustraciones de Modelos Tradicionales | Sistema de Gestión de Calidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sprint2.css">
+  <link rel="stylesheet" href="figma.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="js/transiciones.js" defer></script>
   <script src="sprint2.js" defer></script>
@@ -35,182 +36,157 @@
   </header>
 
   <main>
-    <section class="intro intro-home">
+    <section class="intro fig">
       <div class="intro-copy">
-        <span class="story-tag">US-07 · Procesos de desarrollo</span>
-        <h1>Ver el proceso para entender cada modelo</h1>
-        <p>Diagramas de Cascada, Modelo en V e Iterativo e incremental. Cada figura incluye una explicación breve y puede ampliarse a pantalla completa con un clic.</p>
+        <span class="story-tag">US-07 · Modelos de desarrollo</span>
+        <h1>Los modelos tradicionales, paso a paso</h1>
+        <p>Lee las etapas, sigue las conexiones y descubre cómo cada modelo organiza el desarrollo y la comprobación del software.</p>
       </div>
-      <div class="home-visual">
-        <div class="home-orb" aria-hidden="true"></div>
-        <aside class="home-card">
-          <img src="img/book-open.svg" alt="" width="32" height="32">
-          <h2>Cómo leer las figuras</h2>
-          <p>Recorre cada diagrama de izquierda a derecha. Usa «Ampliar» o haz clic sobre la figura para verla en detalle.</p>
-        </aside>
-      </div>
+      <aside class="intro-aside">
+        <img src="img/book-open.svg" alt="" width="32" height="32">
+        <h2>Aprende con diagramas</h2>
+        <p>Tres esquemas con leyendas, descripciones alternativas y una muestra de ampliación.</p>
+      </aside>
     </section>
 
-    <nav class="toc-bar" aria-label="Modelos tradicionales">
-      <span class="label">Elegí un modelo</span>
-      <div class="chips" role="tablist" aria-label="Modelos tradicionales">
+    <section class="band" aria-labelledby="galeria-titulo">
+      <div class="band-head">
+        <div>
+          <span class="mini">Diagramas de modelos tradicionales</span>
+          <h2 id="galeria-titulo">Una galería para entender el proceso</h2>
+        </div>
+      </div>
+      <div class="chips" role="tablist" aria-label="Modelos tradicionales" data-modelos>
         <button class="chip" type="button" role="tab" id="tab-cascada" aria-controls="cascada" aria-selected="true">Cascada</button>
         <button class="chip" type="button" role="tab" id="tab-modelo-v" aria-controls="modelo-v" aria-selected="false" tabindex="-1">Modelo en V</button>
-        <button class="chip" type="button" role="tab" id="tab-iterativo" aria-controls="iterativo" aria-selected="false" tabindex="-1">Iterativo e incremental</button>
+        <button class="chip" type="button" role="tab" id="tab-iterativo" aria-controls="iterativo" aria-selected="false" tabindex="-1">Iterativo / Incremental</button>
       </div>
-    </nav>
 
-    <section class="section white modelo-panel" id="cascada" role="tabpanel" aria-labelledby="cascada-titulo">
-      <div class="section-head">
-        <span class="label">Figura 1 · Modelo en cascada</span>
-        <h2 id="cascada-titulo">Una galería para entender el proceso</h2>
-      </div>
-      <figure class="figure">
-        <div class="figure-head">
-          <h3>Cascada · una fase después de otra</h3>
-          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
+      <figure class="modelo-panel" id="cascada" role="tabpanel" aria-labelledby="tab-cascada" style="margin:0;display:flex;flex-direction:column;gap:24px">
+        <div class="figure-row">
+          <h3>Cascada · una fase prepara la siguiente</h3>
+          <button class="btn lupa" type="button" data-zoom>⤢ Ampliar diagrama</button>
         </div>
-        <div class="diagram-area diagram-scroll" role="img" aria-label="Diagrama del modelo en cascada: Requisitos, Diseño, Implementación, Pruebas y Mantenimiento, en secuencia y con un hito de aprobación entre cada fase.">
-          <div class="flow" aria-hidden="true">
-            <div class="flow-step"><b>Fase 1</b><strong>Requisitos</strong><p>Se documentan y aprueban las necesidades.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step"><b>Fase 2</b><strong>Diseño</strong><p>Arquitectura y diseño detallado del sistema.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step"><b>Fase 3</b><strong>Implementación</strong><p>Se programa a partir del diseño aprobado.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step"><b>Fase 4</b><strong>Pruebas</strong><p>Se verifica el sistema completo.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step strong"><b>Fase 5</b><strong>Mantenimiento</strong><p>Corrección y evolución tras la entrega.</p></div>
-          </div>
-        </div>
-        <figcaption>Figura 1. Cada fase comienza cuando la anterior se aprueba. Volver atrás es posible, pero costoso: un cambio tardío obliga a revisar documentos y entregables previos.</figcaption>
-      </figure>
-      <div class="note">
-        <strong>Idea clave</strong>
-        <p>Cascada funciona mejor cuando los requisitos son estables y el alcance es conocido. Su fortaleza es la planificación y la trazabilidad; su debilidad, que el usuario ve el producto recién al final.</p>
-      </div>
-    </section>
-
-    <section class="section white modelo-panel" id="modelo-v" role="tabpanel" aria-labelledby="v-titulo" hidden>
-      <div class="section-head">
-        <span class="label">Figura 2 · Modelo en V</span>
-        <h2 id="v-titulo">Modelo en V · planificar la prueba desde el diseño</h2>
-      </div>
-      <figure class="figure">
-        <div class="figure-head">
-          <div class="legend"><span style="--c:#3f78a8">Desarrollo (lado izquierdo)</span><span style="--c:#102a43">Verificación y validación (lado derecho)</span><span style="--c:#abc2db">Relación entre niveles</span></div>
-          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
-        </div>
-        <div class="diagram-area diagram-scroll">
-          <svg class="diagram" viewBox="0 0 1180 420" role="img" aria-labelledby="v-svg-t v-svg-d" style="min-width:720px">
-            <title id="v-svg-t">Diagrama del Modelo en V</title>
-            <desc id="v-svg-d">A la izquierda bajan Requisitos, Diseño del sistema, Diseño de arquitectura y Diseño de módulos. Abajo está la Codificación. A la derecha suben Pruebas unitarias, de integración, de sistema y de aceptación. Cada nivel de la izquierda se relaciona con su prueba a la derecha.</desc>
-            <g font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">
-              <g stroke="#abc2db" stroke-width="2" stroke-dasharray="6 6">
-                <line x1="250" y1="50" x2="930" y2="50"/><line x1="330" y1="135" x2="850" y2="135"/>
-                <line x1="410" y1="220" x2="770" y2="220"/><line x1="490" y1="305" x2="690" y2="305"/>
-              </g>
-              <g fill="#3f78a8">
-                <rect x="20" y="25" width="230" height="50" rx="12"/><rect x="100" y="110" width="230" height="50" rx="12"/>
-                <rect x="180" y="195" width="230" height="50" rx="12"/><rect x="260" y="280" width="230" height="50" rx="12"/>
-              </g>
-              <g fill="#102a43">
-                <rect x="930" y="25" width="230" height="50" rx="12"/><rect x="850" y="110" width="230" height="50" rx="12"/>
-                <rect x="770" y="195" width="230" height="50" rx="12"/><rect x="690" y="280" width="230" height="50" rx="12"/>
-              </g>
-              <rect x="465" y="355" width="250" height="50" rx="12" fill="#eaf2f8" stroke="#3f78a8"/>
-              <g fill="#fff" text-anchor="middle">
-                <text x="135" y="55">Requisitos</text><text x="215" y="140">Diseño del sistema</text>
-                <text x="295" y="225">Diseño de arquitectura</text><text x="375" y="310">Diseño de módulos</text>
-                <text x="1045" y="55">Pruebas de aceptación</text><text x="965" y="140">Pruebas de sistema</text>
-                <text x="885" y="225">Pruebas de integración</text><text x="805" y="310">Pruebas unitarias</text>
-              </g>
-              <text x="590" y="385" text-anchor="middle" fill="#102a43">Codificación</text>
-              <g fill="#5f7385" font-weight="500" font-size="13" text-anchor="middle">
-                <text x="590" y="42">valida</text><text x="590" y="127">verifica</text><text x="590" y="212">verifica</text><text x="590" y="297">verifica</text>
-              </g>
-            </g>
+        <div class="diagram-box diagram-area" role="img" aria-label="Diagrama en escalera del modelo en cascada: Requisitos, Diseño, Desarrollo, Pruebas, Despliegue y Mantenimiento, unidos por flechas.">
+          <svg viewBox="-2 -2 1204 340" aria-hidden="true">
+            <defs><marker id="flecha-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f78a8"/></marker></defs>
+            <path class="d-line" d="M100 52 V82 H198" marker-end="url(#flecha-c)"/>
+            <path class="d-line" d="M300 108 V138 H398" marker-end="url(#flecha-c)"/>
+            <path class="d-line" d="M500 164 V194 H598" marker-end="url(#flecha-c)"/>
+            <path class="d-line" d="M700 220 V250 H798" marker-end="url(#flecha-c)"/>
+            <path class="d-line" d="M900 276 V306 H998" marker-end="url(#flecha-c)"/>
+            <g class="d-node"><rect x="0" y="0" width="200" height="52" rx="6"/><text x="100" y="26">Requisitos</text></g>
+            <g class="d-node"><rect x="200" y="56" width="200" height="52" rx="6"/><text x="300" y="82">Diseño</text></g>
+            <g class="d-node"><rect x="400" y="112" width="200" height="52" rx="6"/><text x="500" y="138">Desarrollo</text></g>
+            <g class="d-node"><rect x="600" y="168" width="200" height="52" rx="6"/><text x="700" y="194">Pruebas</text></g>
+            <g class="d-node"><rect x="800" y="224" width="200" height="52" rx="6"/><text x="900" y="250">Despliegue</text></g>
+            <g class="d-node"><rect x="1000" y="280" width="200" height="52" rx="6"/><text x="1100" y="306">Mantenimiento</text></g>
           </svg>
         </div>
-        <figcaption>Figura 2. Cada nivel de diseño define cómo se probará su resultado. Las pruebas se planifican desde el inicio, aunque se ejecutan después de codificar.</figcaption>
+        <figcaption class="caption">Figura 1. Las flechas indican el avance entre fases y sus entregables. La aprobación de una fase habilita la siguiente; un cambio tardío puede exigir revisar trabajo anterior.</figcaption>
+        <div class="info">
+          <strong>Descripción alternativa · Cascada</strong>
+          <p>Seis etapas descienden en escalera: requisitos → diseño → desarrollo → pruebas → despliegue → mantenimiento. La secuencia principal no representa entregas incrementales.</p>
+        </div>
       </figure>
-      <div class="note">
-        <strong>Idea clave</strong>
-        <p>El Modelo en V refuerza la verificación y la validación. Es habitual en sistemas críticos o regulados, donde hay que demostrar que cada requisito fue probado.</p>
-      </div>
     </section>
 
-    <section class="section white modelo-panel" id="iterativo" role="tabpanel" aria-labelledby="it-titulo" hidden>
-      <div class="section-head">
-        <span class="label">Figura 3 · Iterativo e incremental</span>
-        <h2 id="it-titulo">Iterativo e incremental · aprender y añadir valor</h2>
-      </div>
-      <figure class="figure">
-        <div class="figure-head">
-          <h3>Cada iteración repite el ciclo y agrega un incremento</h3>
-          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
-        </div>
-        <div class="diagram-area diagram-scroll" role="img" aria-label="Ciclo iterativo: Planificar, Analizar y diseñar, Construir, Probar y Evaluar; luego se vuelve a planificar la siguiente iteración.">
-          <div class="flow" aria-hidden="true">
-            <div class="flow-step"><b>1</b><strong>Planificar</strong><p>Se eligen las funciones de esta iteración.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step"><b>2</b><strong>Analizar y diseñar</strong><p>Solo lo necesario para el incremento.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step"><b>3</b><strong>Construir</strong><p>Se integra al producto existente.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step"><b>4</b><strong>Probar</strong><p>Se verifica el incremento y lo anterior.</p></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step strong"><b>5</b><strong>Evaluar</strong><p>El feedback alimenta la próxima iteración ↺</p></div>
+    <section class="band alt modelo-panel" id="modelo-v" role="tabpanel" aria-labelledby="v-titulo" hidden>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:24px">
+        <div class="band-head">
+          <div>
+            <span class="mini">Verificación y validación</span>
+            <h2 id="v-titulo">Modelo en V · planificar la prueba desde el diseño</h2>
           </div>
         </div>
-        <figcaption>Figura 3. El ciclo se repite. Lo aprendido al evaluar cambia el plan de la siguiente iteración.</figcaption>
+        <div class="with-btn">
+          <p class="lead">Descenso: especificar y diseñar. Ascenso: ejecutar pruebas. Las relaciones horizontales conectan cada base de prueba con su nivel correspondiente.</p>
+          <button class="btn lupa" type="button" data-zoom>⤢ Ampliar diagrama</button>
+        </div>
+        <h3 class="sr-only">Modelo en V</h3>
+        <div class="diagram-box diagram-area" role="img" aria-label="Diagrama del modelo en V: a la izquierda bajan requisitos de usuario, requisitos del sistema, diseño de arquitectura y diseño de componentes hasta la codificación; a la derecha suben pruebas unitarias, de integración, de sistema y de aceptación.">
+          <svg viewBox="-2 -2 1204 390" aria-hidden="true">
+            <defs><marker id="flecha-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f78a8"/></marker></defs>
+            <path class="d-line" d="M100 50 L200 88" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M200 138 L300 176" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M300 226 L400 264" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M400 314 L560 336" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M640 336 L795 314" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M797 264 L895 226" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M897 176 L995 138" marker-end="url(#flecha-v)"/>
+            <path class="d-line" d="M997 88 L1095 50" marker-end="url(#flecha-v)"/>
+            <g class="d-node"><rect x="0" y="0" width="205" height="50" rx="6"/><text x="102" y="25">Requisitos de usuario</text></g>
+            <g class="d-node"><rect x="100" y="88" width="205" height="50" rx="6"/><text x="202" y="113">Requisitos del sistema</text></g>
+            <g class="d-node"><rect x="200" y="176" width="205" height="50" rx="6"/><text x="302" y="201">Diseño de arquitectura</text></g>
+            <g class="d-node"><rect x="300" y="264" width="205" height="50" rx="6"/><text x="402" y="289">Diseño de componentes</text></g>
+            <g class="d-node"><rect x="497" y="334" width="205" height="50" rx="6"/><text x="600" y="359">Codificación</text></g>
+            <g class="d-node"><rect x="695" y="264" width="205" height="50" rx="6"/><text x="797" y="289">Pruebas unitarias</text></g>
+            <g class="d-node"><rect x="795" y="176" width="205" height="50" rx="6"/><text x="897" y="201">Pruebas de integración</text></g>
+            <g class="d-node"><rect x="895" y="88" width="205" height="50" rx="6"/><text x="997" y="113">Pruebas de sistema</text></g>
+            <g class="d-node"><rect x="995" y="0" width="205" height="50" rx="6"/><text x="1097" y="25">Pruebas de aceptación</text></g>
+            <text class="d-rel" x="600" y="25">← Validar la necesidad →</text>
+            <text class="d-rel" x="600" y="113">← Verificar el sistema →</text>
+            <text class="d-rel" x="600" y="201">← Verificar interfaces →</text>
+            <text class="d-rel" x="600" y="289">← Componentes →</text>
+          </svg>
+        </div>
+        <figcaption class="caption">Figura 2. La aceptación comprueba necesidades del usuario; sistema, integración y unidad verifican el comportamiento respecto de las especificaciones y el diseño.</figcaption>
+        <div class="info">
+          <strong>Descripción alternativa · Modelo en V</strong>
+          <p>El diseño baja hasta codificación y las pruebas suben desde unidad hasta aceptación. Usuario ↔ aceptación; sistema ↔ sistema; arquitectura ↔ integración; componentes ↔ unidad.</p>
+        </div>
       </figure>
-      <h3 class="h3">Evolución del producto</h3>
-      <div class="grid-3">
-        <article class="card"><span class="pill">Incremento 1</span><h3>Núcleo</h3><p>Registro de usuarios y catálogo básico. Ya se puede usar y probar.</p><div class="meter" aria-hidden="true"><span style="width:33%"></span></div></article>
-        <article class="card"><span class="pill">Incremento 2</span><h3>Compra</h3><p>Se suma el carrito y el pago, ajustados con el feedback del incremento 1.</p><div class="meter" aria-hidden="true"><span style="width:66%"></span></div></article>
-        <article class="card dark"><span class="pill">Incremento 3</span><h3>Seguimiento</h3><p>Se agregan envíos y notificaciones. El producto queda completo.</p><div class="meter" aria-hidden="true"><span style="width:100%"></span></div></article>
-      </div>
     </section>
 
-    <section class="section" aria-labelledby="detalle-titulo">
-      <div class="section-head">
-        <span class="label">Vista ampliada de muestra</span>
-        <h2 id="detalle-titulo">Detalle ampliado · de la necesidad a la aceptación</h2>
-      </div>
-      <figure class="figure">
-        <div class="figure-head">
-          <h3>Un requisito recorre el Modelo en V</h3>
-          <button class="btn zoom-btn" type="button" data-zoom>Ampliar ⤢</button>
-        </div>
-        <div class="diagram-area grid-2">
-          <div class="card">
-            <span class="pill">Lado izquierdo · Requisito</span>
-            <h3>«El usuario debe poder recuperar su contraseña por correo»</h3>
-            <p>Se escribe en la fase de requisitos y se acuerda con el cliente cómo se comprobará.</p>
-          </div>
-          <div class="card dark">
-            <span class="pill">Lado derecho · Prueba de aceptación</span>
-            <h3>Dado un correo registrado, recibe un enlace válido por 30 minutos</h3>
-            <p>Se ejecuta al final, pero se diseñó desde el principio junto con el requisito.</p>
+    <section class="band modelo-panel" id="iterativo" role="tabpanel" aria-labelledby="it-titulo" hidden>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:24px">
+        <div class="band-head">
+          <div>
+            <span class="mini">Ciclos de mejora</span>
+            <h2 id="it-titulo">Iterativo e incremental · aprender y añadir valor</h2>
           </div>
         </div>
-        <figcaption>Figura 4. La trazabilidad une cada requisito con la prueba que demuestra que se cumplió.</figcaption>
+        <div class="with-btn">
+          <p class="lead">Iterar mejora lo ya construido; incrementar añade capacidad utilizable. Pueden combinarse en el mismo ciclo.</p>
+          <button class="btn lupa" type="button" data-zoom>⤢ Ampliar diagrama</button>
+        </div>
+        <h3 class="sr-only">Modelo iterativo e incremental</h3>
+        <div class="diagram-box diagram-area cycle" role="img" aria-label="Ciclo iterativo: Analizar, Diseñar, Construir, Probar y Evaluar; el feedback del usuario vuelve al inicio del ciclo.">
+          <div class="cycle-row" aria-hidden="true">
+            <div class="cycle-step">Analizar</div><span class="cycle-arrow">→</span>
+            <div class="cycle-step">Diseñar</div><span class="cycle-arrow">→</span>
+            <div class="cycle-step">Construir</div><span class="cycle-arrow">→</span>
+            <div class="cycle-step">Probar</div><span class="cycle-arrow">→</span>
+            <div class="cycle-step">Evaluar</div>
+          </div>
+          <div class="cycle-back" aria-hidden="true">↶ Feedback del usuario y ajuste de requisitos · volver al inicio del ciclo</div>
+        </div>
+        <div class="grid-3">
+          <div class="tile2"><span class="mini">Incremento 1</span><h3>Catálogo de cursos</h3></div>
+          <div class="tile2"><span class="mini">Incremento 2</span><h3>Catálogo + inscripción</h3></div>
+          <div class="tile2"><span class="mini">Incremento 3</span><h3>Catálogo + inscripción + seguimiento</h3></div>
+        </div>
+        <figcaption class="caption">Figura 3 / descripción alternativa. Cada ciclo recorre análisis, diseño, construcción, pruebas y evaluación; el feedback vuelve al análisis. Los tres incrementos conservan y amplían la funcionalidad anterior.</figcaption>
       </figure>
-      <div class="row-between">
-        <p class="text">Contrasta estos modelos con los enfoques ágiles en el comparador.</p>
-        <div class="actions">
-          <a class="btn" href="ilustraciones-agiles.html">Ilustraciones ágiles</a>
-          <a class="btn primary" href="comparador.html">Ver comparador →</a>
-        </div>
-      </div>
     </section>
 
-    <nav class="pager" aria-label="Recorrido por el sitio">
-      <a class="pager-link" href="index.html" rel="prev"><span class="label">← Anterior</span><strong>Inicio</strong></a>
-      <a class="pager-home" href="index.html">Todas las secciones</a>
-      <a class="pager-link next" href="metodologias-agiles.html" rel="next"><span class="label">Siguiente →</span><strong>Metodologías Ágiles</strong></a>
-    </nav>
+    <section class="band alt" aria-labelledby="detalle-titulo">
+      <div class="band-head">
+        <div>
+          <span class="mini">Muestra estática de ampliación · Modelo en V</span>
+          <h2 id="detalle-titulo">Detalle ampliado · de la necesidad a la aceptación</h2>
+        </div>
+      </div>
+      <div class="zoom-sample">
+        <div class="zs-top"><span class="mini">Detalle conceptual · 150 % · no es una ventana activa</span><span class="zs-x" aria-hidden="true">×</span></div>
+        <div class="zs-flow">
+          <div>Necesidad: inscribirme a un curso</div><span aria-hidden="true">→</span>
+          <div>Criterio: confirmar plaza disponible</div><span aria-hidden="true">→</span>
+          <div>Aceptación: probar con el usuario</div>
+        </div>
+        <p class="lead">La prueba de aceptación se prepara a partir de las necesidades, no solo del código. Un sistema puede cumplir su especificación y aun así no resolver el problema del usuario.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
